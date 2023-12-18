@@ -15,7 +15,7 @@ class BlogManager(models.Manager):
 class Blog(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    image = models.ImageField(upload_to='blog/image/%Y/%m/%d/')
+    image = models.ImageField(upload_to='blog/image/%Y/%m/%d/', default='04.jpg')
 
     published_date = models.DateTimeField()
     status = models.BooleanField(default=False)
