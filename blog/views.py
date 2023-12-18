@@ -9,4 +9,4 @@ class BlogListView(generic.ListView):
     context_object_name = 'blogs'
 
     def get_queryset(self):
-        return Blog.objects.published()
+        return Blog.published.all()

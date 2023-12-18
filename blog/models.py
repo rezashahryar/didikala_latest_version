@@ -25,7 +25,8 @@ class Blog(models.Model):
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_updated = models.DateTimeField(auto_now=True)
 
-    objects = BlogManager()
+    objects = models.Manager()
+    published = BlogManager()
 
     def __str__(self):
         return self.title
