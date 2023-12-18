@@ -8,8 +8,8 @@ class Category(models.Model):
 
 
 class BlogManager(models.Manager):
-    def published(self):
-        return self.filter(published_date__lte=timezone.now(), status=True).order_by('-published_date')
+    def get_queryset(self):
+        return super().get_queryset().filter(published_date__lte=timezone.now(), status=True).order_by('-published_date')
 
 
 class Blog(models.Model):
