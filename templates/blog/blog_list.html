@@ -15,11 +15,11 @@
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
               <div class="post-card">
                 <div class="post-thumbnail">
-                  <a href="#"><img src="{{ blog.image.url }}" alt="" /></a>
+                  <a href="#"><img src="{{ blog.image.url }}" alt="عکس مقاله"/></a>
                   <span class="post-tag">مقاله</span>
                 </div>
                 <div class="post-title">
-                  <a href="#">{{ blog.title }}</a>
+                  <a href="{% url 'blog:blog_detail_view' slug=blog.slug %}">{{ blog.title }}</a>
                   <span class="post-date">{{ blog.published_date|date:'Y/m/d' }}</span>
                 </div>
               </div>
