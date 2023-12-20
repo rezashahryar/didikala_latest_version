@@ -1,4 +1,5 @@
 {% extends 'base_pages.html' %}
+{% load blog %}
 
 {% block title %}
     صفحه مقالات
@@ -11,11 +12,11 @@
       <div class="row mt-5 pt-5">
         <div class="col-lg-9 col-md-8 col-sm-12 col-12 mb-3">
           <div class="row">
-            {% for blog in blogs %}
+            {% for blog in page_obj %}
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
               <div class="post-card">
                 <div class="post-thumbnail">
-                  <a href="#"><img src="{{ blog.image.url }}" alt="عکس مقاله"/></a>
+                  <a href="{% url 'blog:blog_detail_view' slug=blog.slug %}"><img src="{{ blog.image.url }}" alt="عکس مقاله"/></a>
                   <span class="post-tag">مقاله</span>
                 </div>
                 <div class="post-title">
@@ -26,48 +27,29 @@
             </div>
             {% endfor %}
           </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="pagination">
-                <a href="#" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
-                <a href="#">1</a>
-                <a href="#" class="active-page">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">...</a>
-                <a href="#">7</a>
-                <a href="#" class="next"><i class="mdi mdi-chevron-double-left"></i></a>
-              </div>
-            </div>
-          </div>
+
+        {% include 'includes/pagination_section_blog.html' %}
+
         </div>
         <div class="col-lg-3 col-md-4 col-sm-12 col-12 mb-3 sidebar sticky-sidebar">
-            {% include 'includes/blog_latest_posts.html' %}
+            {% latest_blog %}
           <div class="dt-sn dt-sl border-bottom rounded-0 mb-3">
             <div class="section-title text-sm-title title-wide no-after-title-wide mb-1">
               <h2>دسته ها</h2>
             </div>
             <ul class="category-list">
-              <li>
-                <a href="#">بهینه سازی</a>
-              </li>
-              <li>
-                <a href="#">برنامه نویسی</a>
-              </li>
-              <li>
-                <a href="#">طراحی سایت</a>
-                <ul>
-                  <li>
-                    <a href="#">وردپرس</a>
-                  </li>
-                  <li>
-                    <a href="#">پلاگین نویسی</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">گرافیک</a>
-              </li>
+                  {% category_side_bar %}
+{#              <li>#}
+{#                <a href="#">طراحی سایت</a>#}
+{#                <ul>#}
+{#                  <li>#}
+{#                    <a href="#">وردپرس</a>#}
+{#                  </li>#}
+{#                  <li>#}
+{#                    <a href="#">پلاگین نویسی</a>#}
+{#                  </li>#}
+{#                </ul>#}
+{#              </li>#}
             </ul>
           </div>
           <div class="dt-sn dt-sl border-bottom rounded-0">
