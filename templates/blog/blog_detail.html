@@ -47,8 +47,7 @@
                                     </div>
                                     <div class="post-meta category">
                                         <i class="mdi mdi-folder"></i>
-                                        <a href="#">دسته‌بندی نشده</a> ، <a href="#">کسب و کار آنلاین</a> ، <a
-                                            href="#">معرفی کتاب</a>
+                                        <a href="{% url 'blog:category_objects' cat_name=blog.category.name %}">{{ blog.category }}</a>
                                     </div>
                                     <div class="post-meta category">
                                         <i class="mdi mdi-eye"></i>
