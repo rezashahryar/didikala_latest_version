@@ -30,6 +30,10 @@ class LoginView(View):
         login_form = LoginFormViaEmailOrMobile(request.POST)
         if login_form.is_valid():
             cd = login_form.cleaned_data
+            if cd['remember_me']:
+                request.session.set_expiry(604800)
+            else:
+                request.session.set_expiry(0)
             user = authenticate(request, username=cd['username'], password=cd['password'])
             if user is not None:
                 login(request, user)
