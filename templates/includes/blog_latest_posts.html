@@ -3,57 +3,20 @@
               <h3>جدیدترین نوشته ها</h3>
             </div>
             <div class="content-sidebar dt-sl">
+                {% for blog in blogs %}
               <div class="item">
                 <div class="item-inner">
                   <div class="item-thumb">
-                    <a href="#" class="img-holder" style="background-image: url('./assets/img/post-thumbnail/1.png')"></a>
+                    <a href="{% url 'blog:blog_detail_view' slug=blog.slug %}" class="img-holder" style="background-image: url('{{ blog.image.url }}')"></a>
                   </div>
                   <p class="title">
-                    <a href="#">سایت و فروشگاهتو طراحی کن</a>
+                    <a href="#">{{ blog.title }}</a>
                   </p>
                   <div class="item-meta">
-                    <span class="time">۱۰ مرداد ۱۳۹۸</span>
+                    <span class="time">{{ blog.published_date|date:'Y/m/d' }}</span>
                   </div>
                 </div>
               </div>
-              <div class="item">
-                <div class="item-inner">
-                  <div class="item-thumb">
-                    <a href="#" class="img-holder" style="background-image: url('./assets/img/post-thumbnail/2.png')"></a>
-                  </div>
-                  <p class="title">
-                    <a href="#">امنیت سایتت رو تامین کن</a>
-                  </p>
-                  <div class="item-meta">
-                    <span class="time">۱۰ مرداد ۱۳۹۸</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="item-inner">
-                  <div class="item-thumb">
-                    <a href="#" class="img-holder" style="background-image: url('./assets/img/post-thumbnail/3.png')"></a>
-                  </div>
-                  <p class="title">
-                    <a href="#">اینستاگرام را پول ساز کن</a>
-                  </p>
-                  <div class="item-meta">
-                    <span class="time">۱۰ مرداد ۱۳۹۸</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="item-inner">
-                  <div class="item-thumb">
-                    <a href="#" class="img-holder" style="background-image: url('./assets/img/post-thumbnail/4.png')"></a>
-                  </div>
-                  <p class="title">
-                    <a href="#">سایت خودت رو چندزبانه کن</a>
-                  </p>
-                  <div class="item-meta">
-                    <span class="time">۱۰ مرداد ۱۳۹۸</span>
-                  </div>
-                </div>
-              </div>
+                {% endfor %}
             </div>
           </div>
