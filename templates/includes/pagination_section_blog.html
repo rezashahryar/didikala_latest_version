@@ -3,13 +3,20 @@
         {% if page_obj.has_previous %}
             <a href="?page={{ page_obj.previous_page_number }}" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
         {% endif %}
+
         {% for i in page_obj.paginator.page_range %}
             {% if page_obj.number == i %}
                 <a href="#" class="active-page">{{ i }}</a>
-            {% else %}
+            {% elif i > page_obj.number|add:'-2' and i < page_obj.number|add:'2' %}
                 <a href="?page={{ i }}" class="">{{ i }}</a>
             {% endif %}
         {% endfor %}
+    
+    {% if page_obj.paginator.num_pages > page_obj.number|add:'2' %}
+        <a href="#">&hellip;</a>
+{#        <a href="?page={{ i }}">{{ i }}</a>#}
+        <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+    {% endif %}
         {% if page_obj.has_next %}
             <a href="?page={{ page_obj.next_page_number }}" class="next"><i class="mdi mdi-chevron-double-left"></i></a>
         {% endif %}
