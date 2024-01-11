@@ -38,15 +38,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 
     # local apps
     'core.apps.CoreConfig',
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
     'blog.apps.BlogConfig',
+
+    # 3rd party apps
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,6 +59,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -87,8 +97,11 @@ AUTHENTICATION_BACKENDS = [
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'didikala-latest-version',
+        'HOST': 'localhost',
+        'USER': 'root',
+        'PASSWORD': 'admin',
     }
 }
 
@@ -148,13 +161,12 @@ ENABLE_USER_ACTIVATION = True
 LOGIN_URL = 'core:login_view'
 LOGIN_REDIRECT_URL = 'pages:home_page_view'
 DISABLE_USERNAME = True
-
-
+RESTORE_PASSWORD_VIA_EMAIL_OR_USERNAME = True
 
 # config send gmail
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'reza.shahryarineya7851@gmail.com'
-EMAIL_HOST_PASSWORD = 'selg wzha owrn fiha '
+EMAIL_HOST_PASSWORD = 'selg wzha owrn fiha'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
