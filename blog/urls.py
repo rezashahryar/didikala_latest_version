@@ -9,4 +9,7 @@ urlpatterns = [
     path('detail/<str:slug>/', views.BlogDetailView.as_view(), name='blog_detail_view'),
     path('category/<str:cat_name>/', views.CategoryObjectsView.as_view(), name='category_objects'),
     path('tag/<str:tag_name>/', views.TagObjectsView.as_view(), name='Tag_objects'),
+    path('like/<slug:slug>/<int:pk>/', views.like, name='like'),
+    path('dislike/<slug:slug>/<int:pk>/', views.dislike, name='dislike'),
+    path('comment/<slug:slug>/', views.create_comment_view, name='create_comment'),
 ]
