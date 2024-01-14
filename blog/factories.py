@@ -3,7 +3,7 @@ import factory
 from datetime import datetime
 from faker import Faker
 from factory.django import DjangoModelFactory
-
+from django.utils.text import slugify
 from . import models
 
 faker = Faker()

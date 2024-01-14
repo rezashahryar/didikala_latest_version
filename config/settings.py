@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
     'blog.apps.BlogConfig',
+    'shop.apps.ShopConfig',
 
     # 3rd party apps
     'debug_toolbar',
@@ -61,7 +62,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
+# for django dibug toolbar pack
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
@@ -79,6 +80,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # custom context processors
+                'shop.context_processors.cart',
             ],
         },
     },

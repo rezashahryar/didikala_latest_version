@@ -1,5 +1,5 @@
 {% for tag in tags %}
-<li>
+  <li>
     <a href="{% url 'blog:Tag_objects' tag_name=tag.name %}">{{ tag.name }}</a>
-</li>
+  </li>
 {% endfor %}

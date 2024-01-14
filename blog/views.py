@@ -1,7 +1,8 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.views import generic
-from .models import Blog, Category, Tag
-
+from .models import Blog, Category, Tag, Like, DisLike
+from django.contrib.auth.decorators import login_required
+from .forms import CommentForm
 
 # Create your views here.
 
@@ -16,9 +17,12 @@ class BlogListView(generic.ListView):
 class BlogDetailView(generic.DetailView):
     context_object_name = 'blog'
 
-    def get_object(self):
+    def get_object(self, *args, **kwargs):
         slug = self.kwargs.get('slug')
-        return get_object_or_404(Blog, slug=slug, status=True)
+        blog = get_object_or_404(Blog.published.select_related('author'), slug=slug)
+        # blog.counted_views += 1
+        # blog.save()
+        return blog
 
 
 class CategoryObjectsView(generic.ListView):
@@ -29,7 +33,7 @@ class CategoryObjectsView(generic.ListView):
     def get_queryset(self):
         cat_name = self.kwargs.get('cat_name')
         category = get_object_or_404(Category, name=cat_name)
-        return category.blogs.filter(status=True)
+        return category.blogs.filter(status=Blog.BLOG_STATUS_PUBLISHED)
 
 
 class TagObjectsView(generic.ListView):
@@ -40,4 +44,38 @@ class TagObjectsView(generic.ListView):
     def get_queryset(self):
         tag_name = self.kwargs.get('tag_name')
         tag = get_object_or_404(Tag, name=tag_name)
-        return tag.blogs.filter(status=True)
+        return tag.blogs.filter(status=Blog.BLOG_STATUS_PUBLISHED)
+
+@login_required
+def like(request, slug, pk):
+    try:
+        like = get_object_or_404(Like, blog__slug=slug, user_id=request.user.id)
+        like.delete()
+    except:
+        Like.objects.create(blog_id=pk, user_id=request.user.id)
+
+    return redirect('blog:blog_detail_view', slug)
+
+@login_required()
+def dislike(request, slug, pk):
+    try:
+        user = request.user.id
+        dislike = get_object_or_404(DisLike, blog__slug=slug, user_id=user)
+        dislike.delete()
+
+    except:
+        DisLike.objects.create(blog_id=pk, user_id=request.user.id)
+
+    return redirect('blog:blog_detail_view', slug)
+
+
+def create_comment_view(request, slug):
+    blog = get_object_or_404(Blog, slug=slug, status=Blog.BLOG_STATUS_PUBLISHED)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            new_form = form.save(commit=False)
+            new_form.blog = blog
+            new_form.user = request.user
+            new_form.save()
+            return redirect('blog:blog_detail_view', slug)

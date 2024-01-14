@@ -1,5 +1,5 @@
 {% for cat in categories %}
-<li>
+  <li>
     <a href="{% url 'blog:category_objects' cat.name %}">{{ cat.name }}</a>
-</li>
+  </li>
 {% endfor %}

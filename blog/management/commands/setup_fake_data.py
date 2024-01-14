@@ -16,7 +16,7 @@ faker = Faker()
 list_of_models = [Category, Blog]
 
 NUM_CATEGORIES = 100
-NUM_BLOGS = 2000
+NUM_BLOGS = 10000
 
 
 class Command(BaseCommand):

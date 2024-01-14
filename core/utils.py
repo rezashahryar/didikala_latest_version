@@ -22,3 +22,13 @@ def send_activation_email(request, email, code):
     }
 
     send_mail(email, 'activate_user', context)
+
+
+def send_reset_password_email(request, email, token, uid):
+    context = {
+        'subject': _('Restore password'),
+        'uri': request.build_absolute_uri(
+            reverse('core:password_reset_confirm', kwargs={'uidb64': uid, 'token': token})),
+    }
+
+    send_mail(email, 'restore_password_email', context)

@@ -5,6 +5,20 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 
 
+class Color(models.Model):
+    title = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title
+
+
+class Brand(models.Model):
+    title = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title
+
+
 class ProductProperties(models.Model):
     title = models.CharField(max_length=100)
 
@@ -54,7 +68,10 @@ class Product(models.Model):
     cover = models.ImageField(upload_to='products/covers')
     img_one = models.ImageField(upload_to='products/img_one')
     img_two = models.ImageField(upload_to='products/img_two')
-    img_three = models.ImageField(upload_to='products/img_three')
+    img_three = models.ImageField(upload_to='products/img_three')\
+
+    color = models.ManyToManyField(Color, related_name='colors', null=True, blank=True)
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='brands', null=True, blank=True)
 
     discount = models.PositiveIntegerField(null=True, blank=True, validators=[MinValueValidator(0), MaxValueValidator(100)])
 
@@ -71,7 +88,11 @@ class Product(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('products:product_detail_view', args=[self.slug])
+        return reverse('products:product_detail', args=[self.slug])
+
+    def get_price_after_discount(self):
+        price = int(self.price * self.discount / 100)
+        return price
 
 
 class SetProductProperty(models.Model):

@@ -1,13 +1,16 @@
 from django.contrib import admin
 from .models import User
 from django.contrib.auth.admin import UserAdmin
+
+
 # Register your models here.
+
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
     model = User
-    ordering = ('mobile',)
-    search_fields = ('mobile',)
+    ordering = ('mobile',) 
+    search_fields = ('mobile', 'email')
     list_filter = ('is_active', 'is_superuser')
     list_display = ['mobile', 'is_superuser', 'is_staff', 'is_active', 'email']
 
@@ -24,12 +27,12 @@ class CustomUserAdmin(UserAdmin):
         }),
         ('Permissions', {
             'fields': (
-            'is_staff', 'is_active', 'is_superuser'
+                'is_staff', 'is_active', 'is_superuser'
             ),
         }),
         ('last login', {
             'fields': (
-            'last_login',
+                'last_login',
             ),
         }),
     )
@@ -40,4 +43,3 @@ class CustomUserAdmin(UserAdmin):
             'fields': ('mobile', 'password1', 'password2', 'is_staff', 'is_active', 'is_superuser')
         }),
     )
-    

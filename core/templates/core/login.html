@@ -1,44 +1,10 @@
-{% load static %}
+{% extends 'base_auth_pages.html' %}
 
-<!DOCTYPE html>
-<html lang="fa">
+{% block title %}
+ورود
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="#f7858d">
-    <meta name="msapplication-navbutton-color" content="#f7858d">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#f7858d">
-    <title>ورود</title>
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="{% static 'assets/css/vendor/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/vendor/materialdesignicons.min.css' %}">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="{% static 'assets/css/vendor/bootstrap.min.css' %}">
-    <!-- Plugins -->
-    <link rel="stylesheet" href="{% static 'assets/css/vendor/bootstrap-slider.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/vendor/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/vendor/jquery.horizontalmenu.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/vendor/fancybox.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/vendor/nice-select.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/vendor/nouislider.min.css' %}">
-    <!-- Main CSS File -->
-    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/colors/default.css' %}" id="colorswitch">
-</head>
-
-<body>
-    <div class="wrapper">
-        <!-- Start main-content -->
-        <main class="main-content dt-sl mt-4 mb-3">
-            <div class="container main-container">
-                <div class="row">
-                    
-                    <div class="col-xl-4 col-lg-5 col-md-7 col-12 mx-auto">
-                        <div class="logo-area text-center mb-3">
-                            <a href="#"><img src="{% static 'assets/img/logo.png' %}" class="img-fluid" alt="logo"></a>
-                        </div>
+{% block content %}
                         <div class="auth-wrapper form-ui border pt-4">
                             <div class="section-title title-wide mb-1 no-after-title-wide">
                                 <h2 class="font-weight-bold">ورود</h2>
@@ -89,6 +55,11 @@
                                     <span class="font-weight-bold">کاربر جدید هستید؟</span>
                                     <a href="{% url 'core:register_view' %}" class="mr-3 mt-2">ثبت نام در دیدیکالا</a>
                                 </div>
+                                <p></p>
+                                <div>
+                                    <span class="font-weight-bold">رمز عبور خود را فراموش کردید؟</span>
+                                    <a href="{% url 'password_reset' %}" class="mr-3 mt-2">بازیابی رمز عبور</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -96,53 +67,4 @@
             </div>
         </main>
         <!-- End main-content -->
-        <!-- Start mini-footer -->
-        <footer class="mini-footer dt-sl">
-            <div class="container main-container">
-                <div class="row">
-                    <div class="col-12">
-                        <ul class="mini-footer-menu">
-                            <li><a href="#">درباره دیدیکالا</a></li>
-                            <li><a href="#">فرصت های شغلی</a></li>
-                            <li><a href="#">تماس با ما</a></li>
-                            <li><a href="#">همکاری با سازمان ها</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-12 mt-2 mb-3">
-                        <div class="footer-light-text">
-                            استفاده از مطالب فروشگاه اینترنتی دیدیکالا فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع
-                            است. کلیه حقوق این سایت متعلق به (فروشگاه آنلاین دیدیکالا) می‌باشد.
-                        </div>
-                    </div>
-                    <div class="col-12 text-center">
-                        <div class="copy-right-mini-footer">
-                            Copyright © 2019 Didikala
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- End mini-footer -->
-    </div>
-    <!-- Core JS Files -->
-    <script src="{% static 'assets/js/vendor/jquery-3.4.1.min.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/popper.min.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/bootstrap.min.js' %}"></script>
-    <!-- Plugins -->
-    <script src="{% static 'assets/js/vendor/bootstrap-slider.min.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/owl.carousel2.thumbs.min.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/jquery.nicescroll.min.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/jquery.nice-select.min.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/nouislider.min.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/jquery.horizontalmenu.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/jquery.fancybox.min.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/countdown.min.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/wNumb.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/ResizeSensor.min.js' %}"></script>
-    <script src="{% static 'assets/js/vendor/theia-sticky-sidebar.min.js' %}"></script>
-    <!-- Main JS File -->
-    <script src="{% static 'assets/js/main.js' %}"></script>
-</body>
-
-</html>
+   {% endblock content %}

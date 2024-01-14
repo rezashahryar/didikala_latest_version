@@ -6,9 +6,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.translation import gettext_lazy as _
 from .models import Activation
 from .utils import send_activation_email
-from django.conf import settings
 from django.utils.crypto import get_random_string
 from django.contrib import messages
+from django.conf import settings
+
 
 # Create your views here.
 

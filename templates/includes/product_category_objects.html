@@ -1,11 +1,11 @@
 {% load static %}
 
-{% for name,count in categories.items %}
-    <div class="item">
-        <a href="#" class="promotion-category">
-            <img src=" {% static 'assets/img/category/notebook-computer.png' %}" alt="">
-            <h4 class="promotion-category-name">{{ name }}</h4>
-            <h6 class="promotion-category-quantity">{{ count }} کالا</h6>
-        </a>
-    </div>
+{% for name, count in categories.items %}
+  <div class="item">
+    <a href="#" class="promotion-category">
+      <img src=" {% static 'assets/img/category/notebook-computer.png' %}" alt="" />
+      <h4 class="promotion-category-name">{{ name }}</h4>
+      <h6 class="promotion-category-quantity">{{ count }} کالا</h6>
+    </a>
+  </div>
 {% endfor %}

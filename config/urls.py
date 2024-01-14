@@ -18,13 +18,23 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import handler404
 
 urlpatterns = [
     path('', include('pages.urls')),
     path('auth/', include('core.urls')),
     path('auth/', include('django.contrib.auth.urls')),
     path('blog/', include('blog.urls')),
+    path('products/', include('products.urls', namespace='products')),
+    path('shop/', include('shop.urls')),
+    # django toolbar
+    path("__debug__/", include("debug_toolbar.urls")),
+    # end
     path('admin/', admin.site.urls),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+handler404 = 'pages.views.custom_404'

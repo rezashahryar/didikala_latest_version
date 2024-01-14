@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
 from django.dispatch import receiver
 from django.db.models.signals import post_save
-
 # create your models here
 
 
@@ -27,7 +26,6 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(mobile=mobile, password=password, **extra_fields)
 
 
-
 class User(AbstractBaseUser, PermissionsMixin):
     mobile = models.CharField(max_length=11, unique=True)
     email = models.EmailField(blank=True)
@@ -39,9 +37,15 @@ class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=100, blank=True)
     last_name = models.CharField(max_length=100, blank=True)
 
+    last_login = models.DateTimeField(null=True, blank=True)
+
     USERNAME_FIELD = 'mobile'
 
     objects = CustomUserManager()
+
+    @property
+    def get_id(self):
+        return f'user_{self.id}'
 
     def get_full_name(self):
         return f'{self.first_name} {self.last_name}'

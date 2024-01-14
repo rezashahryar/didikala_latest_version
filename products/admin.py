@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Product, ProductCategory, ProductProperties, SubProductCategory, SetProductProperty
+from . models import Product, ProductCategory, ProductProperties, SubProductCategory, SetProductProperty, Brand, Color
 # Register your models here.
 
 
@@ -12,3 +12,5 @@ admin.site.register(ProductCategory)
 admin.site.register(SubProductCategory)
 admin.site.register(ProductProperties)
 admin.site.register(SetProductProperty)
+admin.site.register(Color)
+admin.site.register(Brand)
