@@ -1,0 +1,16 @@
+<ul class="row">
+  {% for cat in cat.children.all %}
+    {% if cat.parent == None %}
+      <li class="sublist--title">
+        <a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a>
+      </li>
+    {% elif cat.parent %}
+      <li class="sublist--item">
+        <a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a>
+      </li>
+    {% endif %}
+    {% if cat.children.all %}
+      {% include 'includes/category_loop.html' %}
+    {% endif %}
+  {% endfor %}
+</ul>

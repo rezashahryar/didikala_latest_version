@@ -1,0 +1,8 @@
+{% for cat in categories %}
+    <li>
+        <a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a>
+        {% if cat.children.all %}
+            {% include 'includes/category_loop.html' %}
+        {% endif %}
+    </li>
+{% endfor %}
