@@ -4,7 +4,7 @@ from core.models import User
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from django.utils.text import slugify
-
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -38,7 +38,7 @@ class Blog(models.Model):
         (BLOG_STATUS_PUBLISHED, 'Published')
     ]
     title = models.CharField(max_length=255)
-    description = models.TextField()
+    description = RichTextField()
     image = models.ImageField(upload_to='blog/image/%Y/%m/%d/', default='04.jpg')
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='blogs')
     tag = models.ManyToManyField(Tag, related_name='blogs')
