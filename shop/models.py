@@ -1,8 +1,9 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.translation import gettext_lazy as _
-from random import uniform
 from django.conf import settings
+from random import uniform
 # Create your models here.
 
 
@@ -61,3 +62,16 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return f'OrderItem {self.id} of order {self.order.id}'
+
+
+class Address(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='address')
+    full_name = models.CharField(max_length=500)
+    mobile_number = models.CharField(max_length=15)
+    province = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    address = models.TextField()
+    post_code = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.address

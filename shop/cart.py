@@ -1,6 +1,6 @@
-from products.models import Product
 from .models import Coupon
 from decimal import Decimal
+from products.models import Product
 
 
 class Cart:
@@ -59,14 +59,14 @@ class Cart:
     def get_total_price(self):
         return sum(item['quantity'] * item['product'].price for item in self.cart.values())
 
-    def amount_payable(self):
-        product_ids = self.cart.keys()
-        for item in self.cart.values():
-            if item['product'].discount:
-                result = sum(item['quantity'] * item['product'].get_price_after_discount())
-            else:
-                result = sum(item['quantity'] * item['product'].price)
-            return result
+    # def amount_payable(self):
+    #     product_ids = self.cart.keys()
+    #     for item in self.cart.values():
+    #         if item['product'].discount:
+    #             result = sum(item['quantity'] * item['product'].get_price_after_discount())
+    #         else:
+    #             result = sum(item['quantity'] * item['product'].price)
+    #         return result
         # return sum(item['quantity'] * item['product'].price for item in self.cart.values())
 
     def delete(self, id):
@@ -74,7 +74,7 @@ class Cart:
             del self.cart[id]
             self.save()
 
-        # to Coupons
+    # to Coupons
     @property
     def coupon(self):
         if self.coupon_id:
@@ -92,6 +92,6 @@ class Cart:
     def get_total_price_after_discount(self):
         return self.get_total_price() - self.get_discount()
 
-    def get_total_price(self):
-        product_ids = self.cart.keys()
-        return sum(item['quantity'] * item['product'].price for item in self)
+    # def get_total_price(self):
+    #     product_ids = self.cart.keys()
+    #     return sum(item['quantity'] * item['product'].price for item in self)

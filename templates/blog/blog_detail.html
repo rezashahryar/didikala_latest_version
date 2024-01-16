@@ -57,7 +57,7 @@
               <div class="post-thumbnail dt-sl">
                 <img src="{{ blog.image.url }}" alt="" />
               </div>
-              <p>{{ blog.description|linebreaks }}</p>
+              <p>{{ blog.description|safe }}</p>
             </div>
           </div>
           <div class="comments-area dt-sl my-3">

@@ -41,7 +41,7 @@ class Blog(models.Model):
     description = RichTextField()
     image = models.ImageField(upload_to='blog/image/%Y/%m/%d/', default='04.jpg')
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='blogs')
-    tag = models.ManyToManyField(Tag, related_name='blogs')
+    tag = models.ManyToManyField(Tag, related_name='blogs', null=True)
     slug = models.SlugField(null=True, blank=True, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blogs', null=True, blank=True)
 

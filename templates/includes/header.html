@@ -333,7 +333,7 @@
                                         <span>مشاهده سبد خرید</span>
                                     </a>
                                 {% else %}
-                                    <p style="font-size: 13px;">در حال حاضر در سبد خرید شما کالای وجود ندارد</p>
+                                    <p style="font-size: 13px;">در حال حاضر در سبد خرید شما کالایی وجود ندارد</p>
                                 {% endif %}
                             </div>
                             <ul class="header-basket-list do-nice-scroll">
@@ -381,7 +381,7 @@
                                         </p>
                                     </div>
                                     <div>
-                                        <a href="#" class="header-cart-info-submit">
+                                        <a href="{% url 'shop:information_order_view' %}" class="header-cart-info-submit">
                                             ثبت سفارش
                                         </a>
                                     </div>

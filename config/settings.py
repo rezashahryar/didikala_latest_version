@@ -49,7 +49,13 @@ INSTALLED_APPS = [
 
     # 3rd party apps
     'debug_toolbar',
+    'ckeditor',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
+
+# crispy forms config
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -145,6 +151,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media conf
 MEDIA_URL = 'media/'

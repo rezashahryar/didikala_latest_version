@@ -1,0 +1,128 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#f7858d">
+    <meta name="msapplication-navbutton-color" content="#f7858d">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#f7858d">
+    <title>{% block title %}{% endblock title %}</title>
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/materialdesignicons.min.css' %}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/bootstrap.min.css' %}">
+    <!-- Plugins -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/bootstrap-slider.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/jquery.horizontalmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/nouislider.min.css' %}">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/colors/default.css' %}" id="colorswitch">
+</head>
+
+<body>
+<div class="wrapper shopping-page">
+    <!-- Start header-shopping -->
+    <header class="header-shopping dt-sl">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center pt-2">
+                    <div class="header-shopping-logo dt-sl">
+                        <a href="{% url 'pages:home_page_view' %}">
+                            <img src="{% static 'assets/img/logo.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 text-center">
+                    <ul class="checkout-steps">
+                        {% url 'shop:information_order_view' as infopage %}
+                        <li>
+                            <a href="#" class="{% if request.path == infopage %}active{% endif %}">
+                                <span>اطلاعات ارسال</span>
+                            </a>
+                        </li>
+                        {% url 'shop:payment_page' as paymentpage %}
+                        <li>
+                            <a href="#" class="{% if request.path == paymentpage %}active{% endif %}">
+                                <span>پرداخت</span>
+                            </a>
+                        </li>
+                        {% url 'shop:payment_process' as payment_process %}
+                        <li>
+                            <a href="#" class="{% if request.path == payment_process %}active{% endif %}">
+                                <span>اتمام خرید و ارسال</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End header-shopping -->
+    {% block body %}
+
+    {% endblock body %}
+    <!-- Start mini-footer -->
+    <footer class="mini-footer dt-sl">
+        <div class="container main-container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 text-left">
+                    <i class="mdi mdi-phone-outline"></i>
+                    شماره تماس : <a href="#">
+                    ۶۱۹۳۰۰۰۰
+                    - ۰۲۱
+                </a>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right">
+                    <i class="mdi mdi-email-outline"></i>
+                    آدرس ایمیل : <a href="#">info@gmail.com</a>
+                </div>
+                <div class="col-12 text-center mt-2">
+                    <p class="text-secondary text-footer">
+                        استفاده از کارت هدیه یا کد تخفیف، درصفحه ی پرداخت امکان پذیر است.
+                    </p>
+                </div>
+                <div class="col-12 text-center">
+                    <div class="copy-right-mini-footer">
+                        Copyright © 2019 Didikala
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End mini-footer -->
+</div>
+<!-- Core JS Files -->
+<script src="{% static 'assets/js/vendor/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/popper.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/bootstrap.min.js' %}"></script>
+<!-- Plugins -->
+<script src="{% static 'assets/js/vendor/bootstrap-slider.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/owl.carousel2.thumbs.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/jquery.nicescroll.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/nouislider.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/jquery.horizontalmenu.js' %}"></script>
+<script src="{% static 'assets/js/vendor/jquery.fancybox.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/countdown.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/wNumb.js' %}"></script>
+<script src="{% static 'assets/js/vendor/ResizeSensor.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/theia-sticky-sidebar.min.js' %}"></script>
+<!-- Main JS File -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+<script>
+    {% block script %}
+
+    {% endblock script %}
+</script>
+</body>
+</html>
