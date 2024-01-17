@@ -1,11 +1,13 @@
+from django.http import HttpResponse
 import requests
 import json
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse_lazy
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST, require_GET
 from django.contrib import messages
-from django.views import View
+from django.views import View, generic
 from django.http import HttpResponse
 from .cart import Cart
 from products.models import Product
@@ -83,22 +85,18 @@ def add_new_address(request):
             new_address.user = request.user
             new_address.save()
             return redirect('shop:information_order_view')
-        else:
-            address_form = AddressForm()
     return render(request, 'shop/add_new_address.html', {'address_form': address_form})
 
 
-@login_required()
-def edit_address_view(request, pk):
-    address = get_object_or_404(Address, pk=pk)
-    address_form = AddressForm(request.POST or None, instance=address)
-    if address_form.is_valid():
-        address_form.save()
-    context = {
-        'address_form_edit': address_form,
-        'address': address,
-    }
-    return render(request, 'shop/edit_address.html', context)
+
+
+
+class EditAddressView(generic.UpdateView):
+    model = Address
+    form_class = AddressForm
+    template_name = 'shop/edit_address.html'
+    success_url = reverse_lazy('shop:information_order_view')
+
 
 
 def payment_page(request):

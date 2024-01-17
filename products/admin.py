@@ -5,7 +5,8 @@ from . models import Product, ProductCategory, ProductProperties, SubProductCate
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('title', 'product_code', 'available', 'price')
+    list_display = ('title', 'product_code', 'available', 'price', 'category')
+    list_editable = ['available']
 
 
 admin.site.register(ProductCategory)

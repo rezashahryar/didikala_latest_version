@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-مشخصات سفارش
+    مشخصات سفارش
 {% endblock %}
 
 {% block body %}
@@ -18,30 +18,31 @@
                         <div class="address-section">
                             <div class="checkout-contact dt-sn dt-sn--box border px-0 pt-0 pb-0">
                                 <div class="checkout-contact-content">
-                                    <ul class="checkout-contact-items">
-                                        <li class="checkout-contact-item">
-                                            گیرنده:
-                                            <span class="full-name">جلال بهرامی راد</span>
-                                            <a class="checkout-contact-btn-edit">اصلاح این آدرس</a>
-                                        </li>
-                                        <li class="checkout-contact-item">
-                                            <div class="checkout-contact-item checkout-contact-item-mobile">
-                                                شماره تماس:
-                                                <span class="mobile-phone">۰۹۰۳۰۸۱۳۷۴۲</span>
-                                            </div>
-                                            <div class="checkout-contact-item-message">
-                                                کد پستی:
-                                                <span class="post-code">۹۹۹۹۹۹۹۹۹۹</span>
-                                            </div>
-                                            <br>
-                                            استان
-                                            <span class="state">خراسان شمالی</span>
-                                            ، ‌شهر
-                                            <span class="city">بجنورد</span>
-                                            ،
-                                            <span class="address-part">خراسان شمالی-بجنورد</span>
-                                        </li>
-                                    </ul>
+                                    {#                                    <ul class="checkout-contact-items">#}
+                                    {#                                        <li class="checkout-contact-item">#}
+                                    {#                                            گیرنده:#}
+                                    {#                                            <span class="full-name">جلال بهرامی راد</span>#}
+                                    {#                                            <a class="checkout-contact-btn-edit">اصلاح این آدرس</a>#}
+                                    {#                                        </li>#}
+                                    {#                                        <li class="checkout-contact-item">#}
+                                    {#                                            <div class="checkout-contact-item checkout-contact-item-mobile">#}
+                                    {#                                                شماره تماس:#}
+                                    {#                                                <span class="mobile-phone">۰۹۰۳۰۸۱۳۷۴۲</span>#}
+                                    {#                                            </div>#}
+                                    {#                                            <div class="checkout-contact-item-message">#}
+                                    {#                                                کد پستی:#}
+                                    {#                                                <span class="post-code">۹۹۹۹۹۹۹۹۹۹</span>#}
+                                    {#                                            </div>#}
+                                    {#                                            <br>#}
+                                    {#                                            استان#}
+                                    {#                                            <span class="state">خراسان شمالی</span>#}
+                                    {#                                            ، ‌شهر#}
+                                    {#                                            <span class="city">بجنورد</span>#}
+                                    {#                                            ،#}
+                                    {#                                            <span class="address-part">خراسان شمالی-بجنورد</span>#}
+                                    {#                                        </li>#}
+                                    {#                                    </ul>#}
+                                    {{ info_order_form.address }}
                                     <a class="checkout-contact-location" id="btn-checkout-contact-location">تغییر
                                         آدرس
                                         ارسال</a>
@@ -62,7 +63,6 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        {{ info_order_form.address }}
                                         {% for address in user.address.all %}
                                             <div class="checkout-address-row">
                                                 <div class="checkout-address-col">
@@ -163,8 +163,10 @@
                                             {% for item in cart %}
                                                 <div class="item">
                                                     <div class="product-card mb-3">
-                                                        <a class="product-thumb" href="{{ item.product.get_absolute_url }}">
-                                                            <img src="{{ item.product.cover.url }}" alt="Product Thumbnail">
+                                                        <a class="product-thumb"
+                                                           href="{{ item.product.get_absolute_url }}">
+                                                            <img src="{{ item.product.cover.url }}"
+                                                                 alt="Product Thumbnail">
                                                         </a>
                                                         <div class="product-card-body">
                                                             <h5 class="product-title">
@@ -254,68 +256,68 @@
                                         </div>
                                     </div>
                                 </div>
-{#                                <div class="row">#}
-{#                                    <div class="checkout-time-table checkout-time-table-time">#}
-{#                                        <div class="col-12">#}
-{#                                            <div class="radio-box custom-control custom-radio pl-0 pr-3">#}
-{#                                                <input type="radio" class="custom-control-input" name="post-pishtaz"#}
-{#                                                       id="1" value="1" checked>#}
-{#                                                <label for="1" class="custom-control-label">#}
-{#                                                    <img src="{% static 'assets/img/svg/d86ea8ec.svg' %}"#}
-{#                                                         class="checkout-additional-options-checkbox-image"/>#}
-{#                                                    <div class="content-box">#}
-{#                                                        <div#}
-{#                                                                class="checkout-time-table-title-bar checkout-time-table-title-bar-city">#}
-{#                                                            بازه تحویل سفارش: زمان تقریبی تحویل از#}
-{#                                                            <span>۱۳ خرداد</span>#}
-{#                                                            تا#}
-{#                                                            <span>۲۰ خرداد</span>#}
-{#                                                        </div>#}
-{#                                                        <ul class="checkout-time-table-subtitle-bar">#}
-{#                                                            <li>#}
-{#                                                                شیوه ارسال : پست پیشتاز با ظرفیت اختصاصی برای دیجی#}
-{#                                                                کالا#}
-{#                                                            </li>#}
-{#                                                            <li>#}
-{#                                                                هزینه ارسال:#}
-{#                                                                <span class="">رایگان</span>#}
-{#                                                            </li>#}
-{#                                                        </ul>#}
-{#                                                    </div>#}
-{#                                                </label>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                        <div class="col-12">#}
-{#                                            <div class="radio-box custom-control custom-radio pl-0 pr-3">#}
-{#                                                <input type="radio" class="custom-control-input" name="post-pishtaz"#}
-{#                                                       id="2" value="2">#}
-{#                                                <label for="2" class="custom-control-label">#}
-{#                                                    <img src="{% static 'assets/img/svg/d86ea8ec.svg' %}"#}
-{#                                                         class="checkout-additional-options-checkbox-image"/>#}
-{#                                                    <div class="content-box">#}
-{#                                                        <div#}
-{#                                                                class="checkout-time-table-title-bar checkout-time-table-title-bar-city">#}
-{#                                                            بازه تحویل سفارش: زمان تقریبی تحویل از#}
-{#                                                            <span>۱۳ خرداد</span>#}
-{#                                                            تا#}
-{#                                                            <span>۲۰ خرداد</span>#}
-{#                                                        </div>#}
-{#                                                        <ul class="checkout-time-table-subtitle-bar">#}
-{#                                                            <li>#}
-{#                                                                شیوه ارسال : پست پیشتاز با ظرفیت اختصاصی برای دیجی#}
-{#                                                                کالا#}
-{#                                                            </li>#}
-{#                                                            <li>#}
-{#                                                                هزینه ارسال:#}
-{#                                                                <span class="">رایگان</span>#}
-{#                                                            </li>#}
-{#                                                        </ul>#}
-{#                                                    </div>#}
-{#                                                </label>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
+                                {#                                <div class="row">#}
+                                {#                                    <div class="checkout-time-table checkout-time-table-time">#}
+                                {#                                        <div class="col-12">#}
+                                {#                                            <div class="radio-box custom-control custom-radio pl-0 pr-3">#}
+                                {#                                                <input type="radio" class="custom-control-input" name="post-pishtaz"#}
+                                {#                                                       id="1" value="1" checked>#}
+                                {#                                                <label for="1" class="custom-control-label">#}
+                                {#                                                    <img src="{% static 'assets/img/svg/d86ea8ec.svg' %}"#}
+                                {#                                                         class="checkout-additional-options-checkbox-image"/>#}
+                                {#                                                    <div class="content-box">#}
+                                {#                                                        <div#}
+                                {#                                                                class="checkout-time-table-title-bar checkout-time-table-title-bar-city">#}
+                                {#                                                            بازه تحویل سفارش: زمان تقریبی تحویل از#}
+                                {#                                                            <span>۱۳ خرداد</span>#}
+                                {#                                                            تا#}
+                                {#                                                            <span>۲۰ خرداد</span>#}
+                                {#                                                        </div>#}
+                                {#                                                        <ul class="checkout-time-table-subtitle-bar">#}
+                                {#                                                            <li>#}
+                                {#                                                                شیوه ارسال : پست پیشتاز با ظرفیت اختصاصی برای دیجی#}
+                                {#                                                                کالا#}
+                                {#                                                            </li>#}
+                                {#                                                            <li>#}
+                                {#                                                                هزینه ارسال:#}
+                                {#                                                                <span class="">رایگان</span>#}
+                                {#                                                            </li>#}
+                                {#                                                        </ul>#}
+                                {#                                                    </div>#}
+                                {#                                                </label>#}
+                                {#                                            </div>#}
+                                {#                                        </div>#}
+                                {#                                        <div class="col-12">#}
+                                {#                                            <div class="radio-box custom-control custom-radio pl-0 pr-3">#}
+                                {#                                                <input type="radio" class="custom-control-input" name="post-pishtaz"#}
+                                {#                                                       id="2" value="2">#}
+                                {#                                                <label for="2" class="custom-control-label">#}
+                                {#                                                    <img src="{% static 'assets/img/svg/d86ea8ec.svg' %}"#}
+                                {#                                                         class="checkout-additional-options-checkbox-image"/>#}
+                                {#                                                    <div class="content-box">#}
+                                {#                                                        <div#}
+                                {#                                                                class="checkout-time-table-title-bar checkout-time-table-title-bar-city">#}
+                                {#                                                            بازه تحویل سفارش: زمان تقریبی تحویل از#}
+                                {#                                                            <span>۱۳ خرداد</span>#}
+                                {#                                                            تا#}
+                                {#                                                            <span>۲۰ خرداد</span>#}
+                                {#                                                        </div>#}
+                                {#                                                        <ul class="checkout-time-table-subtitle-bar">#}
+                                {#                                                            <li>#}
+                                {#                                                                شیوه ارسال : پست پیشتاز با ظرفیت اختصاصی برای دیجی#}
+                                {#                                                                کالا#}
+                                {#                                                            </li>#}
+                                {#                                                            <li>#}
+                                {#                                                                هزینه ارسال:#}
+                                {#                                                                <span class="">رایگان</span>#}
+                                {#                                                            </li>#}
+                                {#                                                        </ul>#}
+                                {#                                                    </div>#}
+                                {#                                                </label>#}
+                                {#                                            </div>#}
+                                {#                                        </div>#}
+                                {#                                    </div>#}
+                                {#                                </div>#}
                             </div>
                             <br>
                             <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 px-res-1">
@@ -392,14 +394,14 @@
                                 </button>
                             </a>
                             <div>
-                                    <span>
-                                        کالاهای موجود در سبد شما ثبت و رزرو نشده‌اند، برای ثبت سفارش
-                                        مراحل بعدی را تکمیل کنید.
-                                    </span><span class="help-sn" data-toggle="tooltip" data-html="true"
-                                                 data-placement="bottom"
-                                                 title="<div class='help-container is-right'><div class='help-arrow'></div><p class='help-text'>محصولات موجود در سبد خرید شما تنها در صورت ثبت و پرداخت سفارش برای شما رزرو می‌شوند. در صورت عدم ثبت سفارش، دیجی‌کالا هیچگونه مسئولیتی در قبال تغییر قیمت یا موجودی این کالاها ندارد.</p></div>">
-                                        <span class="mdi mdi-information-outline"></span>
-                                    </span></div>
+                                <span>
+                                    کالاهای موجود در سبد شما ثبت و رزرو نشده‌اند، برای ثبت سفارش
+                                    مراحل بعدی را تکمیل کنید.
+                                </span><span class="help-sn" data-toggle="tooltip" data-html="true"
+                                             data-placement="bottom"
+                                             title="<div class='help-container is-right'><div class='help-arrow'></div><p class='help-text'>محصولات موجود در سبد خرید شما تنها در صورت ثبت و پرداخت سفارش برای شما رزرو می‌شوند. در صورت عدم ثبت سفارش، دیجی‌کالا هیچگونه مسئولیتی در قبال تغییر قیمت یا موجودی این کالاها ندارد.</p></div>">
+                                    <span class="mdi mdi-information-outline"></span>
+                                </span></div>
                         </div>
                     </div>
                     <div class="dt-sn dt-sn--box checkout-feature-aside pt-4">
@@ -425,121 +427,120 @@
     <!-- End main-content -->
 {% endblock body %}
 
-
-
 {% block script %}
-// When the window has finished loading create our google map below
+    // When the window has finished loading create our google map below
     google.maps.event.addDomListener(window, 'load', init);
 
     function init() {
-        // Basic options for a simple Google Map
-        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-        var mapOptions = {
-            // How zoomed in you want the map to start at (always required)
-            zoom: 11,
+    // Basic options for a simple Google Map
+    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+    var mapOptions = {
+    // How zoomed in you want the map to start at (always required)
+    zoom: 11,
 
-            scrollwheel: false,
+    scrollwheel: false,
 
-            // The latitude and longitude to center the map (always required)
-            center: new google.maps.LatLng(23.761226, 90.420766), // New York
+    // The latitude and longitude to center the map (always required)
+    center: new google.maps.LatLng(23.761226, 90.420766), // New York
 
-            // How you would like to style the map.
-            // This is where you would paste any style found on Snazzy Maps.
-            styles: [{
-                "featureType": "administrative",
-                "elementType": "labels.text.fill",
-                "stylers": [{
-                    "color": "#444444"
-                }]
-            },
-                {
-                    "featureType": "landscape",
-                    "elementType": "all",
-                    "stylers": [{
-                        "color": "#f2f2f2"
-                    }]
-                },
-                {
-                    "featureType": "poi",
-                    "elementType": "all",
-                    "stylers": [{
-                        "visibility": "off"
-                    }]
-                },
-                {
-                    "featureType": "road",
-                    "elementType": "all",
-                    "stylers": [{
-                        "saturation": -100
-                    },
-                        {
-                            "lightness": 45
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road.highway",
-                    "elementType": "all",
-                    "stylers": [{
-                        "visibility": "simplified"
-                    }]
-                },
-                {
-                    "featureType": "road.arterial",
-                    "elementType": "labels.icon",
-                    "stylers": [{
-                        "visibility": "off"
-                    }]
-                },
-                {
-                    "featureType": "transit",
-                    "elementType": "all",
-                    "stylers": [{
-                        "visibility": "off"
-                    }]
-                },
-                {
-                    "featureType": "water",
-                    "elementType": "all",
-                    "stylers": [{
-                        "color": "#314453"
-                    },
-                        {
-                            "visibility": "on"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "water",
-                    "elementType": "geometry.fill",
-                    "stylers": [{
-                        "lightness": "-12"
-                    },
-                        {
-                            "saturation": "0"
-                        },
-                        {
-                            "color": "#4bc7e9"
-                        }
-                    ]
-                }
-            ]
-        };
-
-        // Get the HTML DOM element that will contain your map
-        // We are using a div with id="map" seen below in the <body>
-        var mapNew = document.getElementById('map');
-        var mapEdit = document.getElementById('map-edit');
-
-        // Create the Google Map using our element and options defined above
-        var map = new google.maps.Map(mapNew, mapOptions);
-        var mapEdit = new google.maps.Map(mapEdit, mapOptions);
-
-        // Let's also add a marker while we're at it
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(23.761226, 90.420766),
-            map: map,
-            title: 'Snazzy!'
-        });
+    // How you would like to style the map.
+    // This is where you would paste any style found on Snazzy Maps.
+    styles: [{
+    "featureType": "administrative",
+    "elementType": "labels.text.fill",
+    "stylers": [{
+    "color": "#444444"
+    }]
+    },
+    {
+    "featureType": "landscape",
+    "elementType": "all",
+    "stylers": [{
+    "color": "#f2f2f2"
+    }]
+    },
+    {
+    "featureType": "poi",
+    "elementType": "all",
+    "stylers": [{
+    "visibility": "off"
+    }]
+    },
+    {
+    "featureType": "road",
+    "elementType": "all",
+    "stylers": [{
+    "saturation": -100
+    },
+    {
+    "lightness": 45
     }
-{% endblock %}
+    ]
+    },
+    {
+    "featureType": "road.highway",
+    "elementType": "all",
+    "stylers": [{
+    "visibility": "simplified"
+    }]
+    },
+    {
+    "featureType": "road.arterial",
+    "elementType": "labels.icon",
+    "stylers": [{
+    "visibility": "off"
+    }]
+    },
+    {
+    "featureType": "transit",
+    "elementType": "all",
+    "stylers": [{
+    "visibility": "off"
+    }]
+    },
+    {
+    "featureType": "water",
+    "elementType": "all",
+    "stylers": [{
+    "color": "#314453"
+    },
+    {
+    "visibility": "on"
+    }
+    ]
+    },
+    {
+    "featureType": "water",
+    "elementType": "geometry.fill",
+    "stylers": [{
+    "lightness": "-12"
+    },
+    {
+    "saturation": "0"
+    },
+    {
+    "color": "#4bc7e9"
+    }
+    ]
+    }
+    ]
+    };
+
+    // Get the HTML DOM element that will contain your map
+    // We are using a div with id="map" seen below inthe
+    <body>
+    var mapNew = document.getElementById('map');
+    var mapEdit = document.getElementById('map-edit');
+
+    // Create the Google Map using our element and options defined above
+    var map = new google.maps.Map(mapNew, mapOptions);
+    var mapEdit = new google.maps.Map(mapEdit, mapOptions);
+
+    // Let's also add a marker while we're at it
+    var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(23.761226, 90.420766),
+    map: map,
+    title: 'Snazzy!'
+    });
+    }
+{% endblock script %}

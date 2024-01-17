@@ -64,6 +64,11 @@ class OrderItem(models.Model):
         return f'OrderItem {self.id} of order {self.order.id}'
 
 
+# class AddressManager(models.Manager):
+#     def get_queryset(self):
+#         return super().get_queryset().filter()
+
+
 class Address(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='address')
     full_name = models.CharField(max_length=500)
@@ -71,7 +76,9 @@ class Address(models.Model):
     province = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     address = models.TextField()
-    post_code = models.CharField(max_length=20)
+    post_code = models.CharField(max_length=10)
+
+    # get_address = AddressManager()
 
     def __str__(self):
         return self.address

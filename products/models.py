@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from random import uniform
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.utils.text import slugify
 # Create your models here.
 
 
@@ -29,7 +30,7 @@ class ProductProperties(models.Model):
 class ProductCategory(models.Model):
     properties = models.ManyToManyField(ProductProperties)
     title = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, null=True, blank=True)
     picture = models.ImageField(upload_to='category_pictures')
 
     def get_absolute_url(self):
@@ -61,14 +62,14 @@ class Product(models.Model):
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, related_name='products')
     sub_category = models.ForeignKey(SubProductCategory, on_delete=models.CASCADE, null=True, blank=True, related_name='products')
     title = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, null=True)
     product_code = models.CharField(max_length=8, default=random_number)
     available = models.BooleanField(default=True)
 
     cover = models.ImageField(upload_to='products/covers')
-    img_one = models.ImageField(upload_to='products/img_one')
-    img_two = models.ImageField(upload_to='products/img_two')
-    img_three = models.ImageField(upload_to='products/img_three')\
+    img_one = models.ImageField(upload_to='products/img_one', null=True, blank=True)
+    img_two = models.ImageField(upload_to='products/img_two', null=True, blank=True)
+    img_three = models.ImageField(upload_to='products/img_three', null=True, blank=True)
 
     color = models.ManyToManyField(Color, related_name='colors', null=True, blank=True)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='brands', null=True, blank=True)
