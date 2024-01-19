@@ -9,12 +9,44 @@ from django.views.decorators.http import require_POST, require_GET
 from django.contrib import messages
 from django.views import View, generic
 from django.http import HttpResponse
+from django.contrib import messages
+import shop.forms
 from .cart import Cart
 from products.models import Product
 from .forms import CouponApplyForm, OrderForm, AddressForm, InfoOrderForm
 from .models import Coupon, Order, OrderItem, Address
+from formtools.wizard.views import SessionWizardView
+from django.http import HttpResponseRedirect
 # Create your views here.
 
+FORMS = [("info_order_form", shop.forms.InfoOrderForm)]
+
+TEMPLATES = {"info_order_form": "shop/shop.html"}
+
+
+def pay_by_credit_card(wizard):
+    """Return true if user opts to pay by credit card"""
+    # Get cleaned data from payment step
+    cleaned_data = wizard.get_cleaned_data_for_step('info_order_form')
+    print(cleaned_data)
+    # Return true if the user selected credit card
+    return cleaned_data
+
+
+# class ContactWizard(SessionWizardView):
+#     # form_list = [OrderForm, AddressForm]
+#     condition_dict = {"info_order_form": pay_by_credit_card}
+#     def get_template_names(self):
+#         return TEMPLATES[self.steps.current]
+#
+#     def done(self, form_list, **kwargs):
+#         print("*" * 40)
+#         print(form.cleaned_data for form in form_list)
+#         print("*" * 40)
+#         return HttpResponseRedirect('pages:home_page_view')
+#         # return render(self.request, 'shop/test.html', {
+#         #     'form_data': [form.cleaned_data for form in form_list],
+#         # })
 
 class CartDetailView(View):
     def get(self, request):
@@ -68,10 +100,35 @@ def coupon_apply_view(request):
 @login_required()
 def information_order(request):
     address_form = AddressForm()
-    info_order_form = InfoOrderForm()
+    order_form = OrderForm()
+    cart = Cart(request)
+    if len(cart) == 0:
+        messages.warning(request, 'سبد خرید شما خالی است')
+        return redirect('pages:home_page_view')
+    if request.method == 'POST':
+        order_form = OrderForm(request.POST)
+        if order_form.is_valid():
+            new_order = order_form.save(commit=False)
+            new_order.user = request.user
+            new_order.save()
+
+            for item in cart:
+                product = item['product']
+                OrderItem.objects.create(
+                    order=new_order,
+                    product=product,
+                    quantity=item['quantity'],
+                    price=product.price,
+                )
+                product.sales_number += 1
+                product.save()
+            cart.clear()
+            messages.success(request, 'سفارش شما با موفیقت ثبت شد')
+            return redirect('pages:home_page_view')
+
     context = {
         'address_form': address_form,
-        'info_order_form': info_order_form,
+        'order_form': order_form
     }
     return render(request, 'shop/shop.html', context)
 
@@ -86,9 +143,6 @@ def add_new_address(request):
             new_address.save()
             return redirect('shop:information_order_view')
     return render(request, 'shop/add_new_address.html', {'address_form': address_form})
-
-
-
 
 
 class EditAddressView(generic.UpdateView):

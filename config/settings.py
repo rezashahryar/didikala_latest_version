@@ -40,18 +40,27 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
 
+    # 3rd party apps
+    'debug_toolbar',
+    'ckeditor',
+    'crispy_forms',
+    'crispy_bootstrap4',
+    'jalali_date',
+    'widget_tweaks',
+    'formtools',
+    'django_filters',
+    'rest_framework',
+    'djoser',
+
     # local apps
     'core.apps.CoreConfig',
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
     'blog.apps.BlogConfig',
     'shop.apps.ShopConfig',
+    'profiles.apps.ProfilesConfig',
+    'api.apps.ApiConfig',
 
-    # 3rd party apps
-    'debug_toolbar',
-    'ckeditor',
-    'crispy_forms',
-    'crispy_bootstrap4',
 ]
 
 # crispy forms config
@@ -88,6 +97,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # custom context processors
                 'shop.context_processors.cart',
+                'profiles.context_processors.profile_side_bar',
             ],
         },
     },
@@ -165,6 +175,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # user config
 AUTH_USER_MODEL = "core.User"
+
+# rest_framework config
+REST_FRAMEWORK = {
+    'PAGE_SIZE': 10,
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES': ('JWT',)
+}
 
 
 ENABLE_USER_ACTIVATION = True

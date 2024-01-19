@@ -1,18 +1,30 @@
 from django.shortcuts import render, redirect
 from .forms import NewsLetterForm
-from products.models import ProductCategory
-
+from products.models import ProductCategory, Product
+from django.core.paginator import Paginator
 
 # Create your views here.
 
 
 def home_page_view(request):
-    categories = ProductCategory.objects.all()
+    categories = ProductCategory.objects.prefetch_related('children').all()
+    product_discounts = Product.objects.filter(discount__isnull=False)
     context = {
         'categories': categories,
+        'product_discount': product_discounts,
     }
     return render(request, 'pages/home.html', context)
 
+
+def get_products_discount(request):
+    products_discount = Product.list.filter(discount__isnull=False)
+    paginator = Paginator(products_discount, 12)
+    page_number = request.GET.get("page")
+    products = paginator.get_page(page_number)
+    context = {
+        'products': products
+    }
+    return render(request, 'pages/products_discount.html', context)
 
 def newsletter_view(request):
     if request.method == 'POST':
@@ -45,3 +57,7 @@ def page_faq_question(request):
 
 def page_privacy(request):
     return render(request, 'pages/page_privacy.html')
+
+
+def welcome_page(request):
+    return render(request, 'pages/welcome.html')

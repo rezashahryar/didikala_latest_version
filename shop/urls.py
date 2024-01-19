@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from .forms import AddressForm, OrderForm
+from .views import FORMS
 
 app_name = 'shop'
 urlpatterns = [
@@ -14,6 +16,7 @@ urlpatterns = [
     path('edit-address/<int:pk>/', views.EditAddressView.as_view(), name='edit_address_view'),
     path('delete/address/<int:pk>/', views.delete_address, name='delete_address'),
     path('process/', views.payment_process, name='payment_process'),
+    # path('test/', views.ContactWizard.as_view(FORMS), name="forms"),
     # path('callback/', views.payment_call_back_view, name='payment_callback'),
     # path('process/', views.payment_process_sandbox, name='payment_process'),
     # path('callback/', views.payment_call_back_sandbox_view, name='payment_callback'),

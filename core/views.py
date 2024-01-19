@@ -9,7 +9,7 @@ from .utils import send_activation_email
 from django.utils.crypto import get_random_string
 from django.contrib import messages
 from django.conf import settings
-
+from profiles.models import Profile
 
 # Create your views here.
 
@@ -69,6 +69,9 @@ class RegisterView(GuestOnlyView, generic.CreateView):
         user.set_password(cd['password'])
         user.save()
 
+        profile = Profile.objects.create(user=user)
+        profile.save()
+
         if settings.ENABLE_USER_ACTIVATION:
             code = get_random_string(20)
 
@@ -107,7 +110,7 @@ class ActivateView(View):
 
         messages.success(request, _('فعالسازی اکانت شما با موفقیت انجام شد'))
 
-        return redirect('core:login_view')
+        return redirect('pages:welcome_page')
 
 
 class LogoutView(LoginRequiredMixin, View):

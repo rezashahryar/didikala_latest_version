@@ -11,11 +11,12 @@
         <div class="container main-container">
             <div class="row">
                 <div class="cart-page-content col-xl-9 col-lg-8 col-12 px-0">
+{#                <form method="POST" class="mb-2 d-block">#}
+                        <form action="#" method="POST" id="shipping-data-form" class="dt-sn dt-sn--box pt-3 pb-3 mb-4">
                     <section class="page-content dt-sl">
                         <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 px-res-1">
                             <h2>انتخاب شیوه پرداخت</h2>
                         </div>
-                        <form method="post" id="shipping-data-form" class="dt-sn dt-sn--box pt-3 pb-3 mb-4">
                             <div class="checkout-pack">
                                 <div class="row">
                                     <div class="checkout-time-table checkout-time-table-time">
@@ -64,7 +65,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
                         <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 px-res-1">
                             <h2>خلاصه سفارش</h2>
                         </div>
@@ -154,19 +154,19 @@
                                     </div>
                                     <p>با ثبت کد کارت هدیه، مبلغ کارت هدیه از “مبلغ قابل پرداخت” کسر می‌شود.</p>
                                     <div class="form-ui">
-                                        <form action="">
-                                            <div class="row text-center">
-                                                <div class="col-xl-8 col-lg-12 px-0">
-                                                    <div class="form-row">
-                                                        <input type="text" class="input-ui pr-2"
-                                                               placeholder="مثلا 1234ABCD5678EFGH0123">
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-lg-12 px-0">
-                                                    <button class="btn btn-primary mt-res-1">ثبت کد هدیه</button>
-                                                </div>
-                                            </div>
-                                        </form>
+{#                                        <form action="">#}
+{#                                            <div class="row text-center">#}
+{#                                                <div class="col-xl-8 col-lg-12 px-0">#}
+{#                                                    <div class="form-row">#}
+{#                                                        <input type="text" class="input-ui pr-2"#}
+{#                                                               placeholder="مثلا 1234ABCD5678EFGH0123">#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                                <div class="col-xl-4 col-lg-12 px-0">#}
+{#                                                    <button class="btn btn-primary mt-res-1">ثبت کد هدیه</button>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </form>#}
                                     </div>
                                 </div>
                             </div>
@@ -253,12 +253,13 @@
                                 {% endif %}
                                 تومان
                             </div>
-                            <a href="{% url 'shop:payment_process' %}" class="mb-2 d-block">
-                                <button class="btn-primary-cm btn-with-icon w-100 text-center pr-0 pl-0">
+
+                                {% csrf_token %}
+                                <button type="submit" class="btn-primary-cm btn-with-icon w-100 text-center pr-0 pl-0">
                                     <i class="mdi mdi-arrow-left"></i>
                                     پرداخت و ثبت نهایی سفارش
                                 </button>
-                            </a>
+                </form>
                             <div>
                                     <span>
                                         کالاهای موجود در سبد شما ثبت و رزرو نشده‌اند، برای ثبت سفارش

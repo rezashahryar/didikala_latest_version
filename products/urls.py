@@ -9,4 +9,6 @@ urlpatterns = [
     path('subCat/<slug:slug>/', views.SubCategoryObjectsView.as_view(), name='sub_category_objects_view'),
     path('detail/<slug:slug>/', views.ProductDetail.as_view(), name='product_detail'),
     path('filter/', views.product_filter, name='product_filter'),
+    path('question/<int:pk>/', views.question, name='question'),
+    path('answer/<int:pk>/<int:qpk>', views.answer, name='answer'),
 ]

@@ -11,4 +11,6 @@ urlpatterns = [
     path('page-faq/', views.page_faq_view, name='page_faq'),
     path('page-faq-category/', views.page_faq_category, name='page_faq_category'),
     path('page-faq-question/', views.page_faq_question, name='page_question'),
+    path('welcome/', views.welcome_page, name='welcome_page'),
+    path('amazing/products/', views.get_products_discount, name='amazing_products'),
 ]

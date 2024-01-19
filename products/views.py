@@ -1,9 +1,35 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
-from .models import ProductCategory, SubProductCategory, Product, Brand, Color
-from django.db.models import Q
+from .models import ProductCategory, SubProductCategory, Product, Brand, Color, Question
+from .forms import QuestionForm
+from django.views.decorators.http import require_POST
 # Create your views here.
 
+@require_POST
+def question(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'POST':
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            new_form = form.save(commit=False)
+            new_form.user = request.user
+            new_form.product = product
+            new_form.save()
+            return redirect('products:product_detail', product.slug)
+
+@require_POST
+def answer(request, pk, qpk):
+    product = get_object_or_404(Product, pk=pk)
+    question_id = get_object_or_404(Question, pk=qpk)
+    if request.method == 'POST':
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            new_form = form.save(commit=False)
+            new_form.user = request.user
+            new_form.product = product
+            new_form.parent = question_id
+            new_form.save()
+            return redirect('products:product_detail', product.slug)
 
 class CategoryObjectsView(generic.ListView):
     context_object_name = 'products'
@@ -43,7 +69,7 @@ class ProductDetail(generic.DetailView):
 
     def get_object(self):
         slug = self.kwargs.get('slug')
-        product = get_object_or_404(Product.objects.all(), slug=slug)
+        product = get_object_or_404(Product.objects.select_related('category'), slug=slug)
         product.counted_views += 1
         product.save()
         return product

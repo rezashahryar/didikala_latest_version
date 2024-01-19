@@ -1,8 +1,9 @@
+from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from random import uniform
 from django.core.validators import MinValueValidator, MaxValueValidator
-from django.utils.text import slugify
+from django.utils.html import format_html
 # Create your models here.
 
 
@@ -58,6 +59,11 @@ def random_number():
     return str(num)
 
 
+class ProductManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(available=True).order_by('-created_date')
+
+
 class Product(models.Model):
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, related_name='products')
     sub_category = models.ForeignKey(SubProductCategory, on_delete=models.CASCADE, null=True, blank=True, related_name='products')
@@ -85,6 +91,9 @@ class Product(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
+    objects = models.Manager()
+    list = ProductManager()
+
     def __str__(self):
         return self.title
 
@@ -103,3 +112,17 @@ class SetProductProperty(models.Model):
 
     def __str__(self):
         return f'property {self.property} for {self.product.title} with value {self.value}'
+
+
+class Question(models.Model):
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='answers', null=True, blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='questions')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='questions')
+    text = models.TextField()
+
+    datetime_created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+
+    def __str__(self):
+        return format_html(
+            '<span>{}</span><b> for </b><span>{}</span> product', self.user, self.product
+        )

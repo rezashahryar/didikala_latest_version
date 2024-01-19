@@ -27,6 +27,9 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('products/', include('products.urls', namespace='products')),
     path('shop/', include('shop.urls')),
+    path('profile/', include('profiles.urls')),
+    path('api/', include('api.urls')),
+    path('api-auth/', include('rest_framework.urls')),
     # django toolbar
     path("__debug__/", include("debug_toolbar.urls")),
     # end

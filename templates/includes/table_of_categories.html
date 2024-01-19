@@ -1,4 +1,4 @@
-{% for cat in categories %}
+{% for cat in categories_all %}
     <li>
         <a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a>
         {% if cat.children.all %}

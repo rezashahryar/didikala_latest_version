@@ -7,7 +7,7 @@ register = template.Library()
 @register.inclusion_tag("includes/product_category_objects.html")
 def product_categories():
     global categories
-    products = Product.objects.filter(available=True)
+    products = Product.list.select_related('category')
     categories = ProductCategory.objects.all()
     cat_dict = {}
     for name in categories:
@@ -15,6 +15,6 @@ def product_categories():
     return {'categories': cat_dict}
 
 
-@register.inclusion_tag('includes/table_of_categories.html')
-def categories():
-    return {'categories': categories}
+# @register.inclusion_tag('includes/table_of_categories.html')
+# def categories():
+#     return {'categories_all': categories}
