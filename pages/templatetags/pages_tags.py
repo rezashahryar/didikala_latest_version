@@ -6,7 +6,7 @@ register = template.Library()
 
 @register.inclusion_tag("includes/product_category_objects.html")
 def product_categories():
-    global categories
+    # global categories
     products = Product.list.select_related('category')
     categories = ProductCategory.objects.all()
     cat_dict = {}

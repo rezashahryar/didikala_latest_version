@@ -1,7 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from shop.models import Order
+from django.views import generic
+from shop.models import Order, Address
+from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 from .forms import ProfileEditForm
+from shop.forms import AddressForm
 # Create your views here.
 
 
@@ -16,6 +20,32 @@ def profile_view(request):
         "orders": orders
     }
     return render(request, 'profiles/profile.html', context)
+
+
+def add_new_address(request):
+    address_form = AddressForm()
+    if request.method == 'POST':
+        address_form = AddressForm(request.POST)
+        if address_form.is_valid():
+            new_address = address_form.save(commit=False)
+            new_address.user = request.user
+            new_address.save()
+            return redirect('profiles:add_address_view')
+    return render(request, 'profiles/user_addresses.html', {'address_form': address_form})
+
+
+class EditAddressView(generic.UpdateView):
+    model = Address
+    form_class = AddressForm
+    template_name = 'shop/edit_address.html'
+    success_url = reverse_lazy('profiles:add_address_view')
+
+
+@require_POST
+def delete_address(request, pk):
+    address = get_object_or_404(Address, pk=pk)
+    address.delete()
+    return redirect('profiles:user_addresses')
 
 
 @login_required()

@@ -11,5 +11,8 @@ urlpatterns = [
     path('orders/return/', views.profile_user_orders_return, name='user_orders_return'),
     path('change/information/', views.profile_edit_view, name='profile_edit'),
     path('user/comments/', views.user_comments, name='user_comments'),
-    path('user/addresses/', views.user_addresses, name='user_addresses')
+    path('user/addresses/', views.user_addresses, name='user_addresses'),
+    path('address/', views.add_new_address, name='add_address_view'),
+    path('address/update/<int:pk>/', views.EditAddressView.as_view(), name='edit_address_view'),
+    path('address/delete/<int:pk>/', views.delete_address, name='delete_address_view'),
 ]

@@ -37,9 +37,13 @@
                                                     <td>1</td>
                                                     <td>{{ order.order_code }}</td>
                                                     <td>۳۱ مرداد ۱۳۹۸</td>
-                                                    <td>{{ order.total_price_order }}تومان</td>
+                                                    <td>{{ order.get_total_price }}تومان</td>
                                                     <td>{{ order.get_total_price }} تومان</td>
-                                                    <td>{{ order.is_paid }}</td>
+                                                    {% if order.is_paid %}
+                                                    <td>پداخت شده</td>
+                                                    {% else %}
+                                                    <td>پرداخت نشده</td>
+                                                    {% endif %}
                                                     <td class="details-link">
                                                         <a href="{% url 'profiles:order_detail' order.id %}">
                                                             <i class="mdi mdi-chevron-left"></i>

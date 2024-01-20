@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="dt-sl dt-sn mb-3 text-center">
-            <a href="#">
+            <a href="{% url 'pages:home_page_view' %}">
                 <img src="{% static 'assets/img/banner/sidebar-banner-3.jpg' %}" class="img-fluid" alt="">
             </a>
         </div>
@@ -56,49 +56,47 @@
                 <div class="profile-menu">
                     <ul>
                         <li>
-                            <a href="{% url 'profiles:profile_main_page' %}" class="active">
+                            {% url 'profiles:profile_main_page' as profile_main_page %}
+                            <a href="{% url 'profiles:profile_main_page' %}" class="{% if request.path == profile_main_page %}active{% endif %}">
                                 <i class="mdi mdi-account-circle-outline"></i>
                                 پروفایل
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'profiles:user_orders' %}">
+                            {% url 'profiles:user_orders' as user_orders %}
+                            <a href="{% url 'profiles:user_orders' %}" class="{% if request.path == user_orders %}active{% endif %}">
                                 <i class="mdi mdi-basket"></i>
                                 همه سفارش ها
                             </a>
                         </li>
+{#                        <li>#}
+{#                            <a href="{% url 'profiles:user_orders_return' %}">#}
+{#                                <i class="mdi mdi-backburger"></i>#}
+{#                                درخواست مرجوعی#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="#">#}
+{#                                <i class="mdi mdi-heart-outline"></i>#}
+{#                                لیست علاقمندی ها#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="{% url 'profiles:user_comments' %}">#}
+{#                                <i class="mdi mdi-glasses"></i>#}
+{#                                نقد و نظرات#}
+{#                            </a>#}
+{#                        </li>#}
                         <li>
-                            <a href="{% url 'profiles:user_orders_return' %}">
-                                <i class="mdi mdi-backburger"></i>
-                                درخواست مرجوعی
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="mdi mdi-heart-outline"></i>
-                                لیست علاقمندی ها
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'profiles:user_comments' %}">
-                                <i class="mdi mdi-glasses"></i>
-                                نقد و نظرات
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'profiles:user_addresses' %}">
+                            {% url 'profiles:user_addresses' as user_address %}
+                            <a href="{% url 'profiles:user_addresses' %}" class="{% if request.path == user_address %}active{% endif %}">
                                 <i class="mdi mdi-sign-direction"></i>
                                 آدرس ها
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="mdi mdi-eye-outline"></i>
-                                بازدیدهای اخیر
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'profiles:additional_info' %}">
+                            {% url 'profiles:additional_info' as additional_info %}
+                            <a href="{% url 'profiles:additional_info' %}" class="{% if request.path == additional_info %}active{% endif %}">
                                 <i class="mdi mdi-account-edit-outline"></i>
                                 اطلاعات شخصی
                             </a>

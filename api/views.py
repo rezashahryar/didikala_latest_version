@@ -18,12 +18,16 @@ class OrderViewSet(ModelViewSet):
     serializer_class = OrderSerializer
 
     def get_queryset(self):
-        return Order.objects.prefetch_related(
+        queryset = Order.objects.prefetch_related(
             Prefetch(
                 'items',
                 queryset=OrderItem.objects.select_related('product')
             )
-        ).select_related('customer').all()
+        ).select_related('customer__user').all()
+
+        if self.request.user.is_staff:
+            return queryset
+        return queryset.filter(customer__user_id=self.request.user.id)
 
 
 class CartItemViewSet(ModelViewSet):
