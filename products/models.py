@@ -100,6 +100,12 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('products:product_detail', args=[self.slug])
 
+    @property
+    def get_discount(self):
+        if self.discount > 0:
+            return True
+        return None
+
     def get_price_after_discount(self):
         price = int(self.price * self.discount / 100)
         return price

@@ -1,47 +1,14 @@
 from django.db import models
-from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
+from django.contrib.auth.models import AbstractUser
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 # create your models here
 
 
-class CustomUserManager(BaseUserManager):
-    def create_user(self, mobile, password, **extra_fields):
-        if not mobile:
-            raise ValueError("the mobile must be set")
-        user = self.model(mobile=mobile, **extra_fields)
-        user.set_password(password)
-        user.save()
-        return user
-
-    def create_superuser(self, mobile, password, **extra_fields):
-
-        extra_fields.setdefault('is_staff', True)
-        extra_fields.setdefault('is_superuser', True)
-        extra_fields.setdefault('is_active', True)
-
-        if extra_fields.get('is_staff') is not True:
-            raise ValueError("superuser must have an is_staff=True")
-
-        return self.create_user(mobile=mobile, password=password, **extra_fields)
-
-
-class User(AbstractBaseUser, PermissionsMixin):
-    mobile = models.CharField(max_length=11, unique=True)
-    email = models.EmailField(blank=True)
-
-    is_superuser = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
-
-    first_name = models.CharField(max_length=100, blank=True)
-    last_name = models.CharField(max_length=100, blank=True)
-
-    last_login = models.DateTimeField(null=True, blank=True)
+class User(AbstractUser):
+    mobile = models.CharField(max_length=13, unique=True)
 
     USERNAME_FIELD = 'mobile'
-
-    objects = CustomUserManager()
 
     @property
     def get_id(self):

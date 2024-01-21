@@ -57,17 +57,12 @@ class Cart:
         self.save()
 
     def get_total_price(self):
-        return sum(item['quantity'] * item['product'].price for item in self.cart.values())
-
-    # def amount_payable(self):
-    #     product_ids = self.cart.keys()
-    #     for item in self.cart.values():
-    #         if item['product'].discount:
-    #             result = sum(item['quantity'] * item['product'].get_price_after_discount())
-    #         else:
-    #             result = sum(item['quantity'] * item['product'].price)
-    #         return result
-        # return sum(item['quantity'] * item['product'].price for item in self.cart.values())
+        for item in self.cart.values():
+            if item['product'].discount:
+                result = sum(item['quantity'] * item['product'].get_price_after_discount() for item in self.cart.values())
+                return result
+            result = sum(item['quantity'] * item['product'].price for item in self.cart.values())
+        return result
 
     def delete(self, id):
         if id in self.cart:
@@ -91,7 +86,3 @@ class Cart:
 
     def get_total_price_after_discount(self):
         return self.get_total_price() - self.get_discount()
-
-    # def get_total_price(self):
-    #     product_ids = self.cart.keys()
-    #     return sum(item['quantity'] * item['product'].price for item in self)

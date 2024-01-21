@@ -156,7 +156,7 @@
                                     <a href="{% url 'pages:amazing_products' %}" class="view-all-amazing-btn">مشاهده همه</a>
                                 </div>
                             </div>
-                            {% for product in product_discount %}
+                            {% for product in product_discount|slice:"8" %}
                             <div class="item">
                                 <div class="product-card mb-3">
                                     <div class="product-head">
@@ -176,7 +176,11 @@
                                     <div class="product-card-body">
                                         <h5 class="product-title"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
                                         <a class="product-meta" href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
+                                        {% if product.get_discount %}
+                                        <span class="product-price">{{ product.get_price_after_discount }} تومان</span>
+                                        {% else %}
                                         <span class="product-price">{{ product.price }} تومان</span>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -204,7 +208,7 @@
                             <!-- Start Product-Slider -->
                             <div class="col-12 px-res-0">
                                 <div class="product-carousel carousel-md owl-carousel owl-theme">
-                                    {% for product in products_most_sales %}
+                                    {% for product in products_most_sales|slice:"8" %}
                                     <div class="item">
                                         <div class="product-card">
                                             <div class="product-head">
@@ -228,7 +232,11 @@
                                                 <h5 class="product-title"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
                                                 </h5>
                                                 <a class="product-meta" href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
-                                                <span class="product-price">{{ product.price }} تومان</span>
+                                                {% if product.get_discount %}
+                                        <span class="product-price">{{ product.get_price_after_discount }} تومان</span>
+                                        {% else %}
+                                        <span class="product-price">{{ product.price }} تومان</span>
+                                        {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -271,7 +279,11 @@
                                     <div class="product-card-body">
                                         <h5 class="product-title"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
                                         <a class="product-meta" href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
-                                        <span class="product-price">{{ product.discount }} تومان</span>
+                                        {% if product.get_discount %}
+                                        <span class="product-price">{{ product.get_price_after_discount }} تومان</span>
+                                        {% else %}
+                                        <span class="product-price">{{ product.price }} تومان</span>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -495,7 +507,7 @@
                     <!-- Start Product-Slider -->
                     <div class="col-12">
                         <div class="product-carousel carousel-lg owl-carousel owl-theme">
-                            {% for product in products_most_visited %}
+                            {% for product in products_most_visited|slice:"8" %}
                             <div class="item">
                                 <div class="product-card mb-3">
                                     <div class="product-head">
@@ -518,7 +530,11 @@
                                     <div class="product-card-body">
                                         <h5 class="product-title"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
                                         <a class="product-meta" href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
+                                        {% if product.get_discount %}
+                                        <span class="product-price">{{ product.get_price_after_discount }} تومان</span>
+                                        {% else %}
                                         <span class="product-price">{{ product.price }} تومان</span>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -551,7 +567,7 @@
                     <!-- Start Product-Slider -->
                     <div class="col-12">
                         <div class="product-carousel carousel-lg owl-carousel owl-theme">
-                            {% for product in cheapest_product %}
+                            {% for product in cheapest_product|slice:"8" %}
                             <div class="item">
                                 <div class="product-card mb-3">
                                     <div class="product-head">
@@ -574,7 +590,11 @@
                                     <div class="product-card-body">
                                         <h5 class="product-title"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
                                         <a class="product-meta" href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
+                                        {% if product.get_discount %}
+                                        <span class="product-price">{{ product.get_price_after_discount }} تومان</span>
+                                        {% else %}
                                         <span class="product-price">{{ product.price }} تومان</span>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>

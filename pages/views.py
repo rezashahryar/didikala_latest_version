@@ -8,7 +8,7 @@ from django.core.paginator import Paginator
 
 def home_page_view(request):
     categories = ProductCategory.objects.prefetch_related('children').all()
-    product_discounts = Product.objects.select_related('category').filter(discount__isnull=False)
+    product_discounts = Product.objects.select_related('category').filter(discount__isnull=False, discount__gt=0)
     products_most_sales = Product.objects.select_related('category').filter(available=True).order_by('-sales_number')[:8]
     products_most_visited = Product.objects.select_related('category').filter(available=True).order_by('-counted_views')[:8]
     cheapest_product = Product.objects.select_related('category').filter(available=True).order_by('price')[:8]
