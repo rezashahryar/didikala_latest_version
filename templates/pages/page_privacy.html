@@ -1,8 +1,9 @@
 {% extends 'base_pages.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
-    قوانین و مقررات
+    {% trans 'قوانین و مقررات' %}
 {% endblock %}
 
 {% block body %}
@@ -13,7 +14,7 @@
                 <div class="col-12">
                     <div class="page dt-sl dt-sn pt-3 pb-5">
                         <div class="section-title title-wide mb-1 no-after-title-wide">
-                            <h2 class="font-weight-bold">حریم خصوصی</h2>
+                            <h2 class="font-weight-bold">{% trans 'حریم خصوصی' %}</h2>
                         </div>
                         <p>
                             دیجی‌کالا با تاکید بر احترامی که برای حریم شخصی کاربران قائل است، برای خرید، ثبت نظر یا

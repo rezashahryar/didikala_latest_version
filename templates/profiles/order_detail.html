@@ -2,6 +2,7 @@
 {% load static %}
 {% load jalali_tags %}
 {% load humanize %}
+{% load i18n %}
 
 {% block body %}
         <!-- Start main-content -->
@@ -16,9 +17,9 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="profile-navbar">
-                                    <a href="{% url 'profiles:user_orders' %}" class="profile-navbar-btn-back">بازگشت</a>
-                                    <h4>سفارش <span class="font-en">{{ order.order_code }}</span>
-                                        <span>ثبت شده در تاریخ
+                                    <a href="{% url 'profiles:user_orders' %}" class="profile-navbar-btn-back">{% trans 'بازگشت' %}</a>
+                                    <h4>{% trans 'سفارش ' %}<span class="font-en">{{ order.order_code }}</span>
+                                        <span>{% trans 'ثبت شده در تاریخ' %}
                                         {{ order.datetime_created|to_jalali:'%Y/%m/%d' }}
                                         </span>
                                     </h4>
@@ -28,91 +29,90 @@
                                 <div class="dt-sl dt-sn border">
                                     <div class="row table-draught px-3">
                                         <div class="col-md-6 col-sm-12">
-                                            <span class="title">تحویل گیرنده:</span>
+                                            <span class="title">{% trans 'تحویل گیرنده:' %}</span>
                                             <span class="value">{{ order.user.profile.full_name }}</span>
                                         </div>
                                         <div class="col-md-6 col-sm-12">
-                                            <span class="title">شماره تماس تحویل گیرنده:</span>
+                                            <span class="title">{% trans 'شماره تماس تحویل گیرنده:' %}</span>
                                             <span class="value">{{ order.phone_number }}</span>
                                         </div>
                                         <div class="col-md-6 col-sm-12">
-                                            <span class="title">کد مرسوله:</span>
+                                            <span class="title">{% trans 'کد مرسوله:' %}</span>
                                             <span class="value">{{ order.order_code }}</span>
                                         </div>
                                         <div class="col-md-6 col-sm-12">
-                                            <span class="title">نحوه ارسال سفارش:</span>
+                                            <span class="title">{% trans 'نحوه ارسال سفارش:' %}</span>
                                             <span class="value">-</span>
                                         </div>
                                         <div class="col-md-6 col-sm-12">
-                                            <span class="title">هزینه ارسال:</span>
-                                            <span class="value">رایگان</span>
+                                            <span class="title">{% trans 'هزینه ارسال:' %}</span>
+                                            <span class="value">{% trans 'رایگان' %}</span>
                                         </div>
                                         <div class="col-md-6 col-sm-12">
-                                            <span class="title">زمان تحویل:</span>
+                                            <span class="title">{% trans 'زمان تحویل:' %}</span>
                                             <span class="value">-</span>
                                             <button class="btn btn-light">
-                                                تغییر زمان ارسال
+                                                {% trans 'تغییر زمان ارسال' %}
                                             </button>
                                         </div>
                                         <div class="col-12 text-center pb-0">
-                                            <span class="title">مبلغ این مرسوله:</span>
+                                            <span class="title">{% trans 'مبلغ این مرسوله:' %}</span>
                                             <span class="value">{{ order.get_total_price|intcomma:False }} تومان</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-{#                            <div class="col-12 mb-4">#}
-{#                                <section class="slider-section dt-sl mb-5">#}
-{#                                    <div class="row mb-3">#}
-{#                                        <div class="col-12">#}
-{#                                            <div class="section-title text-sm-title title-wide no-after-title-wide">#}
-{#                                                <h2>مرسوله 1 از 1</h2>#}
-{#                                                <a href="#">لغو دریافت مرسوله</a>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{##}
-{#                                        <!-- Start Profile-order-step-Slider -->#}
-{#                                        <div class="col-12">#}
-{#                                            <div class="profile-order-steps carousel-lg owl-carousel owl-theme">#}
-{#                                                <div class="item profile-order-steps-item is-active">#}
-{#                                                    <img src="{% static 'assets/img/svg/0eab59b0.svg' %}">#}
-{#                                                    <span>لغو شده</span>#}
-{#                                                </div>#}
-{#                                                <div class="item profile-order-steps-item is-active">#}
-{#                                                    <img src="{% static 'assets/img/svg/d5d5e1d2.svg' %}">#}
-{#                                                    <span>تایید سفارش</span>#}
-{#                                                </div>#}
-{#                                                <div class="item profile-order-steps-item">#}
-{#                                                    <img src="{% static 'assets/img/svg/3db3cdeb.svg' %}">#}
-{#                                                    <span>آماده‌سازی سفارش</span>#}
-{#                                                </div>#}
-{#                                                <div class="item profile-order-steps-item">#}
-{#                                                    <img src="{% static 'assets/img/svg/332b9ff1.svg' %}">#}
-{#                                                    <span>خروج از مرکز پردازش</span>#}
-{#                                                </div>#}
-{#                                                <div class="item profile-order-steps-item">#}
-{#                                                    <img src="{% static 'assets/img/svg/07a0808a.svg' %}">#}
-{#                                                    <span>تحویل به پست</span>#}
-{#                                                </div>#}
-{#                                                <div class="item profile-order-steps-item">#}
-{#                                                    <img src="{% static 'assets/img/svg/dbab74ce.svg' %}">#}
-{#                                                    <span>مرکز مبادلات پست</span>#}
-{#                                                </div>#}
-{#                                                <div class="item profile-order-steps-item">#}
-{#                                                    <img src="{% static 'assets/img/svg/50450a73.svg' %}">#}
-{#                                                    <span>تحویل به مشتری</span>#}
-{#                                                </div>#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                        <!-- End Profile-order-step-Slider -->#}
-{##}
-{#                                    </div>#}
-{#                                </section>#}
-{#                            </div>#}
+                            <div class="col-12 mb-4">
+                                <section class="slider-section dt-sl mb-5">
+                                    <div class="row mb-3">
+                                        <div class="col-12">
+                                            <div class="section-title text-sm-title title-wide no-after-title-wide">
+                                                <h2>{% trans 'مرسوله 1 از 1' %}</h2>
+                                                <a href="#">{% trans 'لغو دریافت مرسوله' %}</a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Start Profile-order-step-Slider -->
+                                        <div class="col-12">
+                                            <div class="profile-order-steps carousel-lg owl-carousel owl-theme">
+                                                <div class="item profile-order-steps-item is-active">
+                                                    <img src="{% static 'assets/img/svg/0eab59b0.svg' %}">
+                                                    <span>{% trans 'لغو شده' %}</span>
+                                                </div>
+                                                <div class="item profile-order-steps-item is-active">
+                                                    <img src="{% static 'assets/img/svg/d5d5e1d2.svg' %}">
+                                                    <span>{% trans 'تایید سفارش' %}</span>
+                                                </div>
+                                                <div class="item profile-order-steps-item">
+                                                    <img src="{% static 'assets/img/svg/3db3cdeb.svg' %}">
+                                                    <span>{% trans 'آماده‌سازی سفارش' %}</span>
+                                                </div>
+                                                <div class="item profile-order-steps-item">
+                                                    <img src="{% static 'assets/img/svg/332b9ff1.svg' %}">
+                                                    <span>{% trans 'خروج از مرکز پردازش' %}</span>
+                                                </div>
+                                                <div class="item profile-order-steps-item">
+                                                    <img src="{% static 'assets/img/svg/07a0808a.svg' %}">
+                                                    <span>{% trans 'تحویل به پست' %}</span>
+                                                </div>
+                                                <div class="item profile-order-steps-item">
+                                                    <img src="{% static 'assets/img/svg/dbab74ce.svg' %}">
+                                                    <span>{% trans 'مرکز مبادلات پست' %}</span>
+                                                </div>
+                                                <div class="item profile-order-steps-item">
+                                                    <img src="{% static 'assets/img/svg/50450a73.svg' %}">
+                                                    <span>{% trans 'تحویل به مشتری' %}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Profile-order-step-Slider -->
+                                    </div>
+                                </section>
+                            </div>
                             <div class="col-12">
                                 <div
                                     class="section-title text-sm-title title-wide mb-1 no-after-title-wide dt-sl mb-2 px-res-1">
-                                    <h2>همه سفارش‌ها</h2>
+                                    <h2>{% trans 'همه سفارش‌ها' %}</h2>
                                 </div>
                                 <div class="dt-sl">
                                     <div class="table-responsive">
@@ -120,13 +120,13 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>نام محصول</th>
-                                                    <th>تعداد</th>
-                                                    <th>قیمت واحد</th>
-                                                    <th>قیمت کل</th>
-                                                    <th>تخفیف</th>
-                                                    <th>قیمت نهایی</th>
-                                                    <th>عملیات</th>
+                                                    <th>{% trans 'نام محصول' %}</th>
+                                                    <th>{% trans 'تعداد' %}</th>
+                                                    <th>{% trans 'قیمت واحد' %}</th>
+                                                    <th>{% trans 'قیمت کل' %}</th>
+                                                    <th>{% trans 'تخفیف' %}</th>
+                                                    <th>{% trans 'قیمت نهایی' %}</th>
+                                                    <th>{% trans 'عملیات' %}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -154,7 +154,7 @@
 {#                                                        <a href="{{ item.product.get_absolute_url }}" class="btn btn-info d-block w-100 mb-2">خرید#}
 {#                                                            مجدد</a>#}
                                                         <a href="{{ item.product.get_absolute_url }}" class="btn text-light bg-secondary d-block w-100">ثبت
-                                                            نظر</a>
+                                                            {% trans 'نظر' %}</a>
                                                     </td>
                                                 </tr>
                                             {% endfor %}

@@ -1,5 +1,5 @@
 {% load i18n %}
 
-{% trans 'To activate your profile, please follow this link:' %}
+{% trans 'برای فعالسازی حساب خود لطفا بر روی لینک زیر کلیک کنید:' %}
 
 {{ uri }}

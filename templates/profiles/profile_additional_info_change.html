@@ -1,5 +1,6 @@
 {% extends 'base_pages.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block body %}
         <!-- Start main-content -->
@@ -16,33 +17,33 @@
                                 <div class="px-3 px-res-0">
                                     <div
                                         class="section-title text-sm-title title-wide mb-1 no-after-title-wide dt-sl mb-2 px-res-1">
-                                        <h2>ویرایش اطلاعات شخصی</h2>
+                                        <h2>{% trans 'ویرایش اطلاعات شخصی' %}</h2>
                                     </div>
                                     <div class="form-ui additional-info dt-sl dt-sn pt-4">
                                         <form action="">
                                             <div class="row">
                                                 <div class="col-md-6 mb-3">
                                                     <div class="form-row-title">
-                                                        <h3>نام</h3>
+                                                        <h3>{% trans 'نام' %}</h3>
                                                     </div>
                                                     <div class="form-row">
                                                         <input type="text" class="input-ui pr-2"
-                                                            placeholder="نام خود را وارد نمایید" value="جلال">
+                                                            placeholder="{% trans 'نام خود را وارد نمایید' %}" value="جلال">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <div class="form-row-title">
-                                                        <h3>نام و نام خانوادگی</h3>
+                                                        <h3>{% trans 'نام و نام خانوادگی' %}</h3>
                                                     </div>
                                                     <div class="form-row">
                                                         <input type="text" class="input-ui pr-2"
-                                                            placeholder="نام خانوادگی خود را وارد نمایید"
+                                                            placeholder="{% trans 'نام خانوادگی خود را وارد نمایید' %}"
                                                             value="بهرامی راد">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <div class="form-row-title">
-                                                        <h3>کد ملی</h3>
+                                                        <h3>{% trans 'کد ملی' %}</h3>
                                                     </div>
                                                     <div class="form-row">
                                                         <input type="text" class="input-ui pl-2 text-left dir-ltr"
@@ -51,27 +52,27 @@
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <div class="form-row-title">
-                                                        <h3>شماره موبایل</h3>
+                                                        <h3>{% trans 'شماره موبایل' %}</h3>
                                                     </div>
                                                     <div class="form-row">
                                                         <input type="text" class="input-ui pl-2 text-left dir-ltr"
-                                                            placeholder="شماره موبایل خود را وارد نمایید"
+                                                            placeholder="{% trans 'شماره موبایل خود را وارد نمایید' %}"
                                                             value="09030813742">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <div class="form-row-title">
-                                                        <h3>آدرس ایمیل</h3>
+                                                        <h3>{% trans 'آدرس ایمیل' %}</h3>
                                                     </div>
                                                     <div class="form-row">
                                                         <input type="email" class="input-ui pl-2 text-left dir-ltr"
-                                                            placeholder="آدرس ایمیل خود را وارد نمایید"
+                                                            placeholder="{% trans 'آدرس ایمیل خود را وارد نمایید' %}"
                                                             value="info@gmail.com">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <div class="form-row-title">
-                                                        <h3>عکس پروفایل</h3>
+                                                        <h3>{% trans 'عکس پروفایل' %}</h3>
                                                     </div>
                                                     <div class="form-row mt-2">
                                                         <div class="input-group">
@@ -80,8 +81,7 @@
                                                                     id="inputGroupFile04"
                                                                     aria-describedby="inputGroupFileAddon04">
                                                                 <label class="custom-file-label"
-                                                                    for="inputGroupFile04">انتخاب
-                                                                    عکس</label>
+                                                                    for="inputGroupFile04">{% trans 'انتخاب عکس' %}</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -89,13 +89,12 @@
                                                 <div class="col-12 mb-3">
                                                     <div class="pt-2 pb-2 mb-3 dt-sl">
                                                         <div class="form-row-title mb-2">
-                                                            <h3>شماره کارت</h3>
+                                                            <h3>{% trans 'شماره کارت' %}</h3>
                                                         </div>
                                                         <div class="form-row">
                                                             <input type="text" class="input-ui pl-2 text-left dir-ltr"
                                                                 placeholder="-">
-                                                            <button class="btn btn-success float-left mt-3">بررسی
-                                                                اطلاعات</button>
+                                                            <button class="btn btn-success float-left mt-3">{% trans 'بررسی اطلاعات' %}</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -126,9 +125,9 @@
                                                 <div class="form-row mt-3 justify-content-end">
                                                     <button class="btn-primary-cm btn-with-icon ml-2">
                                                         <i class="mdi mdi-account-circle-outline"></i>
-                                                        ثبت اطلاعات کاربری
+                                                        {% trans 'ثبت اطلاعات کاربری' %}
                                                     </button>
-                                                    <button class="btn-primary-cm bg-secondary">انصراف</button>
+                                                    <button class="btn-primary-cm bg-secondary">{% trans 'انصراف' %}</button>
                                                 </div>
                                             </div>
                                         </form>

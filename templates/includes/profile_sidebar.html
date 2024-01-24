@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 sticky-sidebar">
     <div class="profile-sidebar dt-sl">
@@ -22,7 +23,7 @@
                     </div>
                 </div>
                 <div class="profile-point mt-3 mb-2 dt-sl">
-                    <span class="label-profile-point">امتیاز شما:</span>
+                    <span class="label-profile-point">{% trans 'امتیاز شما:' %}</span>
                     <span class="float-left value-profile-point">{{ profile.credit }}</span>
                 </div>
                 <div class="profile-link mt-2 dt-sl">
@@ -30,13 +31,13 @@
                         <div class="col-6 text-center">
                             <a href="{% url 'password_change' %}">
                                 <i class="mdi mdi-lock-reset"></i>
-                                <span class="d-block">تغییر رمز</span>
+                                <span class="d-block">{% trans 'تغییر رمز' %}</span>
                             </a>
                         </div>
                         <div class="col-6 text-center">
                             <a href="{% url 'core:logout_view' %}">
                                 <i class="mdi mdi-logout-variant"></i>
-                                <span class="d-block">خروج از حساب</span>
+                                <span class="d-block">{% trans 'خروج از حساب' %}</span>
                             </a>
                         </div>
                     </div>
@@ -51,7 +52,7 @@
         <div class="dt-sl dt-sn border mb-3">
             <div class="profile-menu-section dt-sl">
                 <div class="label-profile-menu mt-2 mb-2">
-                    <span>حساب کاربری شما</span>
+                    <span>{% trans 'حساب کاربری شما' %}</span>
                 </div>
                 <div class="profile-menu">
                     <ul>
@@ -59,14 +60,14 @@
                             {% url 'profiles:profile_main_page' as profile_main_page %}
                             <a href="{% url 'profiles:profile_main_page' %}" class="{% if request.path == profile_main_page %}active{% endif %}">
                                 <i class="mdi mdi-account-circle-outline"></i>
-                                پروفایل
+                                {% trans 'پروفایل' %}
                             </a>
                         </li>
                         <li>
                             {% url 'profiles:user_orders' as user_orders %}
                             <a href="{% url 'profiles:user_orders' %}" class="{% if request.path == user_orders %}active{% endif %}">
                                 <i class="mdi mdi-basket"></i>
-                                همه سفارش ها
+                                {% trans 'همه سفارش ها' %}
                             </a>
                         </li>
 {#                        <li>#}
@@ -91,14 +92,14 @@
                             {% url 'profiles:user_addresses' as user_address %}
                             <a href="{% url 'profiles:user_addresses' %}" class="{% if request.path == user_address %}active{% endif %}">
                                 <i class="mdi mdi-sign-direction"></i>
-                                آدرس ها
+                                {% trans 'آدرس ها' %}
                             </a>
                         </li>
                         <li>
                             {% url 'profiles:additional_info' as additional_info %}
                             <a href="{% url 'profiles:additional_info' %}" class="{% if request.path == additional_info %}active{% endif %}">
                                 <i class="mdi mdi-account-edit-outline"></i>
-                                اطلاعات شخصی
+                                {% trans 'اطلاعات شخصی' %}
                             </a>
                         </li>
                     </ul>

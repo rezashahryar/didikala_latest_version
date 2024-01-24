@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-24 21:46+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\blog\models.py:13 .\blog\models.py:20
+msgid "نام"
+msgstr ""
+
+#: .\blog\models.py:37
+msgid "Draft"
+msgstr ""
+
+#: .\blog\models.py:38
+msgid "Published"
+msgstr ""
+
+#: .\blog\models.py:40 .\blog\models.py:79
+msgid "عنوان"
+msgstr ""
+
+#: .\blog\models.py:41
+msgid "توضیحات"
+msgstr ""
+
+#: .\blog\models.py:42
+msgid "عکس"
+msgstr ""
+
+#: .\blog\models.py:43
+msgid "دسته بندی"
+msgstr ""
+
+#: .\blog\models.py:44
+msgid "بر چسب"
+msgstr ""
+
+#: .\blog\models.py:45
+msgid "مسیر یو ار ال"
+msgstr ""
+
+#: .\blog\models.py:46
+msgid "نویسنده"
+msgstr ""
+
+#: .\blog\models.py:48
+msgid "تاریخ انتشار"
+msgstr ""
+
+#: .\blog\models.py:49
+msgid "وضعیت انتشار"
+msgstr ""
+
+#: .\blog\models.py:51
+msgid "تعداد بازدید"
+msgstr ""
+
+#: .\blog\models.py:53 .\blog\models.py:82 .\blog\models.py:95
+#: .\blog\models.py:102
+msgid "datetime_created"
+msgstr ""
+
+#: .\blog\models.py:54
+msgid "datetime_updated"
+msgstr ""
+
+#: .\blog\models.py:77 .\blog\models.py:92 .\blog\models.py:99
+msgid "کاربر"
+msgstr ""
+
+#: .\blog\models.py:78 .\blog\models.py:93 .\blog\models.py:100
+msgid "مقاله"
+msgstr ""
+
+#: .\blog\models.py:80
+msgid "محتوا"
+msgstr ""

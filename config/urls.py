@@ -36,6 +36,9 @@ urlpatterns = [
     # django toolbar
     path("__debug__/", include("debug_toolbar.urls")),
     # end
+
+    # django rosetta
+    path('rosetta/', include('rosetta.urls')),
     path('admin/', admin.site.urls),
 ]
 

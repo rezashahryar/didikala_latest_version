@@ -1,9 +1,11 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
-from .models import ProductCategory, SubProductCategory, Product, Brand, Color, Question
+from .models import ProductCategory, SubProductCategory, Product, Brand, Color, Question, SetProductProperty
 from .forms import QuestionForm
 from django.views.decorators.http import require_POST
+from django.db.models import Prefetch
 # Create your views here.
+
 
 @require_POST
 def question(request, pk):
@@ -16,6 +18,7 @@ def question(request, pk):
             new_form.product = product
             new_form.save()
             return redirect('products:product_detail', product.slug)
+
 
 @require_POST
 def answer(request, pk, qpk):
@@ -30,6 +33,7 @@ def answer(request, pk, qpk):
             new_form.parent = question_id
             new_form.save()
             return redirect('products:product_detail', product.slug)
+
 
 class CategoryObjectsView(generic.ListView):
     context_object_name = 'products'
@@ -69,10 +73,16 @@ class ProductDetail(generic.DetailView):
 
     def get_object(self):
         slug = self.kwargs.get('slug')
-        product = get_object_or_404(Product.objects.select_related('category'), slug=slug)
+        queryset = Product.objects.prefetch_related('questions__user').prefetch_related('property').select_related('category')
+        product = get_object_or_404(queryset, slug=slug)
         product.counted_views += 1
         product.save()
         return product
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductDetail, self).get_context_data(**kwargs)
+        context['questions'] = Product.objects.prefetch_related('questions__parent')
+        return context
 
 
 def product_filter(request):

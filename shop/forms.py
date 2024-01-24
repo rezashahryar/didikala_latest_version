@@ -1,15 +1,16 @@
 from django import forms
 from .models import Order, Address
+from django.utils.translation import gettext_lazy as _
 from core.models import User
 from django.contrib.auth import get_user_model
 
 
 class CouponApplyForm(forms.Form):
-    code = forms.CharField(max_length=50, label='کد تخفیف')
+    code = forms.CharField(max_length=50, label=_('کد تخفیف'))
 
 
 class InfoOrderForm(forms.Form):
-    address = forms.ModelChoiceField(queryset=Address.objects.all())
+    address = forms.ModelChoiceField(label=_('آدرس'), queryset=Address.objects.all())
 
 
 class OrderForm(forms.ModelForm):
@@ -17,7 +18,7 @@ class OrderForm(forms.ModelForm):
         model = Order
         fields = ['first_name', 'last_name', 'email', 'phone_number', 'address', 'order_notes', 'post_code']
         widgets = {
-            'order_notes': forms.Textarea(attrs={'rows': 5})
+            'order_notes': forms.Textarea(attrs={'rows': 5}),
         }
 
 

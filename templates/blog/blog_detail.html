@@ -1,6 +1,7 @@
 {% extends 'base_pages.html' %}
 {% load static %}
 {% load blog %}
+{% load i18n %}
 
 {% block title %}
   مقاله {{ blog.title }}
@@ -14,7 +15,7 @@
       <div class="title-breadcrumb-special dt-sl">
         <div class="breadcrumb dt-sl">
           <nav>
-            <a href="{% url 'pages:home_page_view' %}">خانه</a>
+            <a href="{% url 'pages:home_page_view' %}">{% trans 'خانه' %}</a>
             <a href="{{ blog.get_category_objects }}">{{ blog.category }}</a>
             <a href="#">{{ blog.title }}</a>
           </nav>
@@ -43,7 +44,7 @@
                 </div>
                 <div class="post-meta author">
                   <i class="mdi mdi-account-circle-outline"></i>
-                  ارسال شده توسط<a href="#">{{ blog.author.id }}</a>
+                    {% trans 'ارسال شده توسط' %}<a href="#">{{ blog.author.id }}</a>
                 </div>
                 <div class="post-meta category">
                   <i class="mdi mdi-folder"></i>
@@ -51,7 +52,7 @@
                 </div>
                 <div class="post-meta category">
                   <i class="mdi mdi-eye"></i>
-                  {{ blog.counted_views }} بازدید
+                  {{ blog.counted_views }} {% trans 'بازدید' %}
                 </div>
               </header>
               <div class="post-thumbnail dt-sl">
@@ -69,13 +70,13 @@
                       {% csrf_token %}
                       <div class="row">
                         <div class="col-12">
-                          <div class="form-row-title mb-2">عنوان نظر شما (اجباری)</div>
+                          <div class="form-row-title mb-2">{% trans 'عنوان نظر شما (اجباری)' %}</div>
                           <div class="form-row">
                             <input name="subject" class="input-ui pr-2" type="text" placeholder="عنوان نظر خود را بنویسید" />
                           </div>
                         </div>
                         <div class="col-12 mt-3 mb-3">
-                          <div class="form-row-title mb-2">متن نظر شما (اجباری)</div>
+                          <div class="form-row-title mb-2">{% trans 'متن نظر شما (اجباری)' %}</div>
                           <div class="form-row">
                             <textarea name="content" class="input-ui pr-2 pt-2" rows="5" placeholder="متن خود را بنویسید"></textarea>
                           </div>
@@ -93,8 +94,8 @@
               </div>
             </div>
             <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 mt-5 dt-sl">
-              <h2>نظرات کاربران</h2>
-              <p class="count-comment">{{ blog.comments.all.count }} نظر</p>
+              <h2>{% trans 'نظرات کاربران' %}</h2>
+              <p class="count-comment">{{ blog.comments.all.count }} {% trans 'نظر' %}</p>
             </div>
             <ol class="comment-list">
               <!-- #comment-## -->
@@ -103,11 +104,11 @@
                   <div class="comment-body mt-3">
                     <div class="row">
                       <div class="col-12 comment-content">
-                        <div class="comment-author">توسط {{ user.get_id }} در تاریخ {{ comment.datetime_created|date:'Y/m/d' }}</div>
+                        <div class="comment-author">{% trans 'توسط' %} {{ user.get_id }} {% trans 'در تاریخ' %} {{ comment.datetime_created|date:'Y/m/d' }}</div>
                         <p>{{ comment.content }}</p>
                         <div class="footer">
                           <div class="comments-likes">
-                            آیا این نظر برایتان مفید بود؟
+                            {% trans 'آیا این نظر برایتان مفید بود؟' %}
                             <a href="{% url 'blog:like' blog.slug blog.id %}"><button name="like" type="submit" class="btn-like" data-counter="{{ blog.likes.all.count }}">بله</button></a>
                             <a href="{% url 'blog:dislike' blog.slug blog.id %}"><button name="dislike" type="submit" class="btn-like" data-counter="{{ blog.dislikes.all.count }}">خیر</button></a>
                           </div>
@@ -124,7 +125,7 @@
         <div class="col-lg-3 col-md-4 col-sm-12 col-12 mb-3 sidebar sticky-sidebar">
           <div class="widget-posts dt-sn dt-sl rounded-0 border-bottom mb-3">
             <div class="title-sidebar dt-sl mb-3">
-              <h3>جدیدترین نوشته ها</h3>
+              <h3>{% trans 'جدیدترین نوشته ها' %}</h3>
             </div>
             <div class="content-sidebar dt-sl">
               {% latest_blog %}
@@ -132,7 +133,7 @@
           </div>
           <div class="dt-sn dt-sl rounded-0 border-bottom mb-3">
             <div class="section-title text-sm-title title-wide no-after-title-wide mb-1">
-              <h2>دسته ها</h2>
+              <h2>{% trans 'دسته ها' %}</h2>
             </div>
             <ul class="category-list">
               {% category_side_bar %}
@@ -140,7 +141,7 @@
           </div>
           <div class="dt-sn dt-sl rounded-0 border-bottom">
             <div class="section-title text-sm-title title-wide no-after-title-wide mb-1">
-              <h2>برچسبها</h2>
+              <h2>{% trans 'برچسبها' %}</h2>
             </div>
             <ul class="tag-list">
               {% tag_side_bar %}

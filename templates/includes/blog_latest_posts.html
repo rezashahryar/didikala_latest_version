@@ -1,6 +1,8 @@
+{% load i18n %}
+
 <div class="widget-posts dt-sn dt-sl mb-3 border-bottom rounded-0">
   <div class="title-sidebar dt-sl mb-3">
-    <h3>جدیدترین نوشته ها</h3>
+    <h3>{% trans 'جدیدترین نوشته ها' %}</h3>
   </div>
   <div class="content-sidebar dt-sl">
     {% for blog in blogs %}

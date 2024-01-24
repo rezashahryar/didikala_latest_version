@@ -10,9 +10,9 @@ class UserCacheMixin:
 
 
 class LoginFormViaEmailOrMobile(forms.Form):
-    username = forms.CharField()
-    password = forms.CharField()
-    remember_me = forms.BooleanField(required=False)
+    username = forms.CharField(label=_('نام کاربری'))
+    password = forms.CharField(label=_('رمز عبور'))
+    remember_me = forms.BooleanField(required=False, label=_('مرا به یاد داشته باش'))
 
     # def clean(self):
     #     username = self.cleaned_data.get('username')
@@ -21,8 +21,8 @@ class LoginFormViaEmailOrMobile(forms.Form):
 
 
 class RegisterViaEmailForm(forms.ModelForm):
-    password = forms.CharField()
-    email = forms.EmailField()
+    password = forms.CharField(label=_('رمز عبور'))
+    email = forms.EmailField(label=_('ایمیل'))
 
     class Meta:
         model = User
@@ -44,7 +44,7 @@ class RegisterViaEmailForm(forms.ModelForm):
 
 
 class EmailOrUsernameForm(forms.Form):
-    email_or_username = forms.CharField(label=_('Email or Username'))
+    email_or_username = forms.CharField(label=_('ایمیل یا نام کاربری'))
 
     # def clean_email_or_username(self):
     #     email_or_username = self.cleaned_data['email_or_username']
@@ -62,7 +62,7 @@ class EmailOrUsernameForm(forms.Form):
 
 
 class EmailForm(UserCacheMixin, forms.Form):
-    email = forms.EmailField(label=_('Email'))
+    email = forms.EmailField(label=_('ایمیل'))
 
     # def clean_email(self):
     #     email = self.cleaned_data['email']

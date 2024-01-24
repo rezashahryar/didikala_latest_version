@@ -1,31 +1,32 @@
 {% load static %}
+{% load i18n %}
 
 <footer class="main-footer dt-sl">
     <div class="back-to-top">
-        <a href="#"><span class="icon"><i class="mdi mdi-chevron-up"></i></span> <span>بازگشت به بالا</span></a>
+        <a href="#"><span class="icon"><i class="mdi mdi-chevron-up"></i></span> <span>{% trans 'بازگشت به بالا' %}</span></a>
     </div>
     <div class="container main-container">
         <div class="footer-services">
             <div class="row">
                 <div class="service-item col">
                     <a href="#" target="_blank"><img src="{% static 'assets/img/svg/delivery.svg' %}"/></a>
-                    <p>تحویل اکسپرس</p>
+                    <p>{% trans 'تحویل اکسپرس' %}</p>
                 </div>
                 <div class="service-item col">
                     <a href="#" target="_blank"><img src="{% static 'assets/img/svg/contact-us.svg' %}"/></a>
-                    <p>پشتیبانی 24 ساعته</p>
+                    <p>{% trans 'پشتیبانی 24 ساعته' %}</p>
                 </div>
                 <div class="service-item col">
                     <a href="#" target="_blank"><img src="{% static 'assets/img/svg/payment-terms.svg' %}"/></a>
-                    <p>پرداخت درمحل</p>
+                    <p>{% trans 'پرداخت درمحل' %}</p>
                 </div>
                 <div class="service-item col">
                     <a href="#" target="_blank"><img src="{% static 'assets/img/svg/return-policy.svg' %}"/></a>
-                    <p>۷ روز ضمانت بازگشت</p>
+                    <p>{% trans '۷ روز ضمانت بازگشت' %}</p>
                 </div>
                 <div class="service-item col">
                     <a href="#" target="_blank"><img src="{% static 'assets/img/svg/origin-guarantee.svg' %}"/></a>
-                    <p>ضمانت اصل بودن کالا</p>
+                    <p>{% trans 'ضمانت اصل بودن کالا' %}</p>
                 </div>
             </div>
         </div>
@@ -34,17 +35,17 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="widget-menu widget card">
                         <header class="card-header">
-                            <h3 class="card-title">راهنمای خرید از تاپ کالا</h3>
+                            <h3 class="card-title">{% trans 'راهنمای خرید از تاپ کالا' %}</h3>
                         </header>
                         <ul class="footer-menu">
                             <li>
-                                <a href="#">نحوه ثبت سفارش</a>
+                                <a href="#">{% trans 'نحوه ثبت سفارش' %}</a>
                             </li>
                             <li>
-                                <a href="#">رویه ارسال سفارش</a>
+                                <a href="#">{% trans 'رویه ارسال سفارش' %}</a>
                             </li>
                             <li>
-                                <a href="#">شیوه‌های پرداخت</a>
+                                <a href="#">{% trans 'شیوه‌های پرداخت' %}</a>
                             </li>
                         </ul>
                     </div>
@@ -52,20 +53,20 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="widget-menu widget card">
                         <header class="card-header">
-                            <h3 class="card-title">خدمات مشتریان</h3>
+                            <h3 class="card-title">{% trans 'خدمات مشتریان' %}</h3>
                         </header>
                         <ul class="footer-menu">
                             <li>
-                                <a href="{% url 'pages:page_faq_category' %}">پاسخ به پرسش‌های متداول</a>
+                                <a href="{% url 'pages:page_faq_category' %}">{% trans 'پاسخ به پرسش‌های متداول' %}</a>
                             </li>
                             <li>
-                                <a href="#">رویه‌های بازگرداندن کالا</a>
+                                <a href="#">{% trans 'رویه‌های بازگرداندن کالا' %}</a>
                             </li>
                             <li>
-                                <a href="#">شرایط استفاده</a>
+                                <a href="#">{% trans 'شرایط استفاده' %}</a>
                             </li>
                             <li>
-                                <a href="{% url 'pages:page_privacy' %}">حریم خصوصی</a>
+                                <a href="{% url 'pages:page_privacy' %}">{% trans 'حریم خصوصی' %}</a>
                             </li>
                         </ul>
                     </div>
@@ -73,39 +74,39 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="widget-menu widget card">
                         <header class="card-header">
-                            <h3 class="card-title">با تاپ کالا</h3>
+                            <h3 class="card-title">{% trans 'با تاپ کالا' %}</h3>
                         </header>
                         <ul class="footer-menu">
                             <li>
-                                <a href="#">فروش در تاپ کالا</a>
+                                <a href="#">{% trans 'فروش در تاپ کالا' %}</a>
                             </li>
                             <li>
-                                <a href="#">همکاری با سازمان‌ها</a>
+                                <a href="#">{% trans 'همکاری با سازمان‌ها' %}</a>
                             </li>
                             <li>
-                                <a href="#">فرصت‌های شغلی</a>
+                                <a href="#">{% trans 'فرصت‌های شغلی' %}</a>
                             </li>
                             <li>
-                                <a href="#">تماس با تاپ کالا</a>
+                                <a href="#">{% trans 'تماس با تاپ کالا' %}</a>
                             </li>
                             <li>
-                                <a href="#">درباره تاپ کالا</a>
+                                <a href="#">{% trans 'درباره تاپ کالا' %}</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="newsletter">
-                        <p>از تخفیف‌ها و جدیدترین‌های فروشگاه باخبر شوید:</p>
+                        <p>{% trans 'از تخفیف‌ها و جدیدترین‌های فروشگاه باخبر شوید:' %}</p>
                         <form action="{% url 'pages:newsletter' %}" method="POST">
                             {% csrf_token %}
-                            <input name="email" type="email" class="form-control"
+                            <input dir="rtl" name="email" type="email" class="form-control"
                                    placeholder="آدرس ایمیل خود را وارد کنید..."/>
                             <input type="submit" class="btn btn-primary" value="ارسال"/>
                         </form>
                     </div>
                     <div class="socials">
-                        <p>ما را در شبکه های اجتماعی دنبال کنید.</p>
+                        <p>{% trans 'ما را در شبکه های اجتماعی دنبال کنید.' %}</p>
                         <div class="footer-social">
                             <ul class="text-center">
                                 <li>
@@ -129,7 +130,7 @@
         <div class="info">
             <div class="row">
                 <div class="col-12 text-right">
-                    <span>هفت روز هفته ، 24 ساعت شبانه‌روز پاسخگوی شما هستیم.</span>
+                    <span>{% trans 'هفت روز هفته ، 24 ساعت شبانه‌روز پاسخگوی شما هستیم.' %}</span>
                 </div>
             </div>
         </div>
@@ -138,7 +139,7 @@
         <div class="container main-container">
             <div class="row">
                 <div class="site-description col-12 col-lg-7">
-                    <h1 class="site-title">فروشگاه اینترنتی تاپ کالا، بررسی، انتخاب و خرید آنلاین</h1>
+                    <h1 class="site-title">{% trans 'فروشگاه اینترنتی تاپ کالا، بررسی، انتخاب و خرید آنلاین' %}</h1>
                     <p>تاپ کالا به عنوان یکی از قدیمی‌ترین فروشگاه های اینترنتی با بیش از یک دهه تجربه، با پایبندی به سه
                         اصل کلیدی، پرداخت در محل، 7 روز ضمانت بازگشت کالا و تضمین اصل‌بودن کالا، موفق شده تا همگام با
                         فروشگاه‌های معتبر جهان، به بزرگ‌ترین فروشگاه اینترنتی ایران تبدیل شود. به محض ورود به تاپ کالا

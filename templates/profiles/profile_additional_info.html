@@ -1,5 +1,6 @@
 {% extends 'base_pages.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block body %}
         <!-- Start main-content -->
@@ -16,13 +17,13 @@
                                 <div class="px-3">
                                     <div
                                         class="section-title text-sm-title title-wide mb-1 no-after-title-wide dt-sl mb-2">
-                                        <h2>اطلاعات شخصی</h2>
+                                        <h2>{% trans 'اطلاعات شخصی' %}</h2>
                                     </div>
                                     <div class="profile-section dt-sl">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="label-info">
-                                                    <span>نام و نام خانوادگی:</span>
+                                                    <span>{% trans 'نام و نام خانوادگی:' %}</span>
                                                 </div>
                                                 <div class="value-info">
                                                     {% if profile.full_name %}
@@ -34,7 +35,7 @@
                                             </div>
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="label-info">
-                                                    <span>پست الکترونیک:</span>
+                                                    <span>{% trans 'پست الکترونیک:' %}</span>
                                                 </div>
                                                 <div class="value-info">
                                                     {% if profile.email %}
@@ -46,7 +47,7 @@
                                             </div>
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="label-info">
-                                                    <span>شماره تلفن همراه:</span>
+                                                    <span>{% trans 'شماره تلفن همراه:' %}</span>
                                                 </div>
                                                 <div class="value-info">
                                                     {% if profile.phone_number %}
@@ -58,7 +59,7 @@
                                             </div>
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="label-info">
-                                                    <span>کد ملی:</span>
+                                                    <span>{% trans 'کد ملی:' %}</span>
                                                 </div>
                                                 <div class="value-info">
                                                     <span>-</span>
@@ -66,15 +67,15 @@
                                             </div>
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="label-info">
-                                                    <span>دریافت خبرنامه:</span>
+                                                    <span>{% trans 'دریافت خبرنامه:' %}</span>
                                                 </div>
                                                 <div class="value-info">
-                                                    <span>خیر</span>
+                                                    <span>{% trans 'خیر' %}</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="label-info">
-                                                    <span>شماره کارت:</span>
+                                                    <span>{% trans 'شماره کارت:' %}</span>
                                                 </div>
                                                 <div class="value-info">
                                                     <span>-</span>
@@ -84,7 +85,7 @@
                                         <div class="profile-section-link">
                                             <a href="{% url 'profiles:profile_edit' %}" class="border-bottom-dt">
                                                 <i class="mdi mdi-account-edit-outline"></i>
-                                                ویرایش اطلاعات شخصی
+                                                {% trans 'ویرایش اطلاعات شخصی' %}
                                             </a>
                                         </div>
                                     </div>
@@ -94,7 +95,6 @@
                     </div>
                     <!-- End Content -->
                 </div>
-
             </div>
         </main>
         <!-- End main-content -->

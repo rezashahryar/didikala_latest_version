@@ -1,9 +1,10 @@
 {% extends 'base_pages.html' %}
 {% load static %}
 {% load pages_tags %}
+{% load i18n %}
 
 {% block title %}
-    دیدی کالا
+    {% trans 'دیدی کالا' %}
 {% endblock %}
 
 {% block body %}
@@ -153,7 +154,7 @@
                             <div class="item">
                                 <div class="amazing-product text-center pt-5">
                                     <a href="{% url 'pages:amazing_products' %}"><img src=" {% static 'assets/img/theme/amazing-1.png' %}" alt=""/></a>
-                                    <a href="{% url 'pages:amazing_products' %}" class="view-all-amazing-btn">مشاهده همه</a>
+                                    <a href="{% url 'pages:amazing_products' %}" class="view-all-amazing-btn">{% trans 'مشاهده همه' %}</a>
                                 </div>
                             </div>
                             {% for product in product_discount|slice:"8" %}
@@ -177,9 +178,9 @@
                                         <h5 class="product-title"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
                                         <a class="product-meta" href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
                                         {% if product.get_discount %}
-                                        <span class="product-price">{{ product.get_price_after_discount }} تومان</span>
+                                        <span class="product-price">{{ product.get_price_after_discount }} {% trans 'تومان' %}</span>
                                         {% else %}
-                                        <span class="product-price">{{ product.price }} تومان</span>
+                                        <span class="product-price">{{ product.price }} {% trans 'تومان' %}</span>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -200,7 +201,7 @@
                         <div class="row mb-3">
                             <div class="col-12">
                                 <div class="section-title text-sm-title title-wide no-after-title-wide">
-                                    <h2>پر فروش ترینها</h2>
+                                    <h2>{% trans 'پر فروش ترینها' %}</h2>
 {#                                    <a href="#">مشاهده همه</a>#}
                                 </div>
                             </div>
@@ -280,9 +281,9 @@
                                         <h5 class="product-title"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
                                         <a class="product-meta" href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
                                         {% if product.get_discount %}
-                                        <span class="product-price">{{ product.get_price_after_discount }} تومان</span>
+                                        <span class="product-price">{{ product.get_price_after_discount }} {% trans 'تومان' %}</span>
                                         {% else %}
-                                        <span class="product-price">{{ product.price }} تومان</span>
+                                        <span class="product-price">{{ product.price }} {% trans 'تومان' %}</span>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -483,7 +484,7 @@
                 <div class="col-12">
                     <div class="category-section dt-sn dt-sl border">
                         <div class="category-section-title dt-sl">
-                            <h3>بیش از ۱،۵۰۰،۰۰۰ کالا در دسته‌بندی‌های مختلف</h3>
+                            <h3>{% trans 'بیش از ۱،۵۰۰،۰۰۰ کالا در دسته‌بندی‌های مختلف' %}</h3>
                         </div>
                         <div class="category-section-slider dt-sl">
                             <div class="category-slider owl-carousel">
@@ -499,7 +500,7 @@
                 <div class="row mb-3">
                     <div class="col-12">
                         <div class="section-title text-sm-title title-wide no-after-title-wide">
-                            <h2>پر بازدید ترین ها</h2>
+                            <h2>{% trans 'پر بازدید ترین ها' %}</h2>
 {#                            <a href="#">مشاهده همه</a>#}
                         </div>
                     </div>
@@ -531,9 +532,9 @@
                                         <h5 class="product-title"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
                                         <a class="product-meta" href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
                                         {% if product.get_discount %}
-                                        <span class="product-price">{{ product.get_price_after_discount }} تومان</span>
+                                        <span class="product-price">{{ product.get_price_after_discount }} {% trans 'تومان' %}</span>
                                         {% else %}
-                                        <span class="product-price">{{ product.price }} تومان</span>
+                                        <span class="product-price">{{ product.price }} {% trans 'تومان' %}</span>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -559,7 +560,7 @@
                 <div class="row mb-3">
                     <div class="col-12">
                         <div class="section-title text-sm-title title-wide no-after-title-wide">
-                            <h2>ارزان ترین محصولات</h2>
+                            <h2>{% trans 'ارزان ترین محصولات' %}</h2>
 {#                            <a href="#">مشاهده همه</a>#}
                         </div>
                     </div>
@@ -591,9 +592,9 @@
                                         <h5 class="product-title"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
                                         <a class="product-meta" href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
                                         {% if product.get_discount %}
-                                        <span class="product-price">{{ product.get_price_after_discount }} تومان</span>
+                                        <span class="product-price">{{ product.get_price_after_discount }} {% trans 'تومان' %}</span>
                                         {% else %}
-                                        <span class="product-price">{{ product.price }} تومان</span>
+                                        <span class="product-price">{{ product.price }} {% trans 'تومان' %}</span>
                                         {% endif %}
                                     </div>
                                 </div>

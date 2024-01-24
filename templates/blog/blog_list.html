@@ -1,9 +1,10 @@
 {% extends 'base_pages.html' %}
 {% load blog %}
 {% load humanize %}
+{% load i18n %}
 
 {% block title %}
-    صفحه مقالات
+    {% trans 'صفحه مقالات' %}
 {% endblock %}
 
 {% block body %}
@@ -18,8 +19,8 @@
                                 <div class="post-card">
                                     <div class="post-thumbnail">
                                         <a href="{{ blog.get_absolute_url }}"><img src="{{ blog.image.url }}"
-                                                                                   alt="عکس مقاله"/></a>
-                                        <span class="post-tag">مقاله</span>
+                                                                                   alt="{% trans 'عکس مقاله' %}"/></a>
+                                        <span class="post-tag">{% trans 'مقاله' %}</span>
                                     </div>
                                     <div class="post-title">
                                         <a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a>
@@ -35,7 +36,7 @@
                     {% latest_blog %}
                     <div class="dt-sn dt-sl border-bottom rounded-0 mb-3">
                         <div class="section-title text-sm-title title-wide no-after-title-wide mb-1">
-                            <h2>دسته ها</h2>
+                            <h2>{% trans 'دسته ها' %}</h2>
                         </div>
                         <ul class="category-list">
                             {% category_side_bar %}
@@ -54,7 +55,7 @@
                     </div>
                     <div class="dt-sn dt-sl border-bottom rounded-0">
                         <div class="section-title text-sm-title title-wide no-after-title-wide mb-1">
-                            <h2>برچسبها</h2>
+                            <h2>{% trans 'برچسبها' %}</h2>
                         </div>
                         <ul class="tag-list">
                             {% tag_side_bar %}

@@ -59,12 +59,16 @@ class Cart:
     def get_total_price(self):
         for item in self.cart.values():
             if item['product'].discount:
-                result = sum(item['quantity'] * item['product'].get_price_after_discount() for item in self.cart.values())
+                result = sum(
+                    item['quantity'] * item['product'].get_price_after_discount() for item in self.cart.values())
                 return result
             result = sum(item['quantity'] * item['product'].price for item in self.cart.values())
         return result
 
     def delete(self, id):
+        """
+        remove an item from the cart
+        """
         if id in self.cart:
             del self.cart[id]
             self.save()
@@ -86,3 +90,14 @@ class Cart:
 
     def get_total_price_after_discount(self):
         return self.get_total_price() - self.get_discount()
+
+
+class NextShoppingCart:
+    def __init__(self, request):
+        self.session = request.session
+
+        next_cart = self.session.get('next_shopping_cart')
+        if not next_cart:
+            next_cart = self.session['next_shopping_cart'] = {}
+
+        self.cart = next_cart

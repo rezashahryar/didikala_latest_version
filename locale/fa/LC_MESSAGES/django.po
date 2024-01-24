@@ -1,0 +1,2440 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-24 19:47+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\core\forms.py:13
+msgid "username"
+msgstr ""
+
+#: .\core\forms.py:14 .\core\forms.py:24
+msgid "password"
+msgstr ""
+
+#: .\core\forms.py:15
+msgid "remember_me"
+msgstr ""
+
+#: .\core\forms.py:25 .\pages\models.py:7 .\profiles\models.py:12
+#: .\shop\models.py:32
+msgid "email"
+msgstr ""
+
+#: .\core\forms.py:47
+msgid "Email or Username"
+msgstr ""
+
+#: .\core\forms.py:65
+msgid "Email"
+msgstr ""
+
+#: .\core\templates\core\emails\activate_user.html:15
+#: .\core\templates\core\emails\activate_user.txt:3
+msgid "To activate your profile, please follow this link:"
+msgstr ""
+
+#: .\core\templates\core\emails\restore_password_email.html:15
+#: .\core\templates\core\emails\restore_password_email.txt:3
+msgid ""
+"You received this email because you requested a password reset for your user "
+"account."
+msgstr ""
+
+#: .\core\templates\core\emails\restore_password_email.html:19
+#: .\core\templates\core\emails\restore_password_email.txt:5
+msgid "Please, go to the following page and choose a new password:"
+msgstr ""
+
+#: .\core\utils.py:20
+msgid "user activation"
+msgstr ""
+
+#: .\core\utils.py:29
+msgid "Restore password"
+msgstr ""
+
+#: .\core\views.py:46
+msgid "کاربری با این مشخصات ثبت نشده است"
+msgstr ""
+
+#: .\core\views.py:48
+msgid "لطفا اطلاعات کاربری خود را به درستی وارد کنید"
+msgstr ""
+
+#: .\core\views.py:85
+msgid ""
+"حساب کاربری شما ساخته شد.جهت فعالسازی وارد لینک ارسال شده به ایمیل خود شوید."
+msgstr ""
+
+#: .\core\views.py:92
+msgid "شما با موفقیت ثبتنام کردید"
+msgstr ""
+
+#: .\core\views.py:111
+msgid "فعالسازی اکانت شما با موفقیت انجام شد"
+msgstr ""
+
+#: .\products\models.py:12 .\products\models.py:19 .\products\models.py:26
+#: .\products\models.py:34 .\products\models.py:48 .\products\models.py:71
+msgid "title"
+msgstr ""
+
+#: .\products\models.py:33
+msgid "properties"
+msgstr ""
+
+#: .\products\models.py:35 .\products\models.py:49 .\products\models.py:72
+msgid "slug"
+msgstr ""
+
+#: .\products\models.py:36
+msgid "picture"
+msgstr ""
+
+#: .\products\models.py:46
+msgid "main_category"
+msgstr ""
+
+#: .\products\models.py:47 .\products\models.py:125
+msgid "parent"
+msgstr ""
+
+#: .\products\models.py:69
+msgid "category"
+msgstr ""
+
+#: .\products\models.py:70
+msgid "sub_category"
+msgstr ""
+
+#: .\products\models.py:73
+msgid "product_code"
+msgstr ""
+
+#: .\products\models.py:74
+msgid "available"
+msgstr ""
+
+#: .\products\models.py:76
+msgid "cover"
+msgstr ""
+
+#: .\products\models.py:77
+msgid "img_one"
+msgstr ""
+
+#: .\products\models.py:78
+msgid "img_two"
+msgstr ""
+
+#: .\products\models.py:79
+msgid "img_three"
+msgstr ""
+
+#: .\products\models.py:81
+msgid "color"
+msgstr ""
+
+#: .\products\models.py:82
+msgid "brand"
+msgstr ""
+
+#: .\products\models.py:84 .\shop\models.py:14
+msgid "discount"
+msgstr ""
+
+#: .\products\models.py:86 .\shop\models.py:61
+msgid "price"
+msgstr ""
+
+#: .\products\models.py:87
+msgid "description"
+msgstr ""
+
+#: .\products\models.py:88
+msgid "counted_views"
+msgstr ""
+
+#: .\products\models.py:90
+msgid "sales_number"
+msgstr ""
+
+#: .\products\models.py:92
+msgid "created_date"
+msgstr ""
+
+#: .\products\models.py:93
+msgid "updated_date"
+msgstr ""
+
+#: .\products\models.py:116 .\products\models.py:127 .\shop\models.py:59
+msgid "product"
+msgstr ""
+
+#: .\products\models.py:117
+msgid "property"
+msgstr ""
+
+#: .\products\models.py:118
+msgid "value"
+msgstr ""
+
+#: .\products\models.py:126 .\profiles\models.py:8 .\shop\models.py:27
+#: .\shop\models.py:73
+msgid "user"
+msgstr ""
+
+#: .\products\models.py:128
+msgid "text"
+msgstr ""
+
+#: .\products\models.py:130 .\shop\models.py:36
+msgid "datetime_created"
+msgstr ""
+
+#: .\profiles\models.py:10 .\shop\models.py:74
+msgid "full_name"
+msgstr ""
+
+#: .\profiles\models.py:11
+msgid "image"
+msgstr ""
+
+#: .\profiles\models.py:13
+msgid "national_code"
+msgstr ""
+
+#: .\profiles\models.py:14 .\shop\models.py:33
+msgid "phone_number"
+msgstr ""
+
+#: .\profiles\models.py:16
+msgid "credit"
+msgstr ""
+
+#: .\shop\forms.py:9
+msgid "کد تخفیف"
+msgstr ""
+
+#: .\shop\forms.py:13 .\shop\models.py:34 .\shop\models.py:78
+msgid "address"
+msgstr ""
+
+#: .\shop\models.py:11
+msgid "code"
+msgstr ""
+
+#: .\shop\models.py:12
+msgid "valid_from"
+msgstr ""
+
+#: .\shop\models.py:13
+msgid "valid_to"
+msgstr ""
+
+#: .\shop\models.py:15
+msgid "active"
+msgstr ""
+
+#: .\shop\models.py:28
+msgid "is_paid"
+msgstr ""
+
+#: .\shop\models.py:30
+msgid "first name"
+msgstr ""
+
+#: .\shop\models.py:31
+msgid "last_name"
+msgstr ""
+
+#: .\shop\models.py:37
+msgid "datetime_modified"
+msgstr ""
+
+#: .\shop\models.py:39
+msgid "order_notes"
+msgstr ""
+
+#: .\shop\models.py:41 .\shop\models.py:79
+msgid "post_code"
+msgstr ""
+
+#: .\shop\models.py:43
+msgid "order_code"
+msgstr ""
+
+#: .\shop\models.py:45
+msgid "total_price_order"
+msgstr ""
+
+#: .\shop\models.py:58
+msgid "order"
+msgstr ""
+
+#: .\shop\models.py:60
+msgid "quantity"
+msgstr ""
+
+#: .\shop\models.py:75
+msgid "mobile_number"
+msgstr ""
+
+#: .\shop\models.py:76
+msgid "province"
+msgstr ""
+
+#: .\shop\models.py:77
+msgid "city"
+msgstr ""
+
+#: .\shop\templates\shop\test.html:23
+msgid "first step"
+msgstr ""
+
+#: .\shop\templates\shop\test.html:24
+msgid "prev step"
+msgstr ""
+
+#: .\shop\templates\shop\test.html:26
+msgid "submit"
+msgstr ""
+
+#: .\templates\blog\blog_detail.html:18
+msgid "خانه"
+msgstr ""
+
+#: .\templates\blog\blog_detail.html:47
+msgid "ارسال شده توسط"
+msgstr ""
+
+#: .\templates\blog\blog_detail.html:55
+msgid "بازدید"
+msgstr ""
+
+#: .\templates\blog\blog_detail.html:73
+msgid "عنوان نظر شما (اجباری)"
+msgstr ""
+
+#: .\templates\blog\blog_detail.html:79
+msgid "متن نظر شما (اجباری)"
+msgstr ""
+
+#: .\templates\blog\blog_detail.html:97
+msgid "نظرات کاربران"
+msgstr ""
+
+#: .\templates\blog\blog_detail.html:98
+#: .\templates\profiles\order_detail.html:157
+msgid "نظر"
+msgstr ""
+
+#: .\templates\blog\blog_detail.html:107
+msgid "توسط"
+msgstr ""
+
+#: .\templates\blog\blog_detail.html:107
+msgid "در تاریخ"
+msgstr ""
+
+#: .\templates\blog\blog_detail.html:111
+msgid "آیا این نظر برایتان مفید بود؟"
+msgstr ""
+
+#: .\templates\blog\blog_detail.html:128
+#: .\templates\includes\blog_latest_posts.html:5
+msgid "جدیدترین نوشته ها"
+msgstr ""
+
+#: .\templates\blog\blog_detail.html:136 .\templates\blog\blog_list.html:39
+msgid "دسته ها"
+msgstr ""
+
+#: .\templates\blog\blog_detail.html:144 .\templates\blog\blog_list.html:58
+msgid "برچسبها"
+msgstr ""
+
+#: .\templates\blog\blog_list.html:7
+msgid "صفحه مقالات"
+msgstr ""
+
+#: .\templates\blog\blog_list.html:22
+msgid "عکس مقاله"
+msgstr ""
+
+#: .\templates\blog\blog_list.html:23
+msgid "مقاله"
+msgstr ""
+
+#: .\templates\includes\footer.html:6
+msgid "بازگشت به بالا"
+msgstr ""
+
+#: .\templates\includes\footer.html:13
+msgid "تحویل اکسپرس"
+msgstr ""
+
+#: .\templates\includes\footer.html:17
+msgid "پشتیبانی 24 ساعته"
+msgstr ""
+
+#: .\templates\includes\footer.html:21
+msgid "پرداخت درمحل"
+msgstr ""
+
+#: .\templates\includes\footer.html:25
+msgid "۷ روز ضمانت بازگشت"
+msgstr ""
+
+#: .\templates\includes\footer.html:29
+msgid "ضمانت اصل بودن کالا"
+msgstr ""
+
+#: .\templates\includes\footer.html:38
+msgid "راهنمای خرید از تاپ کالا"
+msgstr ""
+
+#: .\templates\includes\footer.html:42
+msgid "نحوه ثبت سفارش"
+msgstr ""
+
+#: .\templates\includes\footer.html:45
+msgid "رویه ارسال سفارش"
+msgstr ""
+
+#: .\templates\includes\footer.html:48
+msgid "شیوه‌های پرداخت"
+msgstr ""
+
+#: .\templates\includes\footer.html:56
+msgid "خدمات مشتریان"
+msgstr ""
+
+#: .\templates\includes\footer.html:60
+msgid "پاسخ به پرسش‌های متداول"
+msgstr ""
+
+#: .\templates\includes\footer.html:63
+msgid "رویه‌های بازگرداندن کالا"
+msgstr ""
+
+#: .\templates\includes\footer.html:66
+msgid "شرایط استفاده"
+msgstr ""
+
+#: .\templates\includes\footer.html:69 .\templates\pages\page_privacy.html:17
+msgid "حریم خصوصی"
+msgstr ""
+
+#: .\templates\includes\footer.html:77
+msgid "با تاپ کالا"
+msgstr ""
+
+#: .\templates\includes\footer.html:81
+msgid "فروش در تاپ کالا"
+msgstr ""
+
+#: .\templates\includes\footer.html:84
+msgid "همکاری با سازمان‌ها"
+msgstr ""
+
+#: .\templates\includes\footer.html:87
+msgid "فرصت‌های شغلی"
+msgstr ""
+
+#: .\templates\includes\footer.html:90
+msgid "تماس با تاپ کالا"
+msgstr ""
+
+#: .\templates\includes\footer.html:93
+msgid "درباره تاپ کالا"
+msgstr ""
+
+#: .\templates\includes\footer.html:100
+msgid "از تخفیف‌ها و جدیدترین‌های فروشگاه باخبر شوید:"
+msgstr ""
+
+#: .\templates\includes\footer.html:109
+msgid "ما را در شبکه های اجتماعی دنبال کنید."
+msgstr ""
+
+#: .\templates\includes\footer.html:133
+msgid "هفت روز هفته ، 24 ساعت شبانه‌روز پاسخگوی شما هستیم."
+msgstr ""
+
+#: .\templates\includes\footer.html:142
+msgid "فروشگاه اینترنتی تاپ کالا، بررسی، انتخاب و خرید آنلاین"
+msgstr ""
+
+#: .\templates\includes\header.html:69
+msgid "حساب کاربری"
+msgstr ""
+
+#: .\templates\includes\header.html:75
+#: .\templates\includes\profile_sidebar.html:63
+#: .\templates\pages\page_faq_question.html:39
+#: .\templates\pages\page_faq_question.html:43
+msgid "پروفایل"
+msgstr ""
+
+#: .\templates\includes\header.html:79
+msgid "پیغام ها"
+msgstr ""
+
+#: .\templates\includes\header.html:82
+msgid "ویرایش حساب کاربری"
+msgstr ""
+
+#: .\templates\includes\header.html:86
+msgid "خروج"
+msgstr ""
+
+#: .\templates\includes\header.html:92
+msgid "ورود یا ثبت نام"
+msgstr ""
+
+#: .\templates\includes\header.html:111
+msgid "دسته بندی کالاها"
+msgstr ""
+
+#: .\templates\includes\header.html:145
+msgid "مقالات"
+msgstr ""
+
+#: .\templates\includes\header.html:151
+msgid "سبد خرید"
+msgstr ""
+
+#: .\templates\includes\header.html:159
+msgid "کالا"
+msgstr ""
+
+#: .\templates\includes\header.html:162
+msgid "مشاهده سبد خرید"
+msgstr ""
+
+#: .\templates\includes\header.html:165
+msgid "در حال حاضر در سبد خرید شما کالایی وجود ندارد"
+msgstr ""
+
+#: .\templates\includes\header.html:206
+msgid "مبلغ قابل پرداخت:"
+msgstr ""
+
+#: .\templates\includes\header.html:209 .\templates\pages\home.html:181
+#: .\templates\pages\home.html:183 .\templates\pages\home.html:284
+#: .\templates\pages\home.html:286 .\templates\pages\home.html:535
+#: .\templates\pages\home.html:537 .\templates\pages\home.html:595
+#: .\templates\pages\home.html:597
+#: .\templates\pages\products_discount.html:301
+#: .\templates\profiles\order_list.html:41
+#: .\templates\profiles\order_list.html:42
+msgid "تومان"
+msgstr ""
+
+#: .\templates\includes\header.html:214
+msgid "ثبت سفارش"
+msgstr ""
+
+#: .\templates\includes\profile_sidebar.html:26
+msgid "امتیاز شما:"
+msgstr ""
+
+#: .\templates\includes\profile_sidebar.html:34
+msgid "تغییر رمز"
+msgstr ""
+
+#: .\templates\includes\profile_sidebar.html:40
+msgid "خروج از حساب"
+msgstr ""
+
+#: .\templates\includes\profile_sidebar.html:55
+msgid "حساب کاربری شما"
+msgstr ""
+
+#: .\templates\includes\profile_sidebar.html:70
+msgid "همه سفارش ها"
+msgstr ""
+
+#: .\templates\includes\profile_sidebar.html:95
+msgid "آدرس ها"
+msgstr ""
+
+#: .\templates\includes\profile_sidebar.html:102
+#: .\templates\profiles\profile.html:22
+#: .\templates\profiles\profile_additional_info.html:20
+msgid "اطلاعات شخصی"
+msgstr ""
+
+#: .\templates\pages\404_page.html:6
+msgid "موردی یافت نشد"
+msgstr ""
+
+#: .\templates\pages\404_page.html:17
+msgid "صفحه‌ای که دنبال آن بودید پیدا نشد!"
+msgstr ""
+
+#: .\templates\pages\404_page.html:18
+msgid "ادامه خرید در دیدیکالا"
+msgstr ""
+
+#: .\templates\pages\home.html:7
+msgid "دیدی کالا"
+msgstr ""
+
+#: .\templates\pages\home.html:157 .\templates\profiles\order_list.html:70
+msgid "مشاهده همه"
+msgstr ""
+
+#: .\templates\pages\home.html:204
+msgid "پر فروش ترینها"
+msgstr ""
+
+#: .\templates\pages\home.html:487
+msgid "بیش از ۱،۵۰۰،۰۰۰ کالا در دسته‌بندی‌های مختلف"
+msgstr ""
+
+#: .\templates\pages\home.html:503
+msgid "پر بازدید ترین ها"
+msgstr ""
+
+#: .\templates\pages\home.html:563
+msgid "ارزان ترین محصولات"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:6
+msgid "سوالات"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:14
+#: .\templates\pages\page_faq_category.html:14
+#: .\templates\pages\page_faq_question.html:14
+msgid "پاسخ پرسش‌های پرتکرار"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:18
+#: .\templates\pages\page_faq_category.html:18
+#: .\templates\pages\page_faq_question.html:18
+msgid "پرسش خود را جستجو کنید"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:19
+#: .\templates\pages\page_faq_category.html:19
+#: .\templates\pages\page_faq_question.html:19
+msgid "جستجو"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:32
+msgid "دسته‌بندی پرسش‌ها"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:42
+#: .\templates\pages\page_faq_category.html:33
+msgid "ورود و ثبت نام"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:54
+msgid "روند ثبت سفارش"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:66
+msgid "پیگیری ارسال سفارش"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:78
+msgid "بازگرداندن کالا"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:90
+msgid "کد تخفیف و کارت هدیه"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:102
+msgid "سوپرمارکت"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:114
+msgid "تعهد به شفافیت"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:126
+msgid "چند مرسوله ایی"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:138
+msgid "دیجی پی"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:150
+msgid "دیجی کلاپ"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:162
+msgid "سایر موارد"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:175
+#: .\templates\pages\page_faq_category.html:128
+#: .\templates\pages\page_faq_question.html:64
+msgid "پرتکرارترین پرسش‌ها"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:186
+#: .\templates\pages\page_faq_category.html:44
+#: .\templates\pages\page_faq_category.html:139
+#: .\templates\pages\page_faq_question.html:75
+msgid "چطور میتوانم امتیاز‌ بگیریم؟"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:194
+#: .\templates\pages\page_faq_category.html:52
+#: .\templates\pages\page_faq_category.html:147
+#: .\templates\pages\page_faq_question.html:83
+msgid "شما از سه راه می‌توانید امتیاز بگیرید:"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:196
+#: .\templates\pages\page_faq_category.html:54
+#: .\templates\pages\page_faq_category.html:149
+#: .\templates\pages\page_faq_question.html:85
+msgid "خرید کالا"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:197
+#: .\templates\pages\page_faq_category.html:55
+#: .\templates\pages\page_faq_category.html:150
+#: .\templates\pages\page_faq_question.html:86
+msgid "ثبت نظر"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:198
+#: .\templates\pages\page_faq_category.html:56
+#: .\templates\pages\page_faq_category.html:151
+#: .\templates\pages\page_faq_question.html:87
+msgid "دعوت از دوستان برای خرید از دیجی‌کالا"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:209
+#: .\templates\pages\page_faq_category.html:67
+#: .\templates\pages\page_faq_category.html:162
+#: .\templates\pages\page_faq_question.html:98
+msgid "میتوانم سفارش خود را در محل پرداخت کنم؟"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:228
+#: .\templates\pages\page_faq_category.html:86
+#: .\templates\pages\page_faq_category.html:181
+#: .\templates\pages\page_faq_question.html:117
+msgid "چطور درخواست خود را جهت مرجوعی کالا به شما اطلاع دهم؟"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:247
+#: .\templates\pages\page_faq_category.html:105
+#: .\templates\pages\page_faq_category.html:200
+#: .\templates\pages\page_faq_question.html:136
+msgid "چطور میتوانم سفارشم را لغو کنم ؟"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:270
+#: .\templates\pages\page_faq_category.html:223
+#: .\templates\pages\page_faq_question.html:159
+msgid "جواب یا پرسش خود را پیدا نکردید؟"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:272
+#: .\templates\pages\page_faq_category.html:225
+#: .\templates\pages\page_faq_question.html:161
+msgid "روش‌های ارتباط با ما"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:277
+#: .\templates\pages\page_faq_category.html:230
+#: .\templates\pages\page_faq_question.html:166
+msgid "تماس تلفنی"
+msgstr ""
+
+#: .\templates\pages\page_faq.html:282
+#: .\templates\pages\page_faq_question.html:171
+msgid "ارسال پیام"
+msgstr ""
+
+#: .\templates\pages\page_faq_category.html:6
+msgid "پرسش های متداول"
+msgstr ""
+
+#: .\templates\pages\page_faq_question.html:6
+msgid "سوال"
+msgstr ""
+
+#: .\templates\pages\page_faq_question.html:33
+msgid "چطور میتوانم شماره کارت خود را در پروفایلم وارد کنم؟"
+msgstr ""
+
+#: .\templates\pages\page_faq_question.html:39
+msgid "1.وارد "
+msgstr ""
+
+#: .\templates\pages\page_faq_question.html:39
+msgid "خود شوید."
+msgstr ""
+
+#: .\templates\pages\page_faq_question.html:43
+msgid "2.روی کلمه"
+msgstr ""
+
+#: .\templates\pages\page_faq_question.html:43
+msgid " کلیک کنید."
+msgstr ""
+
+#: .\templates\pages\page_faq_question.html:47
+msgid "3.روی قسمت "
+msgstr ""
+
+#: .\templates\pages\page_faq_question.html:47
+#: .\templates\profiles\profile.html:96
+#: .\templates\profiles\profile_additional_info.html:88
+#: .\templates\profiles\profile_additional_info_change.html:20
+msgid "ویرایش اطلاعات شخصی"
+msgstr ""
+
+#: .\templates\pages\page_faq_question.html:47
+msgid "کلیک کنید."
+msgstr ""
+
+#: .\templates\pages\page_faq_question.html:51
+msgid "4.شماره کارت خود را وارد نموده و دکمه "
+msgstr ""
+
+#: .\templates\pages\page_faq_question.html:51
+msgid "ثبت"
+msgstr ""
+
+#: .\templates\pages\page_faq_question.html:51
+msgid "را بزنید."
+msgstr ""
+
+#: .\templates\pages\page_privacy.html:6
+msgid "قوانین و مقررات"
+msgstr ""
+
+#: .\templates\pages\products_discount.html:6
+msgid "محصولات تخفیف خورده"
+msgstr ""
+
+#: .\templates\pages\products_discount.html:21
+#: .\templates\pages\products_discount.html:267
+msgid "جستجوی پیشرفته "
+msgstr ""
+
+#: .\templates\pages\products_discount.html:29
+msgid "فیلتر محصولات"
+msgstr ""
+
+#: .\templates\pages\products_discount.html:35
+msgid "نام محصول یا برند مورد نظر را بنویسید..."
+msgstr ""
+
+#: .\templates\pages\products_discount.html:49
+msgid "دسته بندی"
+msgstr ""
+
+#: .\templates\pages\products_discount.html:61
+msgid "همه"
+msgstr ""
+
+#: .\templates\pages\products_discount.html:279
+msgid "فروش ویژه"
+msgstr ""
+
+#: .\templates\pages\welcome.html:46
+msgid "به دیدیکالا خوش آمدید"
+msgstr ""
+
+#: .\templates\pages\welcome.html:51
+msgid "حساب کاربری شما در دیدیکالا ساخته شد"
+msgstr ""
+
+#: .\templates\pages\welcome.html:59
+msgid "تکمیل حساب کاربری"
+msgstr ""
+
+#: .\templates\pages\welcome.html:74
+msgid "درباره دیدیکالا"
+msgstr ""
+
+#: .\templates\pages\welcome.html:75
+msgid "فرصت های شغلی"
+msgstr ""
+
+#: .\templates\pages\welcome.html:76
+msgid "تماس با ما"
+msgstr ""
+
+#: .\templates\pages\welcome.html:77
+msgid "همکاری با سازمان ها"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:20
+msgid "بازگشت"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:21
+msgid "سفارش "
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:22
+msgid "ثبت شده در تاریخ"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:32
+msgid "تحویل گیرنده:"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:36
+msgid "شماره تماس تحویل گیرنده:"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:40
+msgid "کد مرسوله:"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:44
+msgid "نحوه ارسال سفارش:"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:48
+msgid "هزینه ارسال:"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:49
+msgid "رایگان"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:52
+msgid "زمان تحویل:"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:55
+msgid "تغییر زمان ارسال"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:59
+msgid "مبلغ این مرسوله:"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:70
+msgid "مرسوله 1 از 1"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:71
+msgid "لغو دریافت مرسوله"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:80
+msgid "لغو شده"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:84
+msgid "تایید سفارش"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:88
+msgid "آماده‌سازی سفارش"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:92
+msgid "خروج از مرکز پردازش"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:96
+msgid "تحویل به پست"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:100
+msgid "مرکز مبادلات پست"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:104
+msgid "تحویل به مشتری"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:115
+#: .\templates\profiles\order_list.html:19
+msgid "همه سفارش‌ها"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:123
+msgid "نام محصول"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:124
+msgid "تعداد"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:125
+msgid "قیمت واحد"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:126
+msgid "قیمت کل"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:127
+msgid "تخفیف"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:128
+msgid "قیمت نهایی"
+msgstr ""
+
+#: .\templates\profiles\order_detail.html:129
+msgid "عملیات"
+msgstr ""
+
+#: .\templates\profiles\order_list.html:27
+#: .\templates\profiles\profile.html:160
+msgid "شماره سفارش"
+msgstr ""
+
+#: .\templates\profiles\order_list.html:28
+#: .\templates\profiles\profile.html:161
+msgid "تاریخ ثبت سفارش"
+msgstr ""
+
+#: .\templates\profiles\order_list.html:29
+#: .\templates\profiles\profile.html:162
+msgid "مبلغ قابل پرداخت"
+msgstr ""
+
+#: .\templates\profiles\order_list.html:30
+#: .\templates\profiles\profile.html:163
+msgid "مبلغ کل"
+msgstr ""
+
+#: .\templates\profiles\order_list.html:31
+#: .\templates\profiles\profile.html:164
+msgid "عملیات پرداخت"
+msgstr ""
+
+#: .\templates\profiles\order_list.html:32
+#: .\templates\profiles\profile.html:165
+msgid "جزییات"
+msgstr ""
+
+#: .\templates\profiles\order_list.html:44
+msgid "پداخت شده"
+msgstr ""
+
+#: .\templates\profiles\order_list.html:46
+msgid "پرداخت نشده"
+msgstr ""
+
+#: .\templates\profiles\order_list.html:69
+msgid "محصولات پیشنهادی برای شما"
+msgstr ""
+
+#: .\templates\profiles\profile.html:28
+#: .\templates\profiles\profile_additional_info.html:26
+msgid "نام و نام خانوادگی:"
+msgstr ""
+
+#: .\templates\profiles\profile.html:40
+#: .\templates\profiles\profile_additional_info.html:38
+msgid "پست الکترونیک:"
+msgstr ""
+
+#: .\templates\profiles\profile.html:52
+#: .\templates\profiles\profile_additional_info.html:50
+msgid "شماره تلفن همراه:"
+msgstr ""
+
+#: .\templates\profiles\profile.html:64
+#: .\templates\profiles\profile_additional_info.html:62
+msgid "کد ملی:"
+msgstr ""
+
+#: .\templates\profiles\profile.html:78
+#: .\templates\profiles\profile_additional_info.html:70
+msgid "دریافت خبرنامه:"
+msgstr ""
+
+#: .\templates\profiles\profile.html:81
+#: .\templates\profiles\profile_additional_info.html:73
+msgid "خیر"
+msgstr ""
+
+#: .\templates\profiles\profile.html:86
+#: .\templates\profiles\profile_additional_info.html:78
+msgid "شماره کارت:"
+msgstr ""
+
+#: .\templates\profiles\profile.html:106
+msgid "لیست آخرین علاقه‌مندی‌ها"
+msgstr ""
+
+#: .\templates\profiles\profile.html:152
+msgid "آخرین سفارش‌ها"
+msgstr ""
+
+#: .\templates\profiles\profile.html:187
+msgid "مشاهده لیست سفارش ها"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:27
+msgid "نام"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:31
+msgid "نام خود را وارد نمایید"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:36
+msgid "نام و نام خانوادگی"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:40
+msgid "نام خانوادگی خود را وارد نمایید"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:46
+msgid "کد ملی"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:55
+msgid "شماره موبایل"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:59
+msgid "شماره موبایل خود را وارد نمایید"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:65
+msgid "آدرس ایمیل"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:69
+msgid "آدرس ایمیل خود را وارد نمایید"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:75
+msgid "عکس پروفایل"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:84
+msgid "انتخاب عکس"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:92
+msgid "شماره کارت"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:97
+msgid "بررسی اطلاعات"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:128
+msgid "ثبت اطلاعات کاربری"
+msgstr ""
+
+#: .\templates\profiles\profile_additional_info_change.html:130
+msgid "انصراف"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\forms.py:6
+msgid "Search files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:5
+msgid "Select an image to embed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:27
+msgid "Browse for the image you want, then click 'Embed Image' to continue..."
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:29
+msgid ""
+"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
+"tab."
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:50
+msgid "Images in: "
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:62
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:80
+msgid "Embed Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:146
+msgid "Play Slideshow"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:147
+msgid "Pause Slideshow"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:148
+msgid "&lsaquo; Previous Photo"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:149
+msgid "Next Photo &rsaquo;"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:150
+msgid "Next &rsaquo;"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:151
+msgid "&lsaquo; Prev"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\messages\apps.py:15
+msgid "Messages"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: .\venv\Lib\site-packages\django\core\paginator.py:30
+msgid "…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:50
+msgid "That page number is not an integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:52
+msgid "That page number is less than 1"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:54
+msgid "That page contains no results"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:104
+#: .\venv\Lib\site-packages\django\forms\fields.py:752
+msgid "Enter a valid URL."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:165
+msgid "Enter a valid integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:176
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: .\venv\Lib\site-packages\django\core\validators.py:259
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:267
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:279
+#: .\venv\Lib\site-packages\django\core\validators.py:287
+#: .\venv\Lib\site-packages\django\core\validators.py:316
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:296
+#: .\venv\Lib\site-packages\django\core\validators.py:317
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:308
+#: .\venv\Lib\site-packages\django\core\validators.py:315
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:351
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:357
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:392
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:401
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:410
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:420
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has %"
+"(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has %"
+"(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:438
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has %(show_value)"
+"d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has %"
+"(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:461
+#: .\venv\Lib\site-packages\django\forms\fields.py:347
+#: .\venv\Lib\site-packages\django\forms\fields.py:386
+msgid "Enter a number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:463
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:468
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:473
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:544
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: %"
+"(allowed_extensions)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:605
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1423
+#: .\venv\Lib\site-packages\django\forms\models.py:893
+msgid "and"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1425
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\constraints.py:17
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:128
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:129
+msgid "This field cannot be null."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:130
+msgid "This field cannot be blank."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:131
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:135
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:173
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1094
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1095
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1097
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1147
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1149
+msgid "String (unlimited)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1253
+msgid "Comma-separated integers"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1354
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1358
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1493
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1362
+msgid "Date (without time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1489
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1497
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1502
+msgid "Date (with time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1626
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1628
+msgid "Decimal number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1789
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1793
+msgid "Duration"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1845
+msgid "Email address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1870
+msgid "File path"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1948
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1950
+msgid "Floating point number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1990
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1992
+msgid "Integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2088
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2105
+msgid "Small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2113
+msgid "IPv4 address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2144
+msgid "IP address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2237
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2238
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2240
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2291
+msgid "Positive big integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2306
+msgid "Positive integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2321
+msgid "Positive small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2337
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2373
+msgid "Text"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2448
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2452
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2456
+msgid "Time"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2564
+msgid "URL"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2588
+msgid "Raw binary data"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2653
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2655
+msgid "Universally unique identifier"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:232
+msgid "File"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:393
+msgid "Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:26
+msgid "A JSON object"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:28
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:919
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:921
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1212
+msgid "One-to-one relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1269
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1271
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1319
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: .\venv\Lib\site-packages\django\forms\boundfield.py:184
+msgid ":?.!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:91
+msgid "This field is required."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:298
+msgid "Enter a whole number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:467
+#: .\venv\Lib\site-packages\django\forms\fields.py:1241
+msgid "Enter a valid date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:490
+#: .\venv\Lib\site-packages\django\forms\fields.py:1242
+msgid "Enter a valid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:517
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:551
+msgid "Enter a valid duration."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:552
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:621
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:622
+msgid "No file was submitted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:623
+msgid "The submitted file is empty."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:625
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:630
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:694
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:857
+#: .\venv\Lib\site-packages\django\forms\fields.py:949
+#: .\venv\Lib\site-packages\django\forms\models.py:1566
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:951
+#: .\venv\Lib\site-packages\django\forms\fields.py:1070
+#: .\venv\Lib\site-packages\django\forms\models.py:1564
+msgid "Enter a list of values."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1071
+msgid "Enter a complete value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1310
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1340
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: .\venv\Lib\site-packages\django\forms\forms.py:98
+msgid ":"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\forms.py:244
+#: .\venv\Lib\site-packages\django\forms\forms.py:328
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:63
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: %"
+"(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:67
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:72
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:484
+#: .\venv\Lib\site-packages\django\forms\formsets.py:491
+msgid "Order"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:886
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:891
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:898
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:907
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1338
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1429
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1568
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\utils.py:226
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:463
+msgid "Clear"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:464
+msgid "Currently"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:465
+#: .\venv\Lib\site-packages\jalali_date\templates\admin\edit_inline\jalali_stacked.html:12
+#: .\venv\Lib\site-packages\jalali_date\templates\admin\edit_inline\jalali_tabular.html:34
+msgid "Change"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:794
+msgid "Unknown"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:795
+msgid "Yes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:796
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:861
+msgid "yes,no,maybe"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:891
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:908
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:910
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:912
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:914
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:916
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:918
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:73
+msgid "p.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:74
+msgid "a.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:79
+msgid "PM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:80
+msgid "AM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:152
+msgid "midnight"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:154
+msgid "noon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:25
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:26
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:27
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:28
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:29
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:30
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:31
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:32
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:33
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:34
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:35
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:36
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:39
+msgid "jan"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:40
+msgid "feb"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:41
+msgid "mar"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:42
+msgid "apr"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:43
+msgid "may"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:44
+msgid "jun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:45
+msgid "jul"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:46
+msgid "aug"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:47
+msgid "sep"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:48
+msgid "oct"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:49
+msgid "nov"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:50
+msgid "dec"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:8
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:84
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:269
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: .\venv\Lib\site-packages\django\utils\text.py:288
+#: .\venv\Lib\site-packages\django\utils\timesince.py:135
+msgid ", "
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\translation\__init__.py:289
+msgid "name"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:111
+msgid "Forbidden"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:112
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:116
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:122
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:127
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
+"\" …> for links to third-party sites."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:136
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:142
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:148
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:64
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:115
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:349
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:380
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:652
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:692
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:169
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:38
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:40
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:79
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:220
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:221
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> is in your settings file and you have not configured any "
+"URLs."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:229
+msgid "Django Documentation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:230
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:238
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:239
+msgid "Get started with Django"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:247
+msgid "Django Community"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:248
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: .\venv\Lib\site-packages\jalali_date\templates\admin\edit_inline\jalali_stacked.html:12
+#: .\venv\Lib\site-packages\jalali_date\templates\admin\edit_inline\jalali_tabular.html:34
+msgid "View"
+msgstr ""
+
+#: .\venv\Lib\site-packages\jalali_date\templates\admin\edit_inline\jalali_stacked.html:14
+#: .\venv\Lib\site-packages\jalali_date\templates\admin\edit_inline\jalali_tabular.html:36
+msgid "View on site"
+msgstr ""
+
+#: .\venv\Lib\site-packages\jalali_date\templates\admin\edit_inline\jalali_tabular.html:20
+msgid "Delete?"
+msgstr ""
+
+#: .\venv\Lib\site-packages\jalali_date\widgets.py:49
+msgid "Date:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\jalali_date\widgets.py:49
+msgid "Time:"
+msgstr ""

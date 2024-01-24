@@ -3,15 +3,19 @@ from .forms import NewsLetterForm
 from products.models import ProductCategory, Product
 from django.core.paginator import Paginator
 
+
 # Create your views here.
 
 
 def home_page_view(request):
     categories = ProductCategory.objects.prefetch_related('children').all()
     product_discounts = Product.objects.select_related('category').filter(discount__isnull=False, discount__gt=0)
-    products_most_sales = Product.objects.select_related('category').filter(available=True).order_by('-sales_number')[:8]
-    products_most_visited = Product.objects.select_related('category').filter(available=True).order_by('-counted_views')[:8]
+    products_most_sales = Product.objects.select_related('category').filter(available=True).order_by('-sales_number')[
+                          :8]
+    products_most_visited = Product.objects.select_related('category').filter(available=True).order_by(
+        '-counted_views')[:8]
     cheapest_product = Product.objects.select_related('category').filter(available=True).order_by('price')[:8]
+    print(request.path)
     context = {
         'categories': categories,
         'product_discount': product_discounts,
@@ -31,6 +35,7 @@ def get_products_discount(request):
         'products': products
     }
     return render(request, 'pages/products_discount.html', context)
+
 
 def newsletter_view(request):
     if request.method == 'POST':

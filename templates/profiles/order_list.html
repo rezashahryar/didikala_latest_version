@@ -1,5 +1,6 @@
 {% extends 'base_pages.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block body %}
         <!-- Start main-content -->
@@ -15,7 +16,7 @@
                             <div class="col-12">
                                 <div
                                     class="section-title text-sm-title title-wide mb-1 no-after-title-wide dt-sl mb-2 px-res-1">
-                                    <h2>همه سفارش‌ها</h2>
+                                    <h2>{% trans 'همه سفارش‌ها' %}</h2>
                                 </div>
                                 <div class="dt-sl">
                                     <div class="table-responsive">
@@ -23,26 +24,26 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>شماره سفارش</th>
-                                                    <th>تاریخ ثبت سفارش</th>
-                                                    <th>مبلغ قابل پرداخت</th>
-                                                    <th>مبلغ کل</th>
-                                                    <th>عملیات پرداخت</th>
-                                                    <th>جزییات</th>
+                                                    <th>{% trans 'شماره سفارش' %}</th>
+                                                    <th>{% trans 'تاریخ ثبت سفارش' %}</th>
+                                                    <th>{% trans 'مبلغ قابل پرداخت' %}</th>
+                                                    <th>{% trans 'مبلغ کل' %}</th>
+                                                    <th>{% trans 'عملیات پرداخت' %}</th>
+                                                    <th>{% trans 'جزییات' %}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                             {% for order in user.orders.all %}
                                                 <tr>
-                                                    <td>1</td>
+                                                    <td>{{ forloop.counter }}</td>
                                                     <td>{{ order.order_code }}</td>
                                                     <td>۳۱ مرداد ۱۳۹۸</td>
-                                                    <td>{{ order.get_total_price }}تومان</td>
-                                                    <td>{{ order.get_total_price }} تومان</td>
+                                                    <td>{{ order.get_total_price }}{% trans 'تومان' %}</td>
+                                                    <td>{{ order.get_total_price }} {% trans 'تومان' %}</td>
                                                     {% if order.is_paid %}
-                                                    <td>پداخت شده</td>
+                                                    <td>{% trans 'پداخت شده' %}</td>
                                                     {% else %}
-                                                    <td>پرداخت نشده</td>
+                                                    <td>{% trans 'پرداخت نشده' %}</td>
                                                     {% endif %}
                                                     <td class="details-link">
                                                         <a href="{% url 'profiles:order_detail' order.id %}">
@@ -65,8 +66,8 @@
                     <div class="row mb-3">
                         <div class="col-12">
                             <div class="section-title text-sm-title title-wide no-after-title-wide">
-                                <h2>محصولات پیشنهادی برای شما</h2>
-                                <a href="#">مشاهده همه</a>
+                                <h2>{% trans 'محصولات پیشنهادی برای شما' %}</h2>
+                                <a href="#">{% trans 'مشاهده همه' %}</a>
                             </div>
                         </div>
 

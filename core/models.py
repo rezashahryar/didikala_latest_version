@@ -1,12 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.dispatch import receiver
-from django.db.models.signals import post_save
+from django.utils.translation import gettext_lazy as _
 # create your models here
 
 
 class User(AbstractUser):
-    mobile = models.CharField(max_length=13, unique=True)
+    mobile = models.CharField(_('شماره موبایل'), max_length=13, unique=True)
 
     USERNAME_FIELD = 'mobile'
 
@@ -24,9 +23,8 @@ class User(AbstractUser):
         ordering = ('-mobile',)
 
 
-
 class Activation(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name=_('کاربر'))
     created_at = models.DateTimeField(auto_now_add=True)
-    code = models.CharField(max_length=20, unique=True)
-    email = models.EmailField(blank=True)
+    code = models.CharField(_('کد'), max_length=20, unique=True)
+    email = models.EmailField(_('ایمیل'), blank=True)

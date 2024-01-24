@@ -4,7 +4,12 @@ from .models import Profile
 
 
 class ProfileEditForm(forms.ModelForm):
-    full_name = forms.CharField(required=True)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.Meta.required:
+            self.fields[field].required = True
+
     class Meta:
         model = Profile
         fields = ['full_name', 'phone_number', 'email', 'national_code', 'image']
+        required = ['full_name', 'phone_number', 'email', 'national_code', 'image']

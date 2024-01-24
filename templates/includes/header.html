@@ -1,5 +1,6 @@
 {% load static %}
 {% load pages_tags %}
+{% load i18n %}
 
 <header class="main-header">
     <!-- Start ads -->
@@ -65,30 +66,30 @@
                         <li class="nav-item account dropdown">
                             <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
-                                <span class="label-dropdown">حساب کاربری</span>
+                                <span class="label-dropdown">{% trans 'حساب کاربری' %}</span>
                                 <i class="mdi mdi-account-circle-outline"></i>
                             </a>
                             {% if user.is_authenticated %}
                                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-left">
                                     <a class="dropdown-item" href="{% url 'profiles:profile_main_page' %}">
-                                        <i class="mdi mdi-account-card-details-outline"></i>پروفایل ({{ user.get_id }})
+                                        <i class="mdi mdi-account-card-details-outline"></i>{% trans 'پروفایل' %} ({{ user.get_id }})
                                     </a>
                                     <a class="dropdown-item" href="#">
                                         <span class="float-left badge badge-dark">۴</span>
-                                        <i class="mdi mdi-comment-text-outline"></i>پیغام ها
+                                        <i class="mdi mdi-comment-text-outline"></i>{% trans 'پیغام ها' %}
                                     </a>
                                     <a class="dropdown-item" href="{% url 'profiles:profile_edit' %}">
-                                        <i class="mdi mdi-account-edit-outline"></i>ویرایش حساب کاربری
+                                        <i class="mdi mdi-account-edit-outline"></i>{% trans 'ویرایش حساب کاربری' %}
                                     </a>
                                     <div class="dropdown-divider" role="presentation"></div>
                                     <a class="dropdown-item" href="{% url 'core:logout_view' %}">
-                                        <i class="mdi mdi-logout-variant"></i>خروج
+                                        <i class="mdi mdi-logout-variant"></i>{% trans 'خروج' %}
                                     </a>
                                 </div>
                             {% else %}
                                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-left">
                                     <a class="dropdown-item" href="{% url 'core:login_view' %}">
-                                        <i class="mdi mdi-logout-variant"></i>ورود یا ثبت نام
+                                        <i class="mdi mdi-logout-variant"></i>{% trans 'ورود یا ثبت نام' %}
                                     </a>
                                 </div>
                             {% endif %}
@@ -107,7 +108,7 @@
             <nav class="main-menu d-flex justify-content-md-between justify-content-end dt-sl">
                 <ul class="list hidden-sm">
                     <li class="list-item category-list">
-                        <a href="#"><i class="fal fa-bars ml-1"></i>دسته بندی کالاها</a>
+                        <a href="#"><i class="fal fa-bars ml-1"></i>{% trans 'دسته بندی کالاها' %}</a>
                         <ul>
                             {% for cat in categories %}
                                 <li>
@@ -132,9 +133,7 @@
                                     <li class="list-item">
                                         <a class="nav-link" href="#">{{ child.title }}</a>
                                     </li>
-
                                     {% endfor %}
-
                                 </ul>
                             </li>
                         </ul>
@@ -142,16 +141,14 @@
                     </li>
                     {% endfor %}
                     <!-- mega menu 4 column -->
-
                     <li class="list-item">
-                        <a class="nav-link" href="{% url 'blog:blog_list_view' %}">مقالات</a>
+                        <a class="nav-link" href="{% url 'blog:blog_list_view' %}">{% trans 'مقالات' %}</a>
                     </li>
-
                 </ul>
                 <div class="nav">
                     <div class="nav-item cart--wrapper">
                         <a class="nav-link" href="#">
-                            <span class="label-dropdown">سبد خرید</span>
+                            <span class="label-dropdown">{% trans 'سبد خرید' %}</span>
                             <i class="mdi mdi-cart-outline"></i>
                             <span class="count">{{ cart|length }}</span>
                         </a>
@@ -159,13 +156,13 @@
                             <div class="header-cart-info-header">
                                 {% if cart %}
                                     <div class="header-cart-info-count">
-                                        {{ cart|length }} کالا
+                                        {{ cart|length }} {% trans 'کالا' %}
                                     </div>
                                     <a href="{% url 'shop:cart_detail' %}" class="header-cart-info-link">
-                                        <span>مشاهده سبد خرید</span>
+                                        <span>{% trans 'مشاهده سبد خرید' %}</span>
                                     </a>
                                 {% else %}
-                                    <p style="font-size: 13px;">در حال حاضر در سبد خرید شما کالایی وجود ندارد</p>
+                                    <p style="font-size: 13px;">{% trans 'در حال حاضر در سبد خرید شما کالایی وجود ندارد' %}</p>
                                 {% endif %}
                             </div>
                             <ul class="header-basket-list do-nice-scroll">
@@ -206,15 +203,15 @@
                             {% if cart %}
                                 <div class="header-cart-info-footer">
                                     <div class="header-cart-info-total">
-                                        <span class="header-cart-info-total-text">مبلغ قابل پرداخت:</span>
+                                        <span class="header-cart-info-total-text">{% trans 'مبلغ قابل پرداخت:' %}</span>
                                         <p class="header-cart-info-total-amount">
                                         <span class="header-cart-info-total-amount-number">
-                                          {{ cart.get_total_price }} <span>تومان</span></span>
+                                          {{ cart.get_total_price }} <span>{% trans 'تومان' %}</span></span>
                                         </p>
                                     </div>
                                     <div>
                                         <a href="{% url 'shop:information_order_view' %}" class="header-cart-info-submit">
-                                            ثبت سفارش
+                                            {% trans 'ثبت سفارش' %}
                                         </a>
                                     </div>
                                 </div>
