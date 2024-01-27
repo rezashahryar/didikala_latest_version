@@ -11,4 +11,6 @@ urlpatterns = [
     path('filter/', views.product_filter, name='product_filter'),
     path('question/<int:pk>/', views.question, name='question'),
     path('answer/<int:pk>/<int:qpk>', views.answer, name='answer'),
+    path('add/interest-product/<int:pk>/', views.add_interest_product, name='add_interest_product'),
+    path('delete/interest-product/<int:pk>/', views.delete_interest_product, name='delete_interest_product'),
 ]

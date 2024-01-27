@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from .forms import ProfileEditForm
 from shop.forms import AddressForm
-from django.db.models import Prefetch
+from products.models import InterestProductUser
 # Create your views here.
 
 
@@ -16,9 +16,11 @@ def profile_view(request):
     if not profile:
         return redirect('profiles:profile_main_page')
     orders = Order.objects.prefetch_related('items').filter(user=request.user)[:3]
+    interest_product = InterestProductUser.objects.filter(user=request.user)[:4]
     context = {
         "profile": profile,
-        "orders": orders
+        "orders": orders,
+        'interest_products': interest_product,
     }
     return render(request, 'profiles/profile.html', context)
 
@@ -67,7 +69,7 @@ def profile_additional_info_change_view(request):
 
 @login_required()
 def order_detail(request, pk):
-    order = get_object_or_404(Order, id=pk)
+    order = get_object_or_404(Order.objects.prefetch_related('items__product'), id=pk)
     return render(request, 'profiles/order_detail.html', {"order": order})
 
 

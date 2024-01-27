@@ -1,9 +1,9 @@
 from django.contrib import admin
-from . models import Product, ProductCategory, ProductProperties, SubProductCategory, SetProductProperty, Brand, Color, Question
+from . models import Product, ProductCategory, ProductProperties, SubProductCategory, SetProductProperty, Brand, Color, Question, InterestProductUser
 # Register your models here.
 
 
-@admin.register(Product)
+@admin.register(Product, InterestProductUser)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('title', 'product_code', 'available', 'price', 'category', 'discount')
     list_editable = ['available', 'discount']

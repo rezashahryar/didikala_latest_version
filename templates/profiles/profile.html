@@ -107,33 +107,19 @@
                                     </div>
                                     <div class="profile-section dt-sl">
                                         <ul class="list-favorites">
+                                            {% for product in interest_products %}
                                             <li>
-                                                <a href="#">
-                                                    <img src="./assets/img/products/016.jpg" alt="">
-                                                    <span>کت مردانه مجلسی مدل k-m-5500</span>
+                                                <a href="{{ product.get_absolute_url }}">
+                                                    <img src="{{ product.cover.url }}" alt="">
+                                                    <span>{{ product.title }}</span>
                                                 </a>
-                                                <button>
+                                                <a href="{% url 'products:delete_interest_product' product.id %}">
+                                                    <button>
                                                     <i class="mdi mdi-trash-can-outline"></i>
                                                 </button>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img src="./assets/img/products/020.jpg" alt="">
-                                                    <span>کت مردانه مجلسی مدل k-m-5640</span>
                                                 </a>
-                                                <button>
-                                                    <i class="mdi mdi-trash-can-outline"></i>
-                                                </button>
                                             </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img src="./assets/img/products/017.jpg" alt="">
-                                                    <span>کت مردانه مجلسی مدل k-m-5110</span>
-                                                </a>
-                                                <button>
-                                                    <i class="mdi mdi-trash-can-outline"></i>
-                                                </button>
-                                            </li>
+                                            {% endfor %}
                                         </ul>
                                         <div class="profile-section-link">
 {#                                            <a href="#" class="border-bottom-dt">#}

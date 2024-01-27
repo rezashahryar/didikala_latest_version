@@ -133,3 +133,7 @@ class Question(models.Model):
         return format_html(
             '<span>{}</span><b> for </b><span>{}</span> product', self.user, self.product
         )
+
+
+class InterestProductUser(Product):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='interest_product')

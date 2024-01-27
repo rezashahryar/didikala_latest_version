@@ -29,7 +29,7 @@
                         <!-- Product Options-->
                         <ul class="gallery-options">
                             <li>
-                                <button class="add-favorites"><i class="mdi mdi-heart"></i></button>
+                                <a style="font-size: 20px;" href="{% url 'products:add_interest_product' product.id %}" class="add-favorites"><i class="mdi mdi-heart"></i></a>
                                 <span class="tooltip-option">افزودن به علاقمندی</span>
                             </li>
                         </ul>
