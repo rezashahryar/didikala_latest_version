@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-24 21:56+0330\n"
-"PO-Revision-Date: 2024-01-24 23:20+0000\n"
+"POT-Creation-Date: 2024-01-25 03:14+0330\n"
+"PO-Revision-Date: 2024-01-25 03:16+0000\n"
 "Last-Translator:   <reza.shahryarineya7851@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,11 +26,11 @@ msgstr "Account"
 
 #: .\core\forms.py:14 .\core\forms.py:24 .\core\templates\core\login.html:32
 msgid "رمز عبور"
-msgstr ""
+msgstr "password"
 
 #: .\core\forms.py:15
 msgid "مرا به یاد داشته باش"
-msgstr ""
+msgstr "remember me"
 
 #: .\core\forms.py:25 .\core\forms.py:65 .\core\models.py:30
 #: .\pages\models.py:9 .\profiles\models.py:12 .\shop\models.py:32
@@ -46,7 +46,7 @@ msgstr "Account"
 #: .\core\models.py:8 .\profiles\models.py:14
 #: .\templates\profiles\profile_additional_info_change.html:55
 msgid "شماره موبایل"
-msgstr ""
+msgstr "mobile number"
 
 #: .\core\models.py:27 .\products\models.py:126 .\profiles\models.py:8
 #: .\shop\models.py:27 .\shop\models.py:73
@@ -55,12 +55,12 @@ msgstr "user"
 
 #: .\core\models.py:29 .\shop\models.py:11
 msgid "کد"
-msgstr ""
+msgstr "code"
 
 #: .\core\templates\core\emails\activate_user.html:15
 #: .\core\templates\core\emails\activate_user.txt:3
 msgid "برای فعالسازی حساب خود لطفا بر روی لینک زیر کلیک کنید:"
-msgstr ""
+msgstr "To activate your account, please click on the following link:"
 
 #: .\core\templates\core\emails\restore_password_email.html:15
 #: .\core\templates\core\emails\restore_password_email.txt:3
@@ -149,7 +149,6 @@ msgstr "Your account has been successfully activated"
 
 #: .\products\models.py:12 .\products\models.py:19 .\products\models.py:26
 #: .\products\models.py:34 .\products\models.py:48 .\products\models.py:71
-#| msgid "نام"
 msgid "عنوان"
 msgstr "title"
 
@@ -377,15 +376,15 @@ msgstr "your cart is empty"
 msgid "سفارش شما با موفیقت ثبت شد"
 msgstr "Your order has been successfully registered"
 
-#: .\shop\views.py:239
+#: .\shop\views.py:240
 msgid "پرداخت شما با موفقیت انجام شد"
 msgstr "Your payment has been successfully completed"
 
-#: .\shop\views.py:241
+#: .\shop\views.py:242
 msgid "این تراکنش قبلا ثبت شده است"
 msgstr "This transaction has already been registered"
 
-#: .\shop\views.py:243 .\shop\views.py:246
+#: .\shop\views.py:244 .\shop\views.py:247
 msgid "تراکنش ناموفق بود"
 msgstr "The transaction was unsuccessful"
 
@@ -543,6 +542,11 @@ msgstr "About Top Kala"
 msgid "از تخفیف‌ها و جدیدترین‌های فروشگاه باخبر شوید:"
 msgstr "Find out about discounts and the latest in the store:"
 
+#: .\templates\includes\footer.html:104
+#| msgid "آدرس ایمیل خود را وارد نمایید"
+msgid "آدرس ایمیل خود را وارد کنید..."
+msgstr "Enter your email address"
+
 #: .\templates\includes\footer.html:109
 msgid "ما را در شبکه های اجتماعی دنبال کنید."
 msgstr "Follow us on social networks."
@@ -595,6 +599,7 @@ msgid "سبد خرید"
 msgstr "Cart"
 
 #: .\templates\includes\header.html:159
+#: .\templates\includes\product_category_objects.html:9
 msgid "کالا"
 msgstr "product"
 
@@ -945,256 +950,256 @@ msgstr "Completing the user account"
 
 #: .\templates\pages\welcome.html:74
 msgid "درباره دیدیکالا"
-msgstr ""
+msgstr "About Didikala"
 
 #: .\templates\pages\welcome.html:75
 msgid "فرصت های شغلی"
-msgstr ""
+msgstr "Career Opportunities"
 
 #: .\templates\pages\welcome.html:76
 msgid "تماس با ما"
-msgstr ""
+msgstr "contact us"
 
 #: .\templates\pages\welcome.html:77
 msgid "همکاری با سازمان ها"
-msgstr ""
+msgstr "Cooperation with organizations"
 
 #: .\templates\profiles\order_detail.html:20
 msgid "بازگشت"
-msgstr ""
+msgstr "coming back"
 
 #: .\templates\profiles\order_detail.html:21
 msgid "سفارش "
-msgstr ""
+msgstr "Order"
 
 #: .\templates\profiles\order_detail.html:22
 msgid "ثبت شده در تاریخ"
-msgstr ""
+msgstr "Recorded in history"
 
 #: .\templates\profiles\order_detail.html:32
 msgid "تحویل گیرنده:"
-msgstr ""
+msgstr "Transferee:"
 
 #: .\templates\profiles\order_detail.html:36
 msgid "شماره تماس تحویل گیرنده:"
-msgstr ""
+msgstr "Contact number of the recipient:"
 
 #: .\templates\profiles\order_detail.html:40
 msgid "کد مرسوله:"
-msgstr ""
+msgstr "Shipment code:"
 
 #: .\templates\profiles\order_detail.html:44
 msgid "نحوه ارسال سفارش:"
-msgstr ""
+msgstr "How to send the order:"
 
 #: .\templates\profiles\order_detail.html:48
 msgid "هزینه ارسال:"
-msgstr ""
+msgstr "shipping cost:"
 
 #: .\templates\profiles\order_detail.html:49
 msgid "رایگان"
-msgstr ""
+msgstr "Free"
 
 #: .\templates\profiles\order_detail.html:52
 msgid "زمان تحویل:"
-msgstr ""
+msgstr "Delivery time:"
 
 #: .\templates\profiles\order_detail.html:55
 msgid "تغییر زمان ارسال"
-msgstr ""
+msgstr "Change the delivery time"
 
 #: .\templates\profiles\order_detail.html:59
 msgid "مبلغ این مرسوله:"
-msgstr ""
+msgstr "The amount of this shipment:"
 
 #: .\templates\profiles\order_detail.html:70
 msgid "مرسوله 1 از 1"
-msgstr ""
+msgstr "Shipment 1 of 1"
 
 #: .\templates\profiles\order_detail.html:71
 msgid "لغو دریافت مرسوله"
-msgstr ""
+msgstr "Cancel receiving the shipment"
 
 #: .\templates\profiles\order_detail.html:80
 msgid "لغو شده"
-msgstr ""
+msgstr "Canceled"
 
 #: .\templates\profiles\order_detail.html:84
 msgid "تایید سفارش"
-msgstr ""
+msgstr "order confirmation"
 
 #: .\templates\profiles\order_detail.html:88
 msgid "آماده‌سازی سفارش"
-msgstr ""
+msgstr "Order preparation"
 
 #: .\templates\profiles\order_detail.html:92
 msgid "خروج از مرکز پردازش"
-msgstr ""
+msgstr "Leaving the processing center"
 
 #: .\templates\profiles\order_detail.html:96
 msgid "تحویل به پست"
-msgstr ""
+msgstr "Delivery to the post office"
 
 #: .\templates\profiles\order_detail.html:100
 msgid "مرکز مبادلات پست"
-msgstr ""
+msgstr "Postal exchange center"
 
 #: .\templates\profiles\order_detail.html:104
 msgid "تحویل به مشتری"
-msgstr ""
+msgstr "Delivery to the customer"
 
 #: .\templates\profiles\order_detail.html:115
 #: .\templates\profiles\order_list.html:19
 msgid "همه سفارش‌ها"
-msgstr ""
+msgstr "All orders"
 
 #: .\templates\profiles\order_detail.html:123
 msgid "نام محصول"
-msgstr ""
+msgstr "Product Name"
 
 #: .\templates\profiles\order_detail.html:125
 msgid "قیمت واحد"
-msgstr ""
+msgstr "Unit price"
 
 #: .\templates\profiles\order_detail.html:126
 msgid "قیمت کل"
-msgstr ""
+msgstr "Total price"
 
 #: .\templates\profiles\order_detail.html:128
 msgid "قیمت نهایی"
-msgstr ""
+msgstr "final price"
 
 #: .\templates\profiles\order_detail.html:129
 msgid "عملیات"
-msgstr ""
+msgstr "operation"
 
 #: .\templates\profiles\order_list.html:27
 #: .\templates\profiles\profile.html:160
 msgid "شماره سفارش"
-msgstr ""
+msgstr "Order number"
 
 #: .\templates\profiles\order_list.html:28
 #: .\templates\profiles\profile.html:161
 msgid "تاریخ ثبت سفارش"
-msgstr ""
+msgstr "Order registration date"
 
 #: .\templates\profiles\order_list.html:29
 #: .\templates\profiles\profile.html:162
 msgid "مبلغ قابل پرداخت"
-msgstr ""
+msgstr "The amount payable"
 
 #: .\templates\profiles\order_list.html:31
 #: .\templates\profiles\profile.html:164
 msgid "عملیات پرداخت"
-msgstr ""
+msgstr "Payment operation"
 
 #: .\templates\profiles\order_list.html:32
 #: .\templates\profiles\profile.html:165
 msgid "جزییات"
-msgstr ""
+msgstr "details"
 
 #: .\templates\profiles\order_list.html:44
 msgid "پداخت شده"
-msgstr ""
+msgstr "paid"
 
 #: .\templates\profiles\order_list.html:46
 msgid "پرداخت نشده"
-msgstr ""
+msgstr "unpaid"
 
 #: .\templates\profiles\order_list.html:69
 msgid "محصولات پیشنهادی برای شما"
-msgstr ""
+msgstr "Suggested products for you"
 
 #: .\templates\profiles\profile.html:28
 #: .\templates\profiles\profile_additional_info.html:26
 msgid "نام و نام خانوادگی:"
-msgstr ""
+msgstr "full name"
 
 #: .\templates\profiles\profile.html:40
 #: .\templates\profiles\profile_additional_info.html:38
 msgid "پست الکترونیک:"
-msgstr ""
+msgstr "E-mail:"
 
 #: .\templates\profiles\profile.html:52
 #: .\templates\profiles\profile_additional_info.html:50
 msgid "شماره تلفن همراه:"
-msgstr ""
+msgstr "Mobile Phone Number:"
 
 #: .\templates\profiles\profile.html:64
 #: .\templates\profiles\profile_additional_info.html:62
 msgid "کد ملی:"
-msgstr ""
+msgstr "National Code:"
 
 #: .\templates\profiles\profile.html:78
 #: .\templates\profiles\profile_additional_info.html:70
 msgid "دریافت خبرنامه:"
-msgstr ""
+msgstr "Subscribe to Newsletter:"
 
 #: .\templates\profiles\profile.html:81
 #: .\templates\profiles\profile_additional_info.html:73
 msgid "خیر"
-msgstr ""
+msgstr "no"
 
 #: .\templates\profiles\profile.html:86
 #: .\templates\profiles\profile_additional_info.html:78
 msgid "شماره کارت:"
-msgstr ""
+msgstr "card number:"
 
 #: .\templates\profiles\profile.html:106
 msgid "لیست آخرین علاقه‌مندی‌ها"
-msgstr ""
+msgstr "List of recent favorites"
 
 #: .\templates\profiles\profile.html:152
 msgid "آخرین سفارش‌ها"
-msgstr ""
+msgstr "Latest orders"
 
 #: .\templates\profiles\profile.html:187
 msgid "مشاهده لیست سفارش ها"
-msgstr ""
+msgstr "View the list of orders"
 
 #: .\templates\profiles\profile_additional_info_change.html:31
 msgid "نام خود را وارد نمایید"
-msgstr ""
+msgstr "Enter your name"
 
 #: .\templates\profiles\profile_additional_info_change.html:40
 msgid "نام خانوادگی خود را وارد نمایید"
-msgstr ""
+msgstr "Enter your last name"
 
 #: .\templates\profiles\profile_additional_info_change.html:59
 msgid "شماره موبایل خود را وارد نمایید"
-msgstr ""
+msgstr "Enter your mobile number"
 
 #: .\templates\profiles\profile_additional_info_change.html:65
 msgid "آدرس ایمیل"
-msgstr ""
+msgstr "E-mail"
 
 #: .\templates\profiles\profile_additional_info_change.html:69
 msgid "آدرس ایمیل خود را وارد نمایید"
-msgstr ""
+msgstr "Enter your email address"
 
 #: .\templates\profiles\profile_additional_info_change.html:75
 msgid "عکس پروفایل"
-msgstr ""
+msgstr "Profile picture"
 
 #: .\templates\profiles\profile_additional_info_change.html:84
 msgid "انتخاب عکس"
-msgstr ""
+msgstr "Select photo"
 
 #: .\templates\profiles\profile_additional_info_change.html:92
 msgid "شماره کارت"
-msgstr ""
+msgstr "card number"
 
 #: .\templates\profiles\profile_additional_info_change.html:97
 msgid "بررسی اطلاعات"
-msgstr ""
+msgstr "Check information"
 
 #: .\templates\profiles\profile_additional_info_change.html:128
 msgid "ثبت اطلاعات کاربری"
-msgstr ""
+msgstr "Registration of user information"
 
 #: .\templates\profiles\profile_additional_info_change.html:130
 msgid "انصراف"
-msgstr ""
+msgstr "opt out"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\forms.py:6
 msgid "Search files"

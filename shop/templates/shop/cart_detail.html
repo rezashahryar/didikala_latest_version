@@ -1,9 +1,10 @@
 {% extends 'base_pages.html' %}
 {% load static %}
 {% load humanize %}
+{% load i18n %}
 
 {% block title %}
-    سبد خرید
+    {% trans 'سبد خرید' %}
 {% endblock title %}
 
 {% block body %}
@@ -16,10 +17,10 @@
                         <div class="nav nav-tabs border-bottom" id="nav-tab" role="tablist">
                             <a class="nav-item nav-link d-inline-flex w-auto active" id="nav-home-tab"
                                data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home"
-                               aria-selected="true">سبد خرید<span class="count-cart">{{ cart|length }}</span></a>
+                               aria-selected="true">{% trans 'سبد خرید' %}<span class="count-cart">{{ cart|length }}</span></a>
                             <a class="nav-item nav-link d-inline-flex w-auto" id="nav-profile-tab" data-toggle="tab"
                                href="#nav-profile" role="tab" aria-controls="nav-profile"
-                               aria-selected="false">لیست خرید بعدی<span class="count-cart">0</span></a>
+                               aria-selected="false">{% trans 'لیست خرید بعدی' %}<span class="count-cart">0</span></a>
                         </div>
                     </nav>
                 </div>
@@ -31,8 +32,8 @@
                                 <div class="col-xl-9 col-lg-8 col-12 px-0">
                                     <div class="table-responsive checkout-content dt-sl">
                                         <div class="checkout-header checkout-header--express">
-                                            <span class="checkout-header-title">ارسال عادی</span>
-                                            <span class="checkout-header-extra-info">({{ cart|length }} کالا)</span>
+                                            <span class="checkout-header-title">{% trans 'ارسال عادی' %}</span>
+                                            <span class="checkout-header-extra-info">({{ cart|length }} {% trans 'کالا' %})</span>
                                         </div>
                                         <table class="table table-cart">
                                             <tbody>
@@ -59,11 +60,10 @@
                                                                          style="background-color:#212121"></div>
                                                             </span>
                                                         </div>
-                                                        <a href="#" class="checkout-save-for-later">انتقال به لیست خرید
-                                                            بعدی</a>
+                                                        <a href="#" class="checkout-save-for-later">{% trans 'انتقال به لیست خرید بعدی' %}</a>
                                                     </td>
                                                     <td>
-                                                        <p class="mb-0">تعداد</p>
+                                                        <p class="mb-0">{% trans 'تعداد' %}</p>
                                                         <div class="number-input">
                                                             <button
                                                                     onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
@@ -86,7 +86,7 @@
                                     <div class="dt-sn dt-sn--box border mb-2">
                                         <ul class="checkout-summary-summary">
                                             <li>
-                                                <span>مبلغ کل ({{ cart|length }} کالا)</span><span>{{ cart.get_total_price|intcomma:False }} تومان</span>
+                                                <span>{% trans 'مبلغ کل' %} ({{ cart|length }} {% trans 'کالا' %})</span><span>{{ cart.get_total_price|intcomma:False }} {% trans 'تومان' %}</span>
                                             </li>
                                             {#                                                <li class="checkout-summary-discount">#}
                                             {#                                                    <span>سود شما از خرید</span><span><span>(۱٪)</span>۲۰۰,۰۰۰#}
@@ -111,29 +111,28 @@
                                             <div></div>
                                         </div>
                                         <div class="checkout-summary-content">
-                                            <div class="checkout-summary-price-title">مبلغ قابل پرداخت:</div>
+                                            <div class="checkout-summary-price-title">{% trans 'مبلغ قابل پرداخت:' %}</div>
                                             <div class="checkout-summary-price-value">
                                                 <span class="checkout-summary-price-value-amount">{{ cart.get_total_price|intcomma:False }}</span>
-                                                تومان
+                                                {% trans 'تومان' %}
                                             </div>
                                             {% if cart.coupon %}
                                                 <div class="checkout-summary-price-value">
-                                                    <span class="checkout-summary-price-value-amount">{{ cart.coupon.discount }}% تخفیف</span>
+                                                    <span class="checkout-summary-price-value-amount">{{ cart.coupon.discount }}% {% trans 'تخفیف' %}</span>
                                                     <span> | </span>
                                                     <span class="checkout-summary-price-value-amount">{{ cart.get_total_price_after_discount|intcomma:False }}</span>
-                                                    تومان
+                                                    {% trans 'تومان' %}
                                                 </div>
                                             {% endif %}
                                             <a href="{% url 'shop:information_order_view' %}" class="mb-2 d-block">
                                                 <button class="btn-primary-cm btn-with-icon w-100 text-center pr-0">
                                                     <i class="mdi mdi-arrow-left"></i>
-                                                    ادامه ثبت سفارش
+                                                    {% trans 'ادامه ثبت سفارش' %}
                                                 </button>
                                             </a>
                                             <div>
                                                     <span>
-                                                        کالاهای موجود در سبد شما ثبت و رزرو نشده‌اند، برای ثبت سفارش
-                                                        مراحل بعدی را تکمیل کنید.
+                                                       {% trans ' کالاهای موجود در سبد شما ثبت و رزرو نشده‌اند، برای ثبت سفارشمراحل بعدی را تکمیل کنید.' %}
                                                     </span><span class="help-sn" data-toggle="tooltip" data-html="true"
                                                                  data-placement="bottom"
                                                                  title="<div class='help-container is-right'><div class='help-arrow'></div><p class='help-text'>محصولات موجود در سبد خرید شما تنها در صورت ثبت و پرداخت سفارش برای شما رزرو می‌شوند. در صورت عدم ثبت سفارش، دیجی‌کالا هیچگونه مسئولیتی در قبال تغییر قیمت یا موجودی این کالاها ندارد.</p></div>">
@@ -152,15 +151,15 @@
                                         <ul>
                                             <li class="checkout-feature-aside-item">
                                                 <img src="{% static 'assets/img/svg/return-policy.svg' %}" alt="">
-                                                هفت روز ضمانت تعویض
+                                                {% trans 'هفت روز ضمانت تعویض' %}
                                             </li>
                                             <li class="checkout-feature-aside-item">
                                                 <img src="{% static 'assets/img/svg/payment-terms.svg' %}" alt="">
-                                                پرداخت در محل با کارت بانکی
+                                                {% trans 'پرداخت در محل با کارت بانکی' %}
                                             </li>
                                             <li class="checkout-feature-aside-item">
                                                 <img src="{% static 'assets/img/svg/delivery.svg' %}" alt="">
-                                                تحویل اکسپرس
+                                                {% trans 'تحویل اکسپرس' %}
                                             </li>
                                         </ul>
                                     </div>
@@ -173,34 +172,35 @@
                                 <div class="col-xl-9 col-lg-8 col-12 px-0">
                                     <div class="table-responsive checkout-content dt-sl">
                                         <div class="checkout-header checkout-header--express">
-                                            <span class="checkout-header-title">ارسال عادی</span>
-                                            <span class="checkout-header-extra-info">({{ cart|length }} کالا)</span>
+                                            <span class="checkout-header-title">{% trans 'ارسال عادی' %}</span>
+                                            <span class="checkout-header-extra-info">({{ cart|length }} {% trans 'کالا' %})</span>
                                             <a class="checkout-add-all-to-cart">
-                                                افزودن همه به سبد خرید
+                                                {% trans 'افزودن همه به سبد خرید' %}
                                             </a>
                                         </div>
                                         <table class="table table-cart">
                                             <tbody>
+                                            {% for item in next_cart %}
                                             <tr class="checkout-item border-bottom">
                                                 <td>
-                                                    <img src="{% static 'assets/img/cart/04.jpg' %}" alt="">
+                                                    <img src="{{ item.product.cover.url }}" alt="">
                                                     <button class="checkout-btn-remove">&times;</button>
                                                 </td>
                                                 <td class="text-right">
                                                     <a href="#">
                                                         <h3 class="checkout-title">
-                                                            گوشی موبایل اپل مدل iPhone X ظرفیت 256 گیگابایت
+                                                            {{ item.product.title }}
                                                         </h3>
                                                     </a>
-                                                    <p class="checkout-dealer">
-                                                        فروشنده: آیش شبکه
-                                                    </p>
-                                                    <p class="checkout-guarantee">گارانتی 18 ماهه آیش
+{#                                                    <p class="checkout-dealer">#}
+{#                                                        فروشنده: آیش شبکه#}
+{#                                                    </p>#}
+{#                                                    <p class="checkout-guarantee">گارانتی 18 ماهه آیش#}
                                                     </p>
                                                     <div class="checkout-variant checkout-variant--color">
                                                         <span class="checkout-variant-title">رنگ :</span>
                                                         <span class="checkout-variant-value">
-                                                                    مشکی
+                                                                    {{ item.color }}
                                                                     <div class="checkout-variant-shape"
                                                                          style="background-color:#212121"></div>
                                                                 </span>
@@ -213,14 +213,15 @@
                                                         <button
                                                                 onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
                                                         <input class="quantity" min="1" name="quantity"
-                                                               value="1" type="number">
+                                                               value="{{ item.quantity }}" type="number">
                                                         <button
                                                                 onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                                                                 class="plus"></button>
                                                     </div>
                                                 </td>
-                                                <td><strong>۱۲,۲۰۰,۰۰۰ تومان</strong></td>
+                                                <td><strong>{{ item.total_price }} تومان</strong></td>
                                             </tr>
+                                            {% endfor %}
                                             </tbody>
                                         </table>
                                     </div>

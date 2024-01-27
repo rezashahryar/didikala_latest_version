@@ -52,7 +52,9 @@ class CartDetailView(View):
     def get(self, request):
         cart = Cart(request)
         if cart:
-            return render(request, 'shop/cart_detail.html', {'cart': cart, "coupon_form": CouponApplyForm()})
+            return render(request, 'shop/cart_detail.html', {'cart': cart,
+                                                             'coupon_form': CouponApplyForm(),
+                                                             })
         else:
             return render(request, 'shop/cart_empty.html')
 

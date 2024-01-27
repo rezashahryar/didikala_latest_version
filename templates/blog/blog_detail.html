@@ -4,7 +4,7 @@
 {% load i18n %}
 
 {% block title %}
-  مقاله {{ blog.title }}
+  {% trans 'مقاله' %} {{ blog.title }}
 {% endblock %}
 
 {% block body %}
@@ -72,20 +72,20 @@
                         <div class="col-12">
                           <div class="form-row-title mb-2">{% trans 'عنوان نظر شما (اجباری)' %}</div>
                           <div class="form-row">
-                            <input name="subject" class="input-ui pr-2" type="text" placeholder="عنوان نظر خود را بنویسید" />
+                            <input name="subject" class="input-ui pr-2" type="text" placeholder="{% trans 'عنوان نظر خود را بنویسید' %}" />
                           </div>
                         </div>
                         <div class="col-12 mt-3 mb-3">
                           <div class="form-row-title mb-2">{% trans 'متن نظر شما (اجباری)' %}</div>
                           <div class="form-row">
-                            <textarea name="content" class="input-ui pr-2 pt-2" rows="5" placeholder="متن خود را بنویسید"></textarea>
+                            <textarea name="content" class="input-ui pr-2 pt-2" rows="5" placeholder="{% trans 'متن خود را بنویسید' %}"></textarea>
                           </div>
                         </div>
                         <div class="col-12 px-3">
                           <p class="d-block">
-                            با “ثبت نظر” موافقت خود را با <a href="#" class="border-bottom-dt" target="_blank">قوانین انتشار محتوا</a> در دیجی‌کالا اعلام می‌کنم.
+                            {% trans 'با “ثبت نظر” موافقت خود را با ' %}<a href="#" class="border-bottom-dt" target="_blank">{% trans 'قوانین انتشار محتوا' %}</a>{% trans ' در دیجی‌کالا اعلام می‌کنم.' %}
                           </p>
-                          <button type="submit" class="btn btn btn-primary px-3">ثبت نظر</button>
+                          <button type="submit" class="btn btn btn-primary px-3">{% trans 'ثبت نظر' %}</button>
                         </div>
                       </div>
                     </form>
@@ -109,8 +109,8 @@
                         <div class="footer">
                           <div class="comments-likes">
                             {% trans 'آیا این نظر برایتان مفید بود؟' %}
-                            <a href="{% url 'blog:like' blog.slug blog.id %}"><button name="like" type="submit" class="btn-like" data-counter="{{ blog.likes.all.count }}">بله</button></a>
-                            <a href="{% url 'blog:dislike' blog.slug blog.id %}"><button name="dislike" type="submit" class="btn-like" data-counter="{{ blog.dislikes.all.count }}">خیر</button></a>
+                            <a href="{% url 'blog:like' blog.slug blog.id %}"><button name="like" type="submit" class="btn-like" data-counter="{{ blog.likes.all.count }}">{% trans 'بله' %}</button></a>
+                            <a href="{% url 'blog:dislike' blog.slug blog.id %}"><button name="dislike" type="submit" class="btn-like" data-counter="{{ blog.dislikes.all.count }}">{% trans 'خیر' %}</button></a>
                           </div>
                         </div>
                       </div>

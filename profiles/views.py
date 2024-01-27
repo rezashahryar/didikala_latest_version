@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
-from shop.models import Order, Address
+from shop.models import Order, Address, OrderItem
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from .forms import ProfileEditForm
 from shop.forms import AddressForm
+from django.db.models import Prefetch
 # Create your views here.
 
 
@@ -14,7 +15,7 @@ def profile_view(request):
     profile = request.user.profile
     if not profile:
         return redirect('profiles:profile_main_page')
-    orders = request.user.orders.all()[:3]
+    orders = Order.objects.prefetch_related('items').filter(user=request.user)[:3]
     context = {
         "profile": profile,
         "orders": orders
@@ -50,7 +51,8 @@ def delete_address(request, pk):
 
 @login_required()
 def profile_order_list_view(request):
-    return render(request, 'profiles/order_list.html')
+    orders = Order.objects.prefetch_related('items').filter(user=request.user)
+    return render(request, 'profiles/order_list.html', {'order_list': orders})
 
 
 @login_required()

@@ -15,7 +15,6 @@ def home_page_view(request):
     products_most_visited = Product.objects.select_related('category').filter(available=True).order_by(
         '-counted_views')[:8]
     cheapest_product = Product.objects.select_related('category').filter(available=True).order_by('price')[:8]
-    print(request.path)
     context = {
         'categories': categories,
         'product_discount': product_discounts,
@@ -27,7 +26,7 @@ def home_page_view(request):
 
 
 def get_products_discount(request):
-    products_discount = Product.list.filter(discount__isnull=False)
+    products_discount = Product.list.filter(discount__isnull=False).select_related('category')
     paginator = Paginator(products_discount, 12)
     page_number = request.GET.get("page")
     products = paginator.get_page(page_number)

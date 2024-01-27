@@ -91,13 +91,3 @@ class Cart:
     def get_total_price_after_discount(self):
         return self.get_total_price() - self.get_discount()
 
-
-class NextShoppingCart:
-    def __init__(self, request):
-        self.session = request.session
-
-        next_cart = self.session.get('next_shopping_cart')
-        if not next_cart:
-            next_cart = self.session['next_shopping_cart'] = {}
-
-        self.cart = next_cart

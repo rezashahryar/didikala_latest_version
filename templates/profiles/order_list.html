@@ -33,11 +33,11 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            {% for order in user.orders.all %}
+                                            {% for order in order_list %}
                                                 <tr>
                                                     <td>{{ forloop.counter }}</td>
                                                     <td>{{ order.order_code }}</td>
-                                                    <td>۳۱ مرداد ۱۳۹۸</td>
+                                                    <td>{{ order.datetime_created }}</td>
                                                     <td>{{ order.get_total_price }}{% trans 'تومان' %}</td>
                                                     <td>{{ order.get_total_price }} {% trans 'تومان' %}</td>
                                                     {% if order.is_paid %}
@@ -70,7 +70,6 @@
                                 <a href="#">{% trans 'مشاهده همه' %}</a>
                             </div>
                         </div>
-
                         <!-- Start Product-Slider -->
                         <div class="col-12 px-res-0">
                             <div class="product-carousel carousel-lg owl-carousel owl-theme">
@@ -244,7 +243,6 @@
                             </div>
                         </div>
                         <!-- End Product-Slider -->
-
                     </div>
                 </section>
                 <!-- End Product-Slider -->

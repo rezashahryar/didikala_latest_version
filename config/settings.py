@@ -98,6 +98,7 @@ TEMPLATES = [
                 # custom context processors
                 'shop.context_processors.cart',
                 'profiles.context_processors.profile_side_bar',
+                'pages.context_proccessors.product_category',
             ],
         },
     },

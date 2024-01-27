@@ -1,11 +1,12 @@
 {% load static %}
+{% load i18n %}
 
 {% for cat in categories %}
   <div class="item">
     <a href="#" class="promotion-category">
       <img src=" {% static 'assets/img/category/notebook-computer.png' %}" alt="" />
       <h4 class="promotion-category-name">{{ cat.title }}</h4>
-      <h6 class="promotion-category-quantity">{{ cat.products_count }} کالا</h6>
+      <h6 class="promotion-category-quantity">{{ cat.products_count }} {% trans 'کالا' %}</h6>
     </a>
   </div>
 {% endfor %}
