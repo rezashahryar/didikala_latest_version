@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import NewsLetterForm
-from products.models import ProductCategory, Product
+from products.models import ProductCategory, Product, Brand
 from django.core.paginator import Paginator
 
 
@@ -71,3 +71,14 @@ def page_privacy(request):
 
 def welcome_page(request):
     return render(request, 'pages/welcome.html')
+
+
+def search(request):
+    query = request.GET.get('query')
+    if product := Product.objects.filter(title__icontains=query):
+        context = {
+            'products': product,
+            'query': query,
+        }
+        return render(request, 'pages/search_product.html', context)
+    return redirect('pages:404_page')

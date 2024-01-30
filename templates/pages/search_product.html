@@ -53,44 +53,45 @@
                                              data-parent="#accordionExample">
                                             <div class="card-body">
                                                 {% for cat in categories %}
-                                                <div class="custom-control custom-checkbox">
-                                                    <input name="category" value="{{ cat.title }}" type="checkbox" class="custom-control-input"
-                                                           id="{{ cat.title }}">
-                                                    <label class="custom-control-label"
-                                                           for="{{ cat.title }}">{{ cat.title }}</label>
-                                                </div>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input name="category" value="{{ cat.title }}" type="checkbox"
+                                                               class="custom-control-input"
+                                                               id="{{ cat.title }}">
+                                                        <label class="custom-control-label"
+                                                               for="{{ cat.title }}">{{ cat.title }}</label>
+                                                    </div>
                                                 {% endfor %}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card">
-                                    {% if brands %}
-                                        <div class="card-header" id="headingTwo">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-block text-right collapsed" type="button"
-                                                        data-toggle="collapse" data-target="#collapseTwo"
-                                                        aria-expanded="false" aria-controls="collapseTwo">
-                                                    {% trans 'برند' %}
-                                                    <i class="mdi mdi-chevron-down"></i>
-                                                </button>
-                                            </h2>
-                                        </div>
-                                    {% endif %}
-                                    {% if brands %}
-                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                             data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                {% for brand in brands %}
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                           id="customCheck7">
-                                                    <label class="custom-control-label"
-                                                           for="customCheck7">{% trans 'همه' %}</label>
-                                                </div>
-                                                {% endfor %}
+                                        {% if brands %}
+                                            <div class="card-header" id="headingTwo">
+                                                <h2 class="mb-0">
+                                                    <button class="btn btn-block text-right collapsed" type="button"
+                                                            data-toggle="collapse" data-target="#collapseTwo"
+                                                            aria-expanded="false" aria-controls="collapseTwo">
+                                                        {% trans 'برند' %}
+                                                        <i class="mdi mdi-chevron-down"></i>
+                                                    </button>
+                                                </h2>
                                             </div>
-                                        </div>
-                                    {% endif %}
+                                        {% endif %}
+                                        {% if brands %}
+                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                                 data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    {% for brand in brands %}
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                   id="customCheck7">
+                                                            <label class="custom-control-label"
+                                                                   for="customCheck7">{% trans 'همه' %}</label>
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                     <div class="card">
                                         <div class="card-header" id="headingFour">
@@ -107,14 +108,15 @@
                                              data-parent="#accordionExample">
                                             <div class="card-body">
                                                 {% for color in colors %}
-                                                <div class="custom-control custom-checkbox">
-                                                    <input name="color" value="{{ color.title }}" type="checkbox" class="custom-control-input"
-                                                           id="{{ color.title }}">
-                                                    <label class="custom-control-label"
-                                                           for="{{ color.title }}">{{ color.title }}</label>
-{#                                                    <span class="filter-color"#}
-{#                                                          style="background-color: rgb(0,0,0)"></span>#}
-                                                </div>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input name="color" value="{{ color.title }}" type="checkbox"
+                                                               class="custom-control-input"
+                                                               id="{{ color.title }}">
+                                                        <label class="custom-control-label"
+                                                               for="{{ color.title }}">{{ color.title }}</label>
+                                                        {#                                                    <span class="filter-color"#}
+                                                        {#                                                          style="background-color: rgb(0,0,0)"></span>#}
+                                                    </div>
                                                 {% endfor %}
                                             </div>
                                         </div>
@@ -126,15 +128,17 @@
                                     <h2>{% trans 'فیلتر براساس قیمت :' %}</h2>
                                 </div>
                                 <div class="mt-2 mb-2">
-                                    <input name="min_price" class="form-control" type="text" placeholder="{% trans 'از قیمت :' %}">
+                                    <input name="min_price" class="form-control" type="text"
+                                           placeholder="{% trans 'از قیمت :' %}">
                                 </div>
                                 <div class="mt-2 mb-2">
-                                    <input name="max_price" class="form-control" type="text" placeholder="{% trans 'تا قیمت :' %}">
+                                    <input name="max_price" class="form-control" type="text"
+                                           placeholder="{% trans 'تا قیمت :' %}">
                                 </div>
-{#                                <div class="mt-2 mb-2 text-center pt-2">#}
-{#                                    <span>قیمت: </span>#}
-{#                                    <span class="example-val" id="slider-non-linear-step-value"></span> تومان#}
-{#                                </div>#}
+                                {#                                <div class="mt-2 mb-2 text-center pt-2">#}
+                                {#                                    <span>قیمت: </span>#}
+                                {#                                    <span class="example-val" id="slider-non-linear-step-value"></span> تومان#}
+                                {#                                </div>#}
                             </div>
                             <div class="col-12 mb-3">
                                 <div class="parent-switcher">
@@ -144,7 +148,8 @@
                                                 <span class="ui-statusswitcher-slider-toggle"></span>
                                             </span>
                                     </label>
-                                    <label class="label-switcher" for="switcher-1">{% trans 'فقط کالاهای موجود' %}</label>
+                                    <label class="label-switcher"
+                                           for="switcher-1">{% trans 'فقط کالاهای موجود' %}</label>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -160,17 +165,13 @@
                 <div class="col-lg-9 col-md-12 col-sm-12 search-card-res">
                     <div class="d-md-none">
                         <button class="btn-filter-sidebar">
-                            {% trans 'جستجوی پیشرفته' %} <i class="fad fa-sliders-h"></i>
+                            {% trans 'جستجوی پیشرفته ' %}<i class="fad fa-sliders-h"></i>
                         </button>
                     </div>
                     <div class="dt-sl dt-sn px-0 search-amazing-tab">
                         <div class="ah-tab-wrapper dt-sl">
                             <div class="ah-tab dt-sl">
-                                <a class="ah-tab-item" data-ah-tab-active="true" href="">{% trans 'مرتبط ترین' %}</a>
-                                <a class="ah-tab-item" href="">{% trans 'پربازدید ترین' %}</a>
-                                <a class="ah-tab-item" href="">{% trans 'جدید ترین' %}</a>
-                                <a class="ah-tab-item" href="">{% trans 'ارزان ترین' %}</a>
-                                <a class="ah-tab-item" href="">{% trans 'گران ترین' %}</a>
+                                {#                                <p class="">جستجو برای : </p>#}
                             </div>
                         </div>
                         <div class="ah-tab-content-wrapper dt-sl px-res-0">
@@ -262,7 +263,7 @@
                                                     </h5>
                                                     <a class="product-meta"
                                                        href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
-                                                    <span class="product-price">{{ product.price }} {% trans 'تومان' %}</span>
+                                                    <span class="product-price">{{ product.price }} تومان</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -286,6 +287,8 @@
                             </div>
                             <div class="ah-tab-content dt-sl">
                                 <div class="row mb-3 mx-0 px-res-0">
+
+
                                     {% for product in latest_products %}
                                         <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-10 mb-1 px-res-0">
                                             <div class="product-card mb-2 mx-res-0">
@@ -307,7 +310,7 @@
                                                     </h5>
                                                     <a class="product-meta"
                                                        href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
-                                                    <span class="product-price">{{ product.price }} {% trans 'تومان' %}</span>
+                                                    <span class="product-price">{{ product.price }} تومان</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -362,7 +365,7 @@
                                                     </h5>
                                                     <a class="product-meta"
                                                        href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
-                                                    <span class="product-price">{{ product.price }} تومان</span>
+                                                    <span class="product-price">{{ product.price }} {% trans 'تومان' %}</span>
                                                 </div>
                                             </div>
                                         </div>

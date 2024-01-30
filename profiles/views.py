@@ -1,12 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
-from shop.models import Order, Address, OrderItem
+from shop.models import Order, Address
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from .forms import ProfileEditForm
 from shop.forms import AddressForm
 from products.models import InterestProductUser
+from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 # Create your views here.
 
 
@@ -14,7 +16,9 @@ from products.models import InterestProductUser
 def profile_view(request):
     profile = request.user.profile
     if not profile:
-        return redirect('profiles:profile_main_page')
+        messages.warning(request, _('متاسفیم ، برای شما پروفایلی وجود ندارد.'))
+        return redirect('pages:home_page_view')
+    print(request.path)
     orders = Order.objects.prefetch_related('items').filter(user=request.user)[:3]
     interest_product = InterestProductUser.objects.filter(user=request.user)[:4]
     context = {
@@ -100,3 +104,12 @@ def user_comments(request):
 
 def user_addresses(request):
     return render(request, 'profiles/user_addresses.html')
+
+
+def interest_product_list(request):
+    interest_product_list = InterestProductUser.objects.all()
+    context = {
+        'products': interest_product_list,
+    }
+    print(request.path)
+    return render(request, 'profiles/interest_product_list.html', context)

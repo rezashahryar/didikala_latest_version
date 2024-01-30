@@ -15,4 +15,5 @@ urlpatterns = [
     path('address/', views.add_new_address, name='add_address_view'),
     path('address/update/<int:pk>/', views.EditAddressView.as_view(), name='edit_address_view'),
     path('address/delete/<int:pk>/', views.delete_address, name='delete_address_view'),
+    path('interest-product/list/', views.interest_product_list, name='interest_product_list'),
 ]

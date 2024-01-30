@@ -29,7 +29,12 @@
                         <!-- Product Options-->
                         <ul class="gallery-options">
                             <li>
-                                <a style="font-size: 20px;" href="{% url 'products:add_interest_product' product.id %}" class="add-favorites"><i class="mdi mdi-heart"></i></a>
+                                <form action="{% url 'products:add_interest_product' product.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button style="font-size: 20px;" class="add-favorites">
+                                    <i class="mdi mdi-heart"></i>
+                                </button>
+                                </form>
                                 <span class="tooltip-option">افزودن به علاقمندی</span>
                             </li>
                         </ul>

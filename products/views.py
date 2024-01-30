@@ -1,9 +1,9 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
-from .models import ProductCategory, SubProductCategory, Product, Brand, Color, Question, SetProductProperty, InterestProductUser
+from .models import (ProductCategory, SubProductCategory, Product, Brand, Color, Question,
+                     InterestProductUser)
 from .forms import QuestionForm
 from django.views.decorators.http import require_POST
-from django.db.models import Prefetch
 # Create your views here.
 
 
@@ -118,6 +118,7 @@ def product_filter(request):
     return render(request, 'products/product_list.html', context)
 
 
+@require_POST
 def add_interest_product(request, pk):
     product = get_object_or_404(Product, pk=pk)
     interest_product = InterestProductUser.objects.create(
@@ -137,7 +138,13 @@ def add_interest_product(request, pk):
     return redirect('profiles:profile_main_page')
 
 
+@require_POST
 def delete_interest_product(request, pk):
     interest_product = get_object_or_404(InterestProductUser, pk=pk)
     interest_product.delete()
+    if request.path == '/profile/interest-product/list/':
+        return redirect('profiles:interest_product_list')
+    elif request.path == '/profile/':
+        return redirect('profiles:profile_main_page')
+
     return redirect('profiles:profile_main_page')

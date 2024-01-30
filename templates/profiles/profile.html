@@ -113,19 +113,20 @@
                                                     <img src="{{ product.cover.url }}" alt="">
                                                     <span>{{ product.title }}</span>
                                                 </a>
-                                                <a href="{% url 'products:delete_interest_product' product.id %}">
+                                                <form action="{% url 'products:delete_interest_product' product.id %}" method="POST">
+                                                    {% csrf_token %}
                                                     <button>
                                                     <i class="mdi mdi-trash-can-outline"></i>
                                                 </button>
-                                                </a>
+                                                </form>
                                             </li>
                                             {% endfor %}
                                         </ul>
                                         <div class="profile-section-link">
-{#                                            <a href="#" class="border-bottom-dt">#}
-{#                                                <i class="mdi mdi-square-edit-outline"></i>#}
-{#                                                مشاهده و ویرایش لیست مورد علاقه#}
-{#                                            </a>#}
+                                            <a href="{% url 'profiles:interest_product_list' %}" class="border-bottom-dt">
+                                                <i class="mdi mdi-square-edit-outline"></i>
+                                                مشاهده و ویرایش لیست مورد علاقه
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

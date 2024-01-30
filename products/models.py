@@ -81,7 +81,7 @@ class Product(models.Model):
     color = models.ManyToManyField(Color, related_name='colors', null=True, blank=True, verbose_name=_('رنگ'))
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='brands', null=True, blank=True, verbose_name=_('برند'))
 
-    discount = models.PositiveIntegerField(_('تخفیف'), null=True, blank=True, validators=[MinValueValidator(0), MaxValueValidator(100)])
+    discount = models.PositiveIntegerField(_('تخفیف'), null=True, blank=True, default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
 
     price = models.IntegerField(_('قیمت'))
     description = models.TextField(_('توضیحات'))
